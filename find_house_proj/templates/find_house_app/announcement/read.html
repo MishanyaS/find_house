@@ -1,0 +1,188 @@
+{% extends "find_house_app/base.html" %}
+
+{% load static %}
+
+{% block title %}Details Announcement{% endblock %}
+
+{% block content %}
+
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div id="announcementImagesCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    {% if announcement.images.all %}
+                        {% for image in announcement.images.all %}
+                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                {% if forloop.first and not image.image %}
+                                    <img src="{% static 'find_house_app/images/announcements/default/default_house.jpg' %}" height="400px" class="d-block w-100" alt="Car Image">
+                                    <div class="carousel-caption">
+                                        <p>Description</p>
+                                    </div>
+                                {% else %}
+                                    <img src="{{ image.image.url }}" height="400px" class="d-block w-100" alt="{{ image.description }}">
+                                    <div class="carousel-caption">
+                                        <p>{{ image.description }}</p>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <img src="{% static 'find_house_app/images/announcements/default/default_house.jpg' %}" height="400px" class="d-block w-100" alt="Announcement Image">
+                    {% endif %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#announcementImagesCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#announcementImagesCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2 class="#">{{ announcement.title }}</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Address:</strong> {{ announcement.address }}</li>
+                <li class="list-group-item"><strong>Owner:</strong> {{ announcement.owner }}</li>
+                <li class="list-group-item"><strong>Category:</strong> {{ announcement.category }}</li>
+                <li class="list-group-item"><strong>Status:</strong> {% if announcement.status == 1 %}Active{% elif announcement.status == 2 %}Sold{% elif announcement.status == 3 %}Withdrawn{% endif %}</li> 
+                <li class="list-group-item"><strong>Square:</strong> {{ announcement.square }} M<sup>2</sup></li>
+                <li class="list-group-item"><strong>Price:</strong> {{ announcement.price }} $</li>
+                <li class="list-group-item"><strong>Price per M<sup>2</sup>:</strong> {{ announcement.price_per_square }} $</li>
+                <li class="list-group-item"><strong>Date Added:</strong> {{ announcement.date_added }}</li>
+                <li class="list-group-item"><div id="moreDetails" style="display: none;">{{ announcement.description }}</div></li>
+            </ul>
+            <div class="mb-3 mt-3">
+                <a class="w-text-75 text-decoration-none" href="javascript:void(0);" id="showMoreLink">More</a>
+
+                {% if announcement.owner and announcement.owner != user and user.is_authenticated %}
+                    <a href="{% url 'create_or_get_chat' other_user_id=announcement.owner.id %}" class="btn btn-orange btn-sm mt-2" id="id_chat_owner_btn">Chat Owner</a>
+                {% endif %}
+
+                <a href="{% url 'home' %}" class="btn btn-red btn-sm mt-2">Back</a>
+            </div>
+
+        </div>
+    </div>
+
+    <p><img width="30px" height="30px" src="{% static 'find_house_app/images/icons/news/view.svg' %}" alt="View"> {{ announcement.views }}</p>
+
+    {% if user.is_authenticated %}
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h3>Leave a Comment</h3>
+                <div id="error-container2"></div>
+                <form action="{% url 'comment_add' pk=announcement.pk %}" method="post" id="commentForm">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="comment_your_name" hidden class="form-label">Name</label>
+                        <input name="comment_your_name" value="{{ user.username }}" disabled hidden type="text" class="custom-form-control" id="id_your_name" required placeholder="Your Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="comment_your_comment" class="form-label">Comment</label>
+                        <textarea name="comment_your_comment" placeholder="Comment" class="custom-form-control" id="id_your_comment" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-orange btn-sm" id="id_post_comment_btn">Post Comment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <h3>Comments</h3>
+            {% if object.comments.all %}
+                {% for comment in object.comments.all %}
+                    <div class="card mb-3 bg-orange-list ">
+                        <div class="card-header bg-orange text-white d-flex justify-content-between align-items-center">
+                            <div>
+                                {% if user.avatar %}
+                                    <img src="{{ user.avatar.url }}" style="width: 20px; height: 20px; -radius: 50%;" alt="User Photo">
+                                {% else %}
+                                    <img src="{% static 'users_app/images/default/default_user.png' %}" style="width: 20px; height: 20px; -radius: 50%;" alt="...">
+                                {% endif %}
+                                {{ comment.user.username }} - <small>{{ comment.date_added }}</small>
+                            </div>
+                            
+                            {% if comment.user == user %}
+                                <div class="ml-auto">
+                                    <a class="w-text-75 text-decoration-none btn btn-blue btn-sm" href="{% url 'comment_edit' pk=comment.pk %}">Edit</a>
+                                    <a class="w-text-75 text-decoration-none btn btn-red btn-sm" href="{% url 'comment_delete' pk=comment.pk %}">Delete</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="card-body">
+                            <p class="card-text">{{ comment.text }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        // Find elements
+                        var commentsContainer = document.querySelector('.col-12');
+                        var allComments = document.querySelectorAll('.card');
+                        var showMoreButton;
+                        
+                        // Comments number to display
+                        var commentsToShow = 1;
+                        
+                        // Show or hide comments
+                        function toggleComments() {
+                            allComments.forEach(function (comment, index) {
+                                if (index < commentsToShow) {
+                                    comment.style.display = 'block';
+                                } else {
+                                    comment.style.display = 'none';
+                                }
+                            });
+                        }
+                        
+                        // Load more comments
+                        function loadMoreComments() {
+                            commentsToShow += 10;
+                            toggleComments();
+                            
+                            // Check for creating "More" button is needed
+                            if (commentsToShow < allComments.length && !showMoreButton) {
+                                showMoreButton = document.createElement('a');
+                                showMoreButton.innerText = 'More';
+                                showMoreButton.classList.add('text-decoration-none', 'w-text-75', 'mt-3');
+                                showMoreButton.addEventListener('click', loadMoreComments);
+                                commentsContainer.appendChild(showMoreButton);
+                            }
+                            
+                            // Check for "More" button is needed to be hidden
+                            if (commentsToShow >= allComments.length && showMoreButton) {
+                                showMoreButton.style.display = 'none';
+                            }
+                        }
+                        
+                        toggleComments();
+                        
+                        // Create "More" button
+                        if (allComments.length > commentsToShow) {
+                            showMoreButton = document.createElement('a');
+                            showMoreButton.innerText = 'More';
+                            showMoreButton.classList.add('text-decoration-none', 'w-text-75', 'mt-3');
+                            showMoreButton.addEventListener('click', loadMoreComments);
+                            commentsContainer.appendChild(showMoreButton);
+                        }
+                    });
+                </script>
+
+            {% else %}
+                <h3 class="text-center text-danger">There is no any comments !!!</h1>
+            {% endif %}
+        </div>
+    </div>
+    
+    <script src="{% static 'find_house_app/js/read_announcement_script.js' %}"></script>
+    <script src="{% static 'find_house_app/js/comment_validation.js' %}"></script>
+    <script src="{% static 'find_house_app/js/email_to_owner_validation.js' %}"></script>
+
+{% endblock content %}

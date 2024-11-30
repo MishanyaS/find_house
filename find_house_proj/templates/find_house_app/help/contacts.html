@@ -1,0 +1,52 @@
+{% extends "find_house_app/base.html" %}
+
+{% load static %}
+
+{% block title %}Contact Information{% endblock %}
+
+{% block content %}
+
+    <h2 class="text-center mb-4">Contact Information</h2>
+
+    <div class="row">
+    <div class="col-md-3">
+        <img src="{% static "find_house_app/images/icons/favicon.jpg" %}" class="img-fluid" alt="...">
+    </div>
+    <div class="col-md-9">
+        <h5 class="text-uppercase">Find your perfect home with ease and comfort</h5>
+        Our real estate search app is your reliable guide in the world of housing. A user-friendly interface, smart filters and accurate data will help you quickly find an apartment, house or commercial property that meets your requirements. Discover new opportunities for living and investing with detailed descriptions of properties and high-quality photos. Buying real estate has never been easier!
+    </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h3>Address</h3>
+            <p>
+                <img width="30px" height="30px" src="{% static 'find_house_app/images/icons/contacts/map.svg' %}" alt="Map">
+                City, Street, 10
+            </p>
+
+            <h3>Telephone</h3>
+            <p>
+                <img width="30px" height="30px" src="{% static 'find_house_app/images/icons/contacts/phone.svg' %}" alt="Phone">
+                Phone Number
+            </p>
+
+            <h3>Email</h3>
+            <p>
+                <img width="30px" height="30px" src="{% static 'find_house_app/images/icons/contacts/email.svg' %}" alt="Email">
+                example@example.com
+            </p>
+        </div>
+            
+        <div class="col-md-9">
+            {% if user.is_authenticated and user.is_admin == 0 %}
+                <h3>Send us a message</h3>
+                <a href="{% url 'create_or_get_chat' other_user_id=admin.pk %}" class="btn btn-orange btn-sm mt-2" id="id_chat_owner_btn">Chat Admin</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="{% static 'find_house_app/js/contacts_validation.js' %}"></script>
+
+{% endblock content %}

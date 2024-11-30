@@ -1,0 +1,71 @@
+{% extends "admin_panel_app/base.html" %}
+
+{% load static %}
+
+{% block title %}Announcements List{% endblock %}
+
+{% block content %}
+
+    <h3 class="text-center">Announcements List</h3>
+    <div class="mb-3">
+        <input type="text" id="announcementsFilterInput" class="custom-form-control" placeholder="Enter filter...">
+    </div>
+    {% if announcements %}
+        <div class="table-responsive">
+            <table class="table table-hover" data-table="announcements">
+                <thead>
+                    <tr>
+                        <th class="text-nowrap">ID</th>
+                        <th class="text-nowrap">Date Added</th>
+                        <th class="text-nowrap">Category ID</th>
+                        <th class="text-nowrap">Owner ID</th>
+                        <th class="text-nowrap">Status</th>
+                        <th class="text-nowrap">Title</th>
+                        <th class="text-nowrap">Views</th>
+                        <th class="text-nowrap">Edit</th>
+                        <th class="text-nowrap">Details</th>
+                        <th class="text-nowrap">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for announcement in announcements %}
+                        <tr>
+                            <td>{{ announcement.id }}</td>
+                            <td>{{ announcement.date_added }}</td>
+                            <td>{{ announcement.category_id }}</td>
+                            <td>{{ announcement.owner_id }}</td>
+                            <td>{{ announcement.status }}</td>
+                            <td>{{ announcement.title|truncatechars:50 }}</td>
+                            <td>{{ announcement.views }}</td>
+                            <td>
+                                <a href="{% url 'admin_announcement_update' pk=announcement.pk %}" class="btn btn-blue btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/edit.svg' %}" alt="Edit" class="mr-1">Edit
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{% url 'admin_announcement_read' pk=announcement.pk %}" class="btn btn-grey btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/details.svg' %}" alt="Edit" class="mr-1">Details
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{% url 'admin_announcement_delete' pk=announcement.pk %}" class="btn btn-red btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/delete.svg' %}" alt="Edit" class="mr-1">Delete
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <h3 class="text-center text-danger">You do not have any announcements !!!</h3>
+    {% endif %}
+
+    <div class="mb-3">
+        <a class="btn btn-orange btn-sm" href="{% url 'admin_announcement_create' %}">Add Announcement</a>
+    </div>
+
+    <script src="{% static 'admin_panel_app/js/announcements_tables_search.js' %}"></script>
+    <script src="{% static 'admin_panel_app/js/table_scroll_script.js' %}"></script>
+
+{% endblock content %}

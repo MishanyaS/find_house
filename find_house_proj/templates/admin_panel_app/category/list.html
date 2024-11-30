@@ -1,0 +1,65 @@
+{% extends "admin_panel_app/base.html" %}
+
+{% load static %}
+
+{% block title %}Categories List{% endblock %}
+
+{% block content %}
+
+    <h3 class="text-center">Categories List</h3>
+    <div class="mb-3">
+        <input type="text" id="categoriesFilterInput" class="custom-form-control" placeholder="Enter filter...">
+    </div>
+    {% if categories %}
+        <div class="table-responsive">
+            <table class="table table-hover " data-table="categories">
+                <thead>
+                    <tr>
+                        <th class="text-nowrap">ID</th>
+                        <th class="text-nowrap">Name</th>
+                        <th class="text-nowrap">Description</th>
+                        <th class="text-nowrap">Date Added</th>
+                        <th class="text-nowrap">Edit</th>
+                        <th class="text-nowrap">Details</th>
+                        <th class="text-nowrap">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for category in categories %}
+                        <tr>
+                            <td>{{ category.id }}</td>
+                            <td>{{ category.name }}</td>
+                            <td>{{ category.description|truncatechars:100 }}</td>
+                            <td>{{ category.date_added }}</td>
+                            <td>
+                                <a href="{% url 'admin_category_update' pk=category.pk %}" class="btn btn-blue btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/edit.svg' %}" alt="Edit" class="mr-1">Edit
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{% url 'admin_category_read' pk=category.pk %}" class="btn btn-grey btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/details.svg' %}" alt="Edit" class="mr-1">Details
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{% url 'admin_category_delete' pk=category.pk %}" class="btn btn-red btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/delete.svg' %}" alt="Edit" class="mr-1">Delete
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <h3 class="text-center text-danger">You do not have any categories !!!</h3>
+    {% endif %}
+
+    <div class="mb-3">
+        <a class="btn btn-orange btn-sm" href="{% url 'admin_category_create' %}">Add Category</a>
+    </div>
+
+    <script src="{% static 'admin_panel_app/js/categories_tables_search.js' %}"></script>
+    <script src="{% static 'admin_panel_app/js/table_scroll_script.js' %}"></script>
+
+{% endblock content %}

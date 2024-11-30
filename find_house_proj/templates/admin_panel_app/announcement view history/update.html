@@ -1,0 +1,55 @@
+{% extends "admin_panel_app/base.html" %}
+
+{% block title %}Edit Announcement View History{% endblock %}
+
+{% block content %}
+
+    {% if user.is_authenticated and user.is_admin == True %}
+
+        {% for field in form %}
+            {% if field.errors %}
+                <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                    {{ field.errors.0 }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        <div class="col-md-12">
+            <div class="card mt-5">
+                <div class="card-header bg-blue text-white">
+                    <h3 class="card-title mb-0">Edit Announcement View History</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+            
+                        <div class="mb-3">
+                            {{ form.user.label_tag }}
+                            {{ form.user }}
+                            <span class="text-muted"><small>{{ form.user.help_text }}</small></span>
+                        </div>
+            
+                        <div class="mb-3">
+                            {{ form.announcement.label_tag }}
+                            {{ form.announcement }}
+                            <span class="text-muted"><small>{{ form.announcement.help_text }}</small></span>
+                        </div>
+            
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-blue btn-sm">Edit Announcement View History</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    {% else %}
+        <h3 class="text-center text-danger">You do not have access to this page !!!</h1>
+    {% endif %}
+
+    <div class="mb-3 mt-3">
+        <a class="btn btn-red btn-sm" href="{% url 'admin_announcement_view_histories_list' %}">Back</a>
+    </div>
+
+{% endblock %}

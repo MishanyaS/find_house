@@ -1,0 +1,47 @@
+{% extends "admin_panel_app/base.html" %}
+
+{% block title %}Announcement Image Details{% endblock %}
+
+{% block content %}
+
+    <h3 class="text-center">Announcement Image Details</h3>
+
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ announcement_images.id }}</td>
+            </tr>
+            <tr>
+                <th>Announcement ID</th>
+                <td>{{ announcement_images.car_id }}</td>
+            </tr>
+            <tr>
+                <th>Date Added</th>
+                <td>{{ announcement_images.date_added }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ announcement_images.description }}</td>
+            </tr>
+            <tr>
+                <th>Image Height</th>
+                <td>{{ announcement_images.image_height }}</td>
+            </tr>
+            <tr>
+                <th>Image Width</th>
+                <td>{{ announcement_images.image_width }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ announcement_images.image }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <div class="mb-3 mt-3">
+        <a class="btn btn-red btn-sm" href="{% url 'admin_announcement_images_list' %}">Back</a>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,90 @@
+{% extends "admin_panel_app/base.html" %}
+
+{% load static %}
+
+{% block title %}Admin Home Page{% endblock %}
+
+{% block content %}
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="{% url 'admin_index' %}" class="list-group-item list-group-item-action text-decoration-none w-text-75  bg-orange-list stretched-link">Dashboard</a>
+                    <a href="{% url 'admin_user_list_index' %}" class="list-group-item list-group-item-action text-decoration-none w-text-75  bg-orange-list stretched-link">Users</a>
+                    <a href="{% url 'admin_announcement_images_list' %}" class="list-group-item list-group-item-action text-decoration-none w-text-75  bg-orange-list stretched-link">Announcement Images</a>
+                    <a href="{% url 'admin_announcement_list' %}" class="list-group-item list-group-item-action text-decoration-none w-text-75  bg-orange-list stretched-link">Announcements</a>
+                    <a href="{% url 'admin_categories_list' %}" class="list-group-item list-group-item-action text-decoration-none w-text-75  bg-orange-list stretched-link">Categories</a>
+                    <a href="{% url 'admin_favorites_list' %}" class="list-group-item list-group-item-action text-decoration-none w-text-75  bg-orange-list stretched-link">Favorites</a>
+                    <a href="{% url 'admin_news_list' %}" class="list-group-item list-group-item-action text-decoration-none w-text-75  bg-orange-list stretched-link">News</a>
+                    <a href="{% url 'admin_announcement_view_histories_list' %}" class="list-group-item list-group-item-action text-decoration-none w-text-75  bg-orange-list stretched-link">Ann View History</a>
+                    <a href="{% url 'admin_comments_list' %}" class="list-group-item list-group-item-action text-decoration-none w-text-75  bg-orange-list stretched-link">Comments</a>
+                    <a href="{% url 'admin_chats_list' %}" class="list-group-item list-group-item-action text-decoration-none w-text-75  bg-orange-list stretched-link">Chats</a>
+                    <a href="{% url 'admin_messages_list' %}" class="list-group-item list-group-item-action text-decoration-none w-text-75  bg-orange-list stretched-link">Messages</a>
+                    <a href="{% url 'home' %}" class="list-group-item list-group-item-action text-decoration-none text-danger bg-orange-list stretched-link">Back</a>
+                </div>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="col-md-9">
+                <h3 class="mb-4">Admin Dashboard</h1>
+
+                <!-- Stats Cards -->
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-white bg-blue bg-opacity-75 ">
+                            <div class="card-body">
+                                <div class="card-title">Total Users</div>
+                                <h2 class="card-text">{{ users_count }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-white bg-green bg-opacity-75 ">
+                            <div class="card-body">
+                                <div class="card-title">Total Announcements</div>
+                                <h2 class="card-text">{{ announcements_count }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-white bg-orange bg-opacity-75 ">
+                            <div class="card-body">
+                                <div class="card-title">Total News</div>
+                                <h2 class="card-text">{{ news_count }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-white bg-red bg-opacity-75 ">
+                            <div class="card-body">
+                                <div class="card-title">Total Comments</div>
+                                <h2 class="card-text">{{ comments_count }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-white bg-purple bg-opacity-75 ">
+                            <div class="card-body">
+                                <div class="card-title">Total Chats</div>
+                                <h2 class="card-text">{{ chats_count }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-white bg-grey bg-opacity-75 ">
+                            <div class="card-body">
+                                <div class="card-title">Total Messages</div>
+                                <h2 class="card-text">{{ messages_count }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

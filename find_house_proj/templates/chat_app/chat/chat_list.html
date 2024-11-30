@@ -1,0 +1,40 @@
+{% extends "find_house_app/base.html" %}
+{% load static %}
+
+{% block title %}Chats{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center">Chats</h2>
+                <div class="list-group">
+                    {% if chats %}
+                        {% for chat in chats %}
+                            <a href="{% url 'chat_read' chat.id %}" class="list-group-item list-group-item-action bg-orange w-text-75 -white mb-3">
+                                <strong>Chat with:</strong>
+                                {% for participant in chat.participants.all %}
+                                    {% if participant != user %}
+                                        {{ participant.username }} ({{ participant.first_name }} {{ participant.last_name }})
+                                    {% endif %}
+                                {% endfor %}
+                                <br>
+                                {% if chat.messages.all %}
+                                    Last message: {{ chat.messages.last.content|truncatechars:20 }} - {{ chat.messages.last.timestamp }}
+                                {% else %}
+                                    No messages yet
+                                {% endif %}
+                                <form action="{% url 'delete_chat' chat.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-sm btn-red float-right">Delete</button>
+                                </form>
+                            </a>
+                        {% endfor %}
+                    {% else %}
+                        <h3 class="text-center text-danger">There is no any chats !!!</h1>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

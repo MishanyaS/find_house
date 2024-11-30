@@ -1,0 +1,112 @@
+{% extends "find_house_app/base.html" %}
+
+{% block title %}Edit User Settings{% endblock %}
+
+{% block content %}
+
+    {% for field in form %}
+        {% if field.errors %}
+            <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                {{ field.errors.0 }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    <div class="col-md-12">
+        <div class="card mt-5">
+            <div class="card-header bg-blue text-white">
+                <h3 class="card-title mb-0">Edit User Settings</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+            
+                    <div class="mb-3">
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
+                    </div>
+            
+                    <div class="mb-3">
+                        {{ form.email.label_tag }}
+                        {{ form.email }}
+                    </div>
+            
+                    <div class="mb-3">
+                        {{ form.password.label_tag }}
+                        {{ form.password }}
+                    </div>
+            
+                    <div class="mb-3">
+                        {{ form.password2.label_tag }}
+                        {{ form.password2 }}
+                    </div>
+            
+                    <div class="mb-3">
+                        {{ form.first_name.label_tag }}
+                        {{ form.first_name }}
+                    </div>
+            
+                    <div class="mb-3">
+                        {{ form.last_name.label_tag }}
+                        {{ form.last_name }}
+                    </div>
+            
+                    <div class="mb-3">
+                        {{ form.phone_number.label_tag }}
+                        {{ form.phone_number }}
+                        <span class="text-muted"><small>{{ form.phone_number.help_text }}</small></span>
+                    </div>
+            
+                    <div class="mb-3">
+                        {{ form.birth_date.label_tag }}
+                        {{ form.birth_date }}
+                        <span class="text-muted"><small>{{ form.birth_date.help_text }}</small></span>
+                    </div>
+            
+                    <div class="mb-3">
+                        {{ form.address.label_tag }}
+                        {{ form.address }}
+                        <span class="text-muted"><small>{{ form.address.help_text }}</small></span>
+                    </div>
+            
+                    <div class="mb-3">
+                        {{ form.avatar.label_tag }}
+                        {{ form.avatar }}
+                        <span class="text-muted"><small>{{ form.avatar.help_text }}</small></span>
+                    </div>
+            
+                    <div class="mb-3">
+                        {{ form.description.label_tag }}
+                        {{ form.description }}
+                        <span class="text-muted"><small>{{ form.description.help_text }}</small></span>
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.is_admin }}
+                    </div>
+                    
+                    <div class="mb-3">
+                        {{ form.old_password.label_tag }}
+                        {{ form.old_password }}
+                    </div>
+            
+                    <div class="mb-3">
+                        {{ form.new_password1.label_tag }}
+                        {{ form.new_password1 }}
+                    </div>
+            
+                    <div class="mb-3">
+                        {{ form.new_password2.label_tag }}
+                        {{ form.new_password2 }}
+                    </div>
+            
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-blue btn-sm">Edit User</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

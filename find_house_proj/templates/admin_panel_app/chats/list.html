@@ -1,0 +1,63 @@
+{% extends "admin_panel_app/base.html" %}
+
+{% load static %}
+
+{% block title %}Chats List{% endblock %}
+
+{% block content %}
+
+    <h3 class="text-center">Chats List</h3>
+    <div class="mb-3">
+        <input type="text" id="chatsFilterInput" class="custom-form-control" placeholder="Enter filter...">
+    </div>
+    {% if chats %}
+        <div class="table-responsive">
+            <table class="table table-hover " data-table="chats">
+                <thead>
+                    <tr>
+                        <th class="text-nowrap">ID</th>
+                        <th class="text-nowrap">Participants</th>
+                        <th class="text-nowrap">Date Added</th>
+                        <th class="text-nowrap">Edit</th>
+                        <th class="text-nowrap">Details</th>
+                        <th class="text-nowrap">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for chat in chats %}
+                        <tr>
+                            <td>{{ chat.id }}</td>
+                            <td>{{ chat.participants.all }}</td>
+                            <td>{{ chat.date_added }}</td>
+                            <td>
+                                <a href="{% url 'admin_chat_update' pk=chat.pk %}" class="btn btn-blue btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/edit.svg' %}" alt="Edit" class="mr-1">Edit
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{% url 'admin_chat_read' pk=chat.pk %}" class="btn btn-grey btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/details.svg' %}" alt="Edit" class="mr-1">Details
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{% url 'admin_chat_delete' pk=chat.pk %}" class="btn btn-red btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/delete.svg' %}" alt="Edit" class="mr-1">Delete
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <h3 class="text-center text-danger">You do not have any chats !!!</h3>
+    {% endif %}
+
+    <div class="mb-3">
+        <a class="btn btn-orange btn-sm" href="{% url 'admin_chat_create' %}">Add Chat</a>
+    </div>
+
+    <script src="{% static 'admin_panel_app/js/chats_tables_search.js' %}"></script>
+    <script src="{% static 'admin_panel_app/js/table_scroll_script.js' %}"></script>
+
+{% endblock content %}

@@ -1,0 +1,75 @@
+{% extends "find_house_app/base.html" %}
+{% load static %}
+
+{% block title %}Chat{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="container">
+            <div class="row">
+                {% if chat %}
+                    <div class="col-md-12">
+                        {% for participant in chat.participants.all %}
+                            {% if participant != user %}
+                                <h2 class="text-center">Chats with: {{ participant.username }} ({{ participant.first_name }} {{ participant.last_name }})</h2>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% for field in form %}
+                            {% if field.errors %}
+                                <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                                    {{ field.errors.0 }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if chat.messages.all %}
+                            {% for message in chat.messages.all %}
+                                {% if not message.is_deleted %}
+                                    <div class="card {% if user == message.sender %} bg-orange text-white {% else %} bg-light {% endif %} mb-3 ">
+                                        <div class="card-body">
+                                            <strong>{{ message.sender.username }} {% if message.sender.username == user.username %}(You){% endif %}</strong>: {{ message.content }}
+                                            <br>
+                                            <small class="text-muted">{{ message.timestamp }}</small>
+                                            {% if user == message.sender %}
+                                                <form method="post" action="{% url 'chat_read' chat_id=chat.id %}">
+                                                    {% csrf_token %}
+                                                    <input type="hidden" name="message_id" value="{{ message.id }}">
+                                                    <button type="submit" name="delete_message" class="btn btn-sm btn-red float-right">Delete</button>
+                                                    <a href="{% url 'edit_message' chat_id=chat.id message_id=message.id %}" class="btn btn-sm btn-blue float-right mr-2">Edit</a>
+                                                </form>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}                
+                        {% else %}
+                            <h3 class="text-center text-danger">There is no any messages !!!</h1>
+                        {% endif %}
+
+                    </div>
+                {% else %}
+                    <h3 class="text-center text-danger">This chat does not exist !!!</h1>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    {{ form.content.label_tag }}
+                    {{ form.content }}
+                    <small class="form-text text-muted">{{ form.content.help_text }}</small>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-orange btn-sm" id="id_send_btn">Send</button>
+                </div>
+            </form>
+        </div>
+    {% else %}
+        <h3 class="text-center text-danger">You do not have access to this page !!!</h1>
+    {% endif %}
+{% endblock content %}

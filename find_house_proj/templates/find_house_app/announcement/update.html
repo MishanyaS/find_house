@@ -1,0 +1,111 @@
+{% extends "find_house_app/base.html" %}
+
+{% load static %}
+
+{% block title %}Edit Announcement{% endblock %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+
+        {% for field in form %}
+            {% if field.errors %}
+                <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                    {{ field.errors.0 }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% for error in image_formset.non_form_errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+
+        <div class="col-md-12">
+            <div class="card mt-5">
+                <div class="card-header bg-blue text-white">
+                    <h3 class="card-title mb-0">Edit Announcement</h3>
+                </div>
+                <div class="card-body">
+                    <form method="POST" enctype="multipart/form-data" class="announcement-form" id="announcementForm">
+                        {% csrf_token %}
+            
+                        <div class="mb-3">
+                            {{ form.title.label_tag }}
+                            {{ form.title }}
+                            <span class="text-muted"><small>{{ form.title.help_text }}</small></span>
+                        </div>
+            
+                        <div class="mb-3">
+                            {{ form.description.label_tag }}
+                            {{ form.description }}
+                            <span class="text-muted"><small>{{ form.description.help_text }}</small></span>
+                        </div>
+            
+                        <div class="mb-3">
+                            {{ form.price.label_tag }}
+                            {{ form.price }}
+                            <span class="text-muted"><small>{{ form.price.help_text }}</small></span>
+                        </div>
+            
+                        <div class="mb-3">
+                            {{ form.square.label_tag }}
+                            {{ form.square }}
+                            <span class="text-muted"><small>{{ form.square.help_text }}</small></span>
+                        </div>
+            
+                        <div class="mb-3">
+                            {{ form.owner }}
+                        </div>
+            
+                        <div class="mb-3">
+                            {{ form.category.label_tag }}
+                            {{ form.category }}
+                            <span class="text-muted"><small>{{ form.category.help_text }}</small></span>
+                        </div>
+            
+                        <div class="mb-3">
+                            {{ form.status.label_tag }}
+                            {{ form.status }}
+                            <span class="text-muted"><small>{{ form.status.help_text }}</small></span>
+                        </div>
+            
+                        <div class="mb-3">
+                            {{ form.address.label_tag }}
+                            {{ form.address }}
+                            <span class="text-muted"><small>{{ form.address.help_text }}</small></span>
+                        </div>
+            
+                        <!-- Form for images -->
+                        {{ image_formset.management_form }}
+                        {% for form in image_formset.forms|slice:"10" %}
+            
+                            <div class="mb-3">
+                                {{ form.image.label_tag }}
+                                {{ form.image }}
+                                <span class="text-muted"><small>{{ form.image.help_text }}</small></span>
+                            </div>
+            
+                            <div class="mb-3">
+                                {{ form.description.label_tag }}
+                                {{ form.description }}
+                                <span class="text-muted"><small>{{ form.description.help_text }}</small></span>
+                            </div>
+            
+                            <hr class="text-dark">
+            
+                        {% endfor %}
+                    
+                        <div class="mb-3">
+                            <input type="submit" value="Edit Announcement" class="btn btn-blue btn-sm" id="id_update_btn">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    {% else %}
+        <h3 class="text-center text-danger">You do not have access to this page !!!</h1>
+    {% endif %}
+
+{% endblock content %}

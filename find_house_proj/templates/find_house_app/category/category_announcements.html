@@ -1,0 +1,143 @@
+{% extends "find_house_app/base.html" %}
+
+{% load static %}
+
+{% block title %}Category Announcements{% endblock %}
+
+{% block content %}
+
+    {% if category_announcements %}
+
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Categories</h3>
+                <ul class="list-group mb-3 ">
+                    {% for category in categories %}
+                        <li class="list-group-item list-group-item-action bg-orange-list"><a href="{% url 'category_announcements' category.name|slugify %}" class="text-decoration-none w-text-75 stretched-link text-capitalize">{{ category.name }}</a></li>
+                    {% endfor %}
+                </ul>
+
+                <h3>Search</h3>
+                <!-- Search Bar -->
+                <form method="get" action="{% url 'search' %}" class="mb-3">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="custom-form-control" name="q" id="title" placeholder="Search by Title" value="{{ query }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="category" class="form-label">Category</label>
+                        <select class="custom-form-select" name="category" id="category">
+                            <option value="" {% if not selected_category %}selected{% endif %}>All Categories</option>
+                            {% for category in categories %}
+                                <option value="{{ category.name }}" {% if category.name == selected_category %}selected{% endif %}>{{ category.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- More Filters -->
+                    <div id="more-filters" class="mb-3" style="display: none;">
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <input type="text" class="custom-form-control" name="description" id="description" placeholder="Search by Description">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="price_from" class="form-label">Price</label>
+                            <input type="number" class="custom-form-control mb-1" name="price_from" placeholder="Min Price">
+                            <input type="number" class="custom-form-control" name="price_to" placeholder="Max Price">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="square_from" class="form-label">Square</label>
+                            <input type="number" class="custom-form-control mb-1" name="square_from" placeholder="Min Square">
+                            <input type="number" class="custom-form-control" name="square_to" placeholder="Max Square">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="date_added" class="form-label">Date Added</label>
+                            <input type="date" class="custom-form-control" name="date_added" placeholder="Enter date">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="custom-form-control" name="address" placeholder="Enter Address">
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-orange btn-sm" onclick="toggleMoreFilters()">More Filters</button>
+
+                    <button type="submit" class="btn btn-orange btn-sm" id="id_search_btn">Search</button>
+                </form>
+            </div>
+
+            <div class="col-md-9">
+
+                <h3 class="text-center">Announcements with category '{{ cats }}'</h3>
+
+                {% for announcement in category_announcements %}
+                    <div class="card mb-3 bg-orange-list ">
+
+                        {% if announcement.images.first.image.url %}
+                            <img src="{{ announcement.images.first.image.url }}" height="500px" class="card-img-top" alt="...">
+                        {% else %}
+                            <img src="{% static 'find_house_app/images/announcements/default/default_house.jpg' %}" height="500px" class="card-img-top" alt="...">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="{% url 'announcement_read' announcement.pk %}" class="text-decoration-none w-text-75 ">{{ announcement.title|truncatechars:50 }}</a></h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-orange-list"><p class="card-text">Price: {{ announcement.price }} $</p></li>
+                            <li class="list-group-item bg-orange-list"><p class="card-text">Square: {{ announcement.square }} M<sup>2</sup></p></li>
+                            <li class="list-group-item bg-orange-list"><p class="card-text"><small class="text-muted">Date: {{ announcement.date_added|timesince }} ago | {{ announcement.owner }}</small></p></li>
+                        </ul>
+
+                        {% if user.is_authenticated %}
+                            <form method="post" action="{% url 'category_announcements' announcement.category.pk %}" class="m-1">
+                                {% csrf_token %}
+                                <input type="hidden" name="action" value="add_to_favorites">
+                                <input type="hidden" name="announcement_id" value="{{ announcement.id }}">
+                                <button type="submit" class="#" style="background: none; border: none; padding: 0;">
+                                    <img width="30px" height="30px" src="{% static 'find_house_app/images/icons/favorite/add_favorite.svg' %}" alt="Add to Favorite">
+                                </button>
+                            </form>
+                        {% endif %}
+
+                    </div>
+                {% endfor %}
+
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        {% if category_announcements.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link " href="?page=1" tabindex="-1" aria-disabled="true">First</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link " href="?page={{ category_announcements.previous_page_number }}">Previous</a>
+                            </li>
+                        {% endif %}
+                
+                        {% for num in category_announcements.paginator.page_range %}
+                            <li class="page-item {% if num == category_announcements.number %}active{% endif %}">
+                                <a class="page-link " href="?page={{ num }}">{{ num }}</a>
+                            </li>
+                        {% endfor %}
+                
+                        {% if category_announcements.has_next %}
+                            <li class="page-item">
+                                <a class="page-link " href="?page={{ category_announcements.next_page_number }}">Next</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link " href="?page={{ category_announcements.paginator.num_pages }}">Last</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    {% else %}
+        <h3 class="text-center text-danger">This category does not exist or it does not have any announcements !!!</h1>
+    {% endif %}
+
+{% endblock content %}
+

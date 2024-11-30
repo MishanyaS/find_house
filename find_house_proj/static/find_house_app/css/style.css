@@ -1,0 +1,208 @@
+body {
+    background: linear-gradient(to left, #ffddd4, #ffa45e);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+a:hover {
+    color: #ffffff !important;
+}
+
+.nav-link.active {
+    color: #ffffff !important;
+}
+
+/* Visibility annimation */
+.content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*---------------------------------------------------------------------*/
+.w-text-75 {
+    color: rgb(110, 110, 110);
+}
+
+.bg-orange {
+    background: linear-gradient(to left, #ff987c, #ff8e38);
+}
+
+.bg-blue {
+    background: linear-gradient(to left, #bcc8ff, #6e88ff);
+}
+
+.bg-green {
+    background: linear-gradient(to left, #6be675, #27c027);
+}
+
+.bg-red {
+    background: linear-gradient(to left, #ff9b9b, #ff4f4f);
+}
+
+.bg-purple {
+    background: linear-gradient(to left, #fb85ff, #f714ff);
+}
+
+.bg-grey {
+    background: linear-gradient(to left, #c9c9c9, #9e9e9e);
+}
+
+.bg-orange-list {
+    background-color: #ffddd4;
+}
+
+.bg-orange-list:hover {
+    background-color: #ffbba8;
+    box-shadow: 0 0 0 0.2rem rgba(255, 217, 113, 0.521);
+}
+
+.btn-orange {
+    background: linear-gradient(to left, #ff8664, #ff923f);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.btn-orange:hover {
+    background: linear-gradient(to left, #ff6a41, #ff8222);
+    color: white;
+    box-shadow: 0 0 0 0.2rem rgba(255, 217, 113, 0.521);
+}
+
+.btn-red {
+    background: linear-gradient(to left, #ffbbbb, #ff6f6f);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.btn-red:hover {
+    background: linear-gradient(to left, #ff8b8b, #ff4848);
+    color:white;
+    box-shadow: 0 0 0 0.2rem rgba(255, 113, 113, 0.521);
+}
+
+.btn-blue {
+    background: linear-gradient(to left, #9bb6ff, #5863ff);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.btn-blue:hover {
+    background: linear-gradient(to left, #7a9eff, #5d67ff);
+    color: white;
+    box-shadow: 0 0 0 0.2rem rgba(113, 122, 255, 0.521);
+}
+
+.btn-grey {
+    background: linear-gradient(to left, #c9c9c9, #9e9e9e);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.btn-grey:hover {
+    background: linear-gradient(to left, #b6b6b6, #808080);
+    color: white;
+    box-shadow: 0 0 0 0.2rem rgba(197, 197, 197, 0.521);
+}
+
+.custom-form-control {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #ffddd4;
+    background-clip: padding-box;
+    border: none;
+    border-radius: .65rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.custom-form-control:hover {
+    box-shadow: 0 0 0 0.2rem rgba(255, 217, 113, 0.521);
+    background-color: #ffbba8;
+}
+
+.custom-form-control:focus {
+    color: #495057;
+    background-color: #ffbba8;
+    border-color: #fd8f3b;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 217, 113, 0.521);
+}
+
+.custom-form-control::placeholder {
+    color: #6c757d;
+    opacity: 1;
+}
+
+.custom-form-control:-ms-input-placeholder {
+    color: #6c757d;
+}
+
+.custom-form-control::-ms-input-placeholder {
+    color: #6c757d;
+}
+
+.custom-form-select {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #ffddd4;
+    background-image: none;
+    border: none;
+    border-radius: .65rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    appearance: none;
+}
+
+.custom-form-select:hover {
+    box-shadow: 0 0 0 0.2rem rgba(255, 217, 113, 0.521);
+    background-color: #ffbba8;
+}
+
+.custom-form-select:focus {
+    color: #495057;
+    background-color: #ffbba8;
+    border-color: #fd8f3b;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 217, 113, 0.521);
+}
+
+.custom-form-select::placeholder {
+    color: #6c757d;
+    opacity: 1;
+}
+
+.custom-form-select:-ms-input-placeholder {
+    color: #6c757d;
+}
+
+.custom-form-select::-ms-input-placeholder {
+    color: #6c757d;
+}
+
+.custom-form-select option {
+    color: #495057;
+    background-color: #ffddd4;
+}
+
+textarea {
+    min-height: 100px;
+}

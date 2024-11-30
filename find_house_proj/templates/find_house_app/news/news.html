@@ -1,0 +1,89 @@
+{% extends "find_house_app/base.html" %}
+
+{% load static %}
+
+{% block title %}News Page{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-3">
+
+            <h3>News Search</h3>
+            <div class="col-md-12 mb-3">
+                <form method="get" action="{% url 'search_news' %}">
+                    
+                    <div class="mb-3">
+                        <label for="year" class="form-label">Title</label>
+                        <input type="text" class="custom-form-control" name="q" placeholder="Search by title" value="{{ query }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="date" class="form-label">Date</label>
+                        <input type="date" class="custom-form-control" name="date" placeholder="Search by date" value="{{ date_query }}">
+                    </div>
+
+                    <button type="submit" class="btn btn-orange btn-sm">Search</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="mb-3">
+                <h3 class="text-center">All News</h3>
+
+                {% if news %} 
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                        {% for news in news %}
+                            <div class="col">
+                                <div class="card bg-orange-list ">
+                                <img src="{% static 'find_house_app/images/news/default/default_house.jpg' %}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="{% url 'news_read' pk=news.pk %}" class="text-decoration-none w-text-75 ">{{ news.title }}</a></h5>
+                                    <small  class="card-text text-muted">Date: {{ news.date_added }}</small>
+                                    <p class="card-text">{{ news.content|truncatechars:30|safe|linebreaks }}</p>
+                                </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <h3 class="text-center text-danger">There is no any news !!!</h1>
+                {% endif %}
+            </div>
+
+            {% if news %} 
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        {% if news.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link " href="?page=1" tabindex="-1" aria-disabled="true">First</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link " href="?page={{ news.previous_page_number }}">Previous</a>
+                            </li>
+                        {% endif %}
+
+                        {% for num in news.paginator.page_range %}
+                            <li class="page-item {% if num == news.number %}active{% endif %}">
+                                <a class="page-link " href="?page={{ num }}">{{ num }}</a>
+                            </li>
+                        {% endfor %}
+
+                        {% if news.has_next %}
+                            <li class="page-item">
+                                <a class="page-link " href="?page={{ news.next_page_number }}">Next</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link " href="?page={{ news.paginator.num_pages }}">Last</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            {% endif %}
+
+        </div>
+    </div>
+        
+{% endblock content %}

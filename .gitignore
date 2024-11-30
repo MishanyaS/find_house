@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+db.sqlite3
+/venv/
+
+# Django
+/media/
+
+# General
+.vscode/
+/photos/
+/Technical task/
+commands.txt
