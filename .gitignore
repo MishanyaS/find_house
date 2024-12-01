@@ -8,6 +8,5 @@ db.sqlite3
 
 # General
 .vscode/
-/photos/
 /Technical task/
 commands.txt
