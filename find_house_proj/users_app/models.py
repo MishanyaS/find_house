@@ -23,6 +23,7 @@ class CustomUser(AbstractUser):
         verbose_name = "Custom User"
         verbose_name_plural = "Custom Users"
         ordering = ["-date_joined"]
+        db_table = 'custom_user'
     
     def __str__(self):
         return f"{self.username}"

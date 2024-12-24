@@ -10,6 +10,7 @@ class Chat(models.Model):
         verbose_name = "Chat"
         verbose_name_plural = "Chats"
         ordering = ["-date_added"]
+        db_table = 'chat'
     
     def __str__(self):
         return f"Chat betwen: {self.participants.first()} and {self.participants.last()}"
@@ -28,6 +29,7 @@ class Message(models.Model):
         verbose_name = "Message"
         verbose_name_plural = "Message"
         ordering = ["timestamp"]
+        db_table = 'message'
     
     def __str__(self):
         return f"{self.sender.username}: {self.content}"

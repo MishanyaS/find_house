@@ -13,6 +13,7 @@ class Category(models.Model):
         verbose_name = "Category"
         verbose_name_plural = "Categories"
         ordering = ["name"]
+        db_table = 'category'
 
     def __str__(self):
         return f"{self.name}"
@@ -43,6 +44,7 @@ class Announcement(models.Model):
         verbose_name = "Announcement"
         verbose_name_plural = "Announcements"
         ordering = ["-date_added"]
+        db_table = 'announcement'
 
     def __str__(self):
         return f"Title: {self.title} Owner: {self.owner} Category: {self.category} Status: {self.status}"
@@ -69,6 +71,7 @@ class AnnouncementImage(models.Model):
         verbose_name = "Announcement Image"
         verbose_name_plural = "Announcement Images"
         ordering = ["-date_added"]
+        db_table = 'announcement_image'
 
     def __str__(self):
         return f"Image ID: {self.id} for {self.announcement.title}"
@@ -92,6 +95,7 @@ class Comment(models.Model):
         verbose_name = "Comment"
         verbose_name_plural = "Comments"
         ordering = ["-date_added"]
+        db_table = 'comment'
 
     def __str__(self):
         return f"{self.user.username} - {self.date_added}"
@@ -108,6 +112,7 @@ class News(models.Model):
         verbose_name = "News"
         verbose_name_plural = "News List"
         ordering = ["-date_added"]
+        db_table = 'news'
         
     def __str__(self):
         return f"News Title: {self.title} Date: {self.content}"
@@ -126,6 +131,7 @@ class AnnouncementViewHistory(models.Model):
         verbose_name = "Announcement View History"
         verbose_name_plural = "Announcement View Histories"
         ordering = ["-date"]
+        db_table = 'announcement_view_history'
 
     def __str__(self):
         return f"{self.user} viewed announcement \"{self.announcement}\" on {self.date}"
@@ -143,6 +149,7 @@ class Favorite(models.Model):
         verbose_name_plural = "Favorites"
         unique_together = [("user", "announcement")]
         ordering = ["-date_added"]
+        db_table = 'favorite'
 
     def __str__(self):
         return f"{self.user} favorited {self.announcement} on {self.date_added}"
