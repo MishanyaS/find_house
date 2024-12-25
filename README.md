@@ -232,3 +232,8 @@ ___
 ![](https://github.com/MishanyaS/find_house/blob/main/photos/admin/admin%20panel%20add%20user%20page%202.png?raw=true)
 
 It is distinguished by the presence of "Is Admin" field.
+
+**Content management:**
+
+![](https://github.com/MishanyaS/find_house/blob/main/photos/content/add%20content.png?raw=true)
+![](https://github.com/MishanyaS/find_house/blob/main/photos/content/content%20list.png?raw=true)
