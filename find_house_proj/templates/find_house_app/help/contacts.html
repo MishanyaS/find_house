@@ -13,8 +13,8 @@
         <img src="{% static "find_house_app/images/icons/favicon.jpg" %}" class="img-fluid" alt="...">
     </div>
     <div class="col-md-9">
-        <h5 class="text-uppercase">Find your perfect home with ease and comfort</h5>
-        Our real estate search app is your reliable guide in the world of housing. A user-friendly interface, smart filters and accurate data will help you quickly find an apartment, house or commercial property that meets your requirements. Discover new opportunities for living and investing with detailed descriptions of properties and high-quality photos. Buying real estate has never been easier!
+        <h5 class="text-uppercase">{{content.contacts_page_h5}}</h5>
+        {{content.contacts_page_text}}
     </div>
     </div>
 
@@ -23,19 +23,19 @@
             <h3>Address</h3>
             <p>
                 <img width="30px" height="30px" src="{% static 'find_house_app/images/icons/contacts/map.svg' %}" alt="Map">
-                City, Street, 10
+                {{content.contacts_page_address}}
             </p>
 
             <h3>Telephone</h3>
             <p>
                 <img width="30px" height="30px" src="{% static 'find_house_app/images/icons/contacts/phone.svg' %}" alt="Phone">
-                Phone Number
+                {{content.contacts_page_telephone}}
             </p>
 
             <h3>Email</h3>
             <p>
                 <img width="30px" height="30px" src="{% static 'find_house_app/images/icons/contacts/email.svg' %}" alt="Email">
-                example@example.com
+                {{content.contacts_page_email}}
             </p>
         </div>
             

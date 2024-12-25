@@ -8,6 +8,7 @@ from chat_app.models import Chat, Message
 from django.forms.models import inlineformset_factory
 from django.core.exceptions import ValidationError
 from django.utils.safestring import mark_safe
+from admin_panel_app.models import Content
 
 
 # region User forms
@@ -876,4 +877,110 @@ class MessageForm(forms.ModelForm):
             raise ValidationError(mark_safe('<strong>Description</strong> max length is 1000 symbols.'))
                 
         return content
+# endregion
+
+# region Content forms
+class ContentForm(forms.ModelForm):
+    class Meta:
+        model = Content
+        fields = ['contacts_page_h5', 'contacts_page_text', 'contacts_page_address', 'contacts_page_telephone', 'contacts_page_email', 'footer_text']
+        exclude = ['change_date']
+        
+        widgets = {
+            'contacts_page_h5': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': 'Enter contacts page h5'}),
+            'contacts_page_text': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': 'Enter contacts page text'}),
+            'contacts_page_address': forms.TextInput(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': 'Enter contacts page address'}),
+            'contacts_page_telephone': forms.TextInput(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': 'Enter contacts page telephone'}),
+            'contacts_page_email': forms.EmailInput(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': 'Enter contacts page email'}),
+            'footer_text': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': 'Enter footer text'}),
+        }
+        
+        labels = {
+            'contacts_page_h5': 'Contacts Page h5',
+            'contacts_page_text': 'Contacts Page Text',
+            'contacts_page_address': 'Contacts Page Address',
+            'contacts_page_telephone': 'Contacts Page Telephone',
+            'contacts_page_email': 'Contacts Page Email',
+            'footer_text': 'Footer Text',
+        }
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        
+        self.fields['contacts_page_h5'].required = False
+        self.fields['contacts_page_text'].required = False
+        self.fields['contacts_page_address'].required = False
+        self.fields['contacts_page_telephone'].required = False
+        self.fields['contacts_page_email'].required = False
+        self.fields['footer_text'].required = False
+        
+    def clean_contacts_page_h5(self):
+        contacts_page_h5 = self.cleaned_data.get('contacts_page_h5')
+        
+        if not contacts_page_h5:
+            raise ValidationError(mark_safe('<strong>Contacts Page h5</strong> is required.'))
+        
+        if len(contacts_page_h5) > 255:
+            raise ValidationError(mark_safe('<strong>Contacts Page h5</strong> max length is 255 symbols.'))
+        
+        return contacts_page_h5
+    
+    def clean_contacts_page_text(self):
+        contacts_page_text = self.cleaned_data.get('contacts_page_text')
+        
+        if not contacts_page_text:
+            raise ValidationError(mark_safe('<strong>Contacts Page Text</strong> is required.'))
+        
+        if len(contacts_page_text) > 1000:
+            raise ValidationError(mark_safe('<strong>Contacts Page Text</strong> max length is 1000 symbols.'))
+        
+        return contacts_page_text
+    
+    def clean_contacts_page_address(self):
+        contacts_page_address = self.cleaned_data.get('contacts_page_address')
+        
+        if not contacts_page_address:
+            raise ValidationError(mark_safe('<strong>Contacts Page Address</strong> is required.'))
+        
+        if len(contacts_page_address) > 1000:
+            raise ValidationError(mark_safe('<strong>Contacts Page Address</strong> max length is 1000 symbols.'))
+        
+        return contacts_page_address
+    
+    def clean_contacts_page_telephone(self):
+        contacts_page_telephone = self.cleaned_data.get('contacts_page_telephone')
+        
+        if not contacts_page_telephone:
+            raise ValidationError(mark_safe('<strong>Contacts Page Telephone</strong> is required.'))
+                
+        if not contacts_page_telephone.isdigit():
+            raise ValidationError(mark_safe('<strong>Contacts Page Telephone</strong> should contain only digits.'))
+
+        if len(contacts_page_telephone) != 10:
+            raise ValidationError(mark_safe('<strong>Contacts Page Telephone</strong> should be 10 digits long.'))
+        
+        return contacts_page_telephone
+    
+    def clean_contacts_page_email(self):
+        contacts_page_email = self.cleaned_data.get('contacts_page_email')
+        
+        if not contacts_page_email:
+            raise ValidationError(mark_safe('<strong>Contacts Page Email</strong> is required.'))
+                
+        email_pattern = re.compile(r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$')
+        if not email_pattern.match(contacts_page_email):
+            raise ValidationError(mark_safe('Invalid <strong>Contacts Page Email</strong> format.'))
+        
+        return contacts_page_email
+    
+    def clean_footer_text(self):
+        footer_text = self.cleaned_data.get('footer_text')
+        
+        if not footer_text:
+            raise ValidationError(mark_safe('<strong>Footer Text</strong> is required.'))
+        
+        if len(footer_text) > 1000:
+            raise ValidationError(mark_safe('<strong>Footer Text</strong> max length is 1000 symbols.'))
+        
+        return footer_text
 # endregion

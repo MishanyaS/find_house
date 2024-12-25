@@ -12,6 +12,8 @@ from django.contrib.auth import update_session_auth_hash
 from admin_panel_app.forms import (UserForm, EditUserForm, AnnouncementForm, AnnouncementImageForm, CategoryForm, FavoriteForm, NewsForm, AnnouncementViewHistoryForm, 
                                    CommentForm, ChatForm, MessageForm)
 from django.contrib.auth.hashers import make_password
+from admin_panel_app.models import Content
+from admin_panel_app.forms import ContentForm
 
 # region Basic views
 class AdminPanelHomeView(TemplateView):
@@ -454,6 +456,41 @@ class MessageListView(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['messages'] = Message.objects.all().order_by('pk')
+        
+        return context
+# endregion
+
+# region Content views
+class ContentCreateView(CreateView):
+    model = Content
+    form_class = ContentForm
+    template_name = 'admin_panel_app/content/create.html'
+    success_url = reverse_lazy('admin_content_list')
+
+class ContentUpdateView(LoginRequiredMixin, UpdateView):
+    model = Content
+    form_class = ContentForm
+    template_name = 'admin_panel_app/content/update.html'
+    success_url = reverse_lazy('admin_content_list')
+
+class ContentDeleteView(LoginRequiredMixin, DeleteView):
+    model = Content
+    template_name = 'admin_panel_app/content/delete.html'
+    context_object_name = 'content'
+    success_url = reverse_lazy('admin_content_list')
+
+class ContentDetailView(LoginRequiredMixin, DetailView):
+    model = Content
+    template_name = 'admin_panel_app/content/read.html'
+    context_object_name = 'content'
+
+class ContentListView(LoginRequiredMixin, ListView):
+    model = Content
+    template_name = 'admin_panel_app/content/list.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['content'] = Content.objects.all().order_by('pk')
         
         return context
 # endregion

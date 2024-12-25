@@ -75,5 +75,12 @@ urlpatterns = [
     path('message/delete/<int:pk>/', views.MessageDeleteView.as_view(), name='admin_message_delete'),
     path('message/add/', views.MessageCreateView.as_view(), name='admin_message_create'),
     path('message/edit/<int:pk>/', views.MessageUpdateView.as_view(), name='admin_message_update'),
+
+    # Admin Content URLs
+    path('content-list/', views.ContentListView.as_view(), name='admin_content_list'),
+    path('content-details/<int:pk>/', views.ContentDetailView.as_view(), name='admin_content_read'),
+    path('content/delete/<int:pk>/', views.ContentDeleteView.as_view(), name='admin_content_delete'),
+    path('content/add/', views.ContentCreateView.as_view(), name='admin_content_create'),
+    path('content/edit/<int:pk>/', views.ContentUpdateView.as_view(), name='admin_content_update'),
 ]
 

@@ -10,6 +10,7 @@ from django.db.models import Q
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from users_app.models import CustomUser
 from django.http import JsonResponse
+from admin_panel_app.models import Content
 
 # Create your views here.
 # region Basic views
@@ -36,6 +37,7 @@ class HomeView(ListView):
         context['top_announcements'] = top_announcements
         context['news'] = News.objects.all().order_by('-date_added')[:4]
         context['categories'] = Category.objects.all()
+        context['content'] = Content.objects.order_by('-change_date').first()
 
         # Pagination
         announcements_list = Announcement.objects.filter(status=Announcement.ACTIVE)
@@ -86,6 +88,7 @@ class ContactsView(TemplateView):
         context = super().get_context_data(**kwargs)
 
         context['admin'] = CustomUser.objects.filter(is_admin=True).order_by('?').first()
+        context['content'] = Content.objects.order_by('-change_date').first()
         
         return context
 # endregion
