@@ -15,7 +15,7 @@ class CustomUserRegistrationView(CreateView):
     model = CustomUser
     form_class = RegistrationForm
     template_name = 'users_app/registration/registration.html'
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('users_app:login')
 
 class CustomUserLoginView(LoginView):
     form_class = LoginForm
@@ -24,7 +24,7 @@ class CustomUserLoginView(LoginView):
 class CustomUserDeleteView(LoginRequiredMixin, DeleteView):
     model = CustomUser
     template_name = 'users_app/registration/delete_user.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('find_house_app:home')
 
 class CustomUserUpdateView(LoginRequiredMixin, UpdateView):
     model = CustomUser
@@ -53,7 +53,7 @@ class CustomUserUpdateView(LoginRequiredMixin, UpdateView):
         return response
     
     def get_success_url(self):
-        return reverse_lazy('profile_read', kwargs={'pk': self.request.user.pk})
+        return reverse_lazy('users_app:profile_read', kwargs={'pk': self.request.user.pk})
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

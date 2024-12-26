@@ -11,7 +11,7 @@
 
             <h3>News Search</h3>
             <div class="col-md-12 mb-3">
-                <form method="get" action="{% url 'search_news' %}">
+                <form method="get" action="{% url 'find_house_app:search_news' %}">
                     
                     <div class="mb-3">
                         <label for="year" class="form-label">Title</label>
@@ -40,7 +40,7 @@
                                 <div class="card bg-orange-list ">
                                 <img src="{% static 'find_house_app/images/news/default/default_house.jpg' %}" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="{% url 'news_read' pk=news.pk %}" class="text-decoration-none w-text-75 ">{{ news.title }}</a></h5>
+                                    <h5 class="card-title"><a href="{% url 'find_house_app:news_read' pk=news.pk %}" class="text-decoration-none w-text-75 ">{{ news.title }}</a></h5>
                                     <small  class="card-text text-muted">Date: {{ news.date_added }}</small>
                                     <p class="card-text">{{ news.content|truncatechars:30|safe|linebreaks }}</p>
                                 </div>

@@ -66,12 +66,12 @@ class HomeView(ListView):
         announcement_id = request.POST.get('announcement_id')
 
         try:
-            if action == 'add_to_favorites':
+            if action == 'find_house_app:add_to_favorites':
                 self.add_to_favorites(announcement_id)
         except IntegrityError as e:
             pass
 
-        return redirect('favorite')
+        return redirect('find_house_app:favorite')
 
 class HelpView(TemplateView):
     template_name = 'find_house_app/help/help.html'
@@ -98,7 +98,7 @@ class AnnouncementCreateView(CreateView):
     model = Announcement
     form_class = AnnouncementForm
     template_name = 'find_house_app/announcement/create.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('find_house_app:home')
         
     def form_valid(self, form):
         context = self.get_context_data()
@@ -169,7 +169,7 @@ class AnnouncementUpdateView(UpdateView):
     model = Announcement
     form_class = AnnouncementForm
     template_name = 'find_house_app/announcement/update.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('find_house_app:home')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -184,14 +184,14 @@ class AnnouncementUpdateView(UpdateView):
         return context
     
     def get_success_url(self):
-        return reverse_lazy('profile_read', kwargs={'pk': self.request.user.pk})
+        return reverse_lazy('users_app:profile_read', kwargs={'pk': self.request.user.pk})
 
 class AnnouncementDeleteView(DeleteView):
     model = Announcement
     template_name = 'find_house_app/announcement/delete.html'
         
     def get_success_url(self):
-        return reverse_lazy('profile_read', kwargs={'pk': self.request.user.pk})
+        return reverse_lazy('users_app:profile_read', kwargs={'pk': self.request.user.pk})
 
 class SearchAnnouncementView(View):
     template_name = 'find_house_app/index.html'
@@ -280,7 +280,7 @@ class AddToFavoritesView(View):
         except IntegrityError:
             return JsonResponse({'error': 'Error adding to favorites'}, status=500)
 
-        return redirect('favorite')
+        return redirect('find_house_app:favorite')
 # endregion
 
 # region News views
@@ -431,7 +431,7 @@ class CategoryAnnouncementsView(ListView):
         announcement_id = request.POST.get('announcement_id')
 
         try:
-            if action == 'add_to_favorites':
+            if action == 'find_house_app:add_to_favorites':
                 self.add_to_favorites(announcement_id)
 
         except IntegrityError as e:
@@ -466,7 +466,7 @@ class FavoriteView(ListView):
         except IntegrityError as e:
             pass
 
-        return redirect('favorite')
+        return redirect('find_house_app:favorite')
 # endregion
 
 # region Comment views
@@ -479,7 +479,7 @@ class CommentAddView(View):
         if text:
             Comment.objects.create(announcement=announcement, user=user, text=text)
 
-        return redirect('announcement_read', pk=pk)
+        return redirect('find_house_app:announcement_read', pk=pk)
 
 class CommentEditView(View):
     template_name = 'find_house_app/comment/edit.html'
@@ -496,7 +496,7 @@ class CommentEditView(View):
 
         if form.is_valid():
             form.save()
-            return redirect('announcement_read', pk=comment.announcement.pk)
+            return redirect('find_house_app:announcement_read', pk=comment.announcement.pk)
         else:
             return render(request, self.template_name, {'form': form, 'comment': comment})
 
@@ -507,6 +507,6 @@ class CommentDeleteView(View):
         if comment.user == request.user:
             comment.delete()
 
-        return redirect('announcement_read', pk=comment.announcement.pk)
+        return redirect('find_house_app:announcement_read', pk=comment.announcement.pk)
 # endregion
 

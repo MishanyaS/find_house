@@ -48,7 +48,7 @@
                                 </a>
                             </td>
                             <td>
-                                <a href="{% url 'admin_announcement_images_delete' pk=announcement_image.pk %}" class="btn btn-red btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                <a href="{% url 'admin_panel_app:admin_announcement_images_delete' pk=announcement_image.pk %}" class="btn btn-red btn-sm w-text-75 d-flex align-items-center text-decoration-none">
                                     <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/delete.svg' %}" alt="Edit" class="mr-1">Delete
                                 </a>
                             </td>
@@ -62,7 +62,7 @@
     {% endif %}
 
     <div class="mb-3">
-        <a class="btn btn-orange btn-sm" href="{% url 'admin_announcement_images_create' %}">Add Announcement Image</a>
+        <a class="btn btn-orange btn-sm" href="{% url 'admin_panel_app:admin_announcement_images_create' %}">Add Announcement Image</a>
     </div>
 
     <script src="{% static 'admin_panel_app/js/announcement_images_tables_search.js' %}"></script>

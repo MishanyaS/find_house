@@ -23,7 +23,7 @@
                     <h3 class="card-title mb-0">Edit Comment</h3>
                 </div>
                 <div class="card-body">
-                    <form method="post" action="{% url 'comment_edit' pk=comment.pk %}">
+                    <form method="post" action="{% url 'find_house_app:comment_edit' pk=comment.pk %}">
                         {% csrf_token %}
             
                         <div class="mb-3">

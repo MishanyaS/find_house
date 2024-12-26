@@ -13,13 +13,13 @@ def create_or_get_chat(request, other_user_id):
         chat = Chat.objects.create()
         chat.participants.add(request.user, other_user)
         
-    return redirect('chat_read', chat_id=chat.id)
+    return redirect('chat_app:chat_read', chat_id=chat.id)
 
 def delete_chat(request, chat_id):
     chat = get_object_or_404(Chat, id=chat_id)
     chat.delete()
     
-    return redirect('chat_list')
+    return redirect('chat_app:chat_list')
 
 def chat_list(request):
     context = {}
@@ -40,18 +40,18 @@ def chat_read(request, chat_id):
             content = form.cleaned_data['content']
             message = Message.objects.create(chat=chat, sender=request.user, content=content)
             
-            return redirect('chat_read', chat_id=chat_id)
+            return redirect('chat_app:chat_read', chat_id=chat_id)
     else:
         form = MessageForm()
 
-    if request.method == 'POST' and 'edit_message' in request.POST:
+    if request.method == 'POST' and 'chat_app:edit_message' in request.POST:
         message_id = request.POST.get('message_id')
         message = get_object_or_404(Message, id=message_id)
         form = MessageForm(request.POST, instance=message)
         if form.is_valid():
             form.save()
             
-            return redirect('chat_read', chat_id=chat_id)
+            return redirect('chat_app:chat_read', chat_id=chat_id)
 
     if request.method == 'POST' and 'delete_message' in request.POST:
         message_id = request.POST.get('message_id')
@@ -59,7 +59,7 @@ def chat_read(request, chat_id):
         message.is_deleted = True
         message.save()
         
-        return redirect('chat_read', chat_id=chat_id)
+        return redirect('chat_app:chat_read', chat_id=chat_id)
     
     context = {}
     
@@ -82,7 +82,7 @@ def edit_message(request, chat_id, message_id):
             instance.sender = request.user
             instance.save()
             
-            return redirect('chat_read', chat_id=chat_id)
+            return redirect('chat_app:chat_read', chat_id=chat_id)
     else:
         form = MessageForm(instance=message)
         

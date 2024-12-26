@@ -1,6 +1,7 @@
 from django.urls import path
 from admin_panel_app import views
 
+app_name = 'admin_panel_app'
 
 urlpatterns = [
     # Admin Home URLs

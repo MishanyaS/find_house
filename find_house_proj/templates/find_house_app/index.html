@@ -12,13 +12,13 @@
             <h3>Categories</h3>
             <ul class="list-group mb-3 ">
                 {% for category in categories %}
-                    <li class="list-group-item list-group-item-action bg-orange-list"><a href="{% url 'category_announcements' category.name|slugify %}" class="text-decoration-none w-text-75 stretched-link text-capitalize">{{ category.name }}</a></li>
+                    <li class="list-group-item list-group-item-action bg-orange-list"><a href="{% url 'find_house_app:category_announcements' category.name|slugify %}" class="text-decoration-none w-text-75 stretched-link text-capitalize">{{ category.name }}</a></li>
                 {% endfor %}
             </ul>
 
             <h3>Search</h3>
             <!-- Search Bar -->
-            <form method="get" action="{% url 'search' %}" class="mb-3">
+            <form method="get" action="{% url 'find_house_app:search' %}" class="mb-3">
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
                     <input type="text" class="custom-form-select" name="q" id="title" placeholder="Search by Title" value="{{ query }}">
@@ -77,7 +77,7 @@
                     <div class="carousel-inner">
                         {% for announcement in top_announcements %}
                             {% if announcement.status == 1 %}
-                                <a href="{% url 'announcement_read' announcement.pk %}" class="carousel-item {% if forloop.first %}active{% endif %}">
+                                <a href="{% url 'find_house_app:announcement_read' announcement.pk %}" class="carousel-item {% if forloop.first %}active{% endif %}">
                                     <img src="{{ announcement.images.first.image.url }}" height="500px" class="d-block w-100" alt="#">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5 class="text-white text-decoration-none">{{ announcement.title|truncatechars:50 }}</h5>
@@ -111,7 +111,7 @@
                                 <img src="{% static 'find_house_app/images/announcements/default/default_house.jpg' %}" height="500px" class="card-img-top" alt="...">
                             {% endif %}
                             <div class="card-body">
-                                <h5 class="card-title"><a href="{% url 'announcement_read' announcement.pk %}" class="text-decoration-none w-text-75 ">{{ announcement.title|truncatechars:50 }}</a></h5>
+                                <h5 class="card-title"><a href="{% url 'find_house_app:announcement_read' announcement.pk %}" class="text-decoration-none w-text-75 ">{{ announcement.title|truncatechars:50 }}</a></h5>
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item bg-orange-list"><p class="card-text">Price: {{ announcement.price }} $</p></li>
@@ -120,9 +120,9 @@
                             </ul>
 
                             {% if user.is_authenticated %}
-                                <form method="post" action="{% url 'add_to_favorites' %}" class="m-1">
+                                <form method="post" action="{% url 'find_house_app:add_to_favorites' %}" class="m-1">
                                     {% csrf_token %}
-                                    <input type="hidden" name="action" value="add_to_favorites">
+                                    <input type="hidden" name="action" value="find_house_app:add_to_favorites">
                                     <input type="hidden" name="announcement_id" value="{{ announcement.id }}">
                                     <button type="submit" class="#" id="id_favorite_btn" style="background: none; border: none; padding: 0;">
                                         <img width="30px" height="30px" src="{% static 'find_house_app/images/icons/favorite/add_favorite.svg' %}" alt="Add to Favorite">
@@ -178,7 +178,7 @@
                                 <div class="card  shadow-lg bg-orange-list ">
                                     <img src="{% static 'find_house_app/images/news/default/default_house.jpg' %}" class="card-img-top" alt="...">
                                     <div class="card-body">
-                                        <h5 class="card-title"><a href="{% url 'news_read' pk=news_item.pk %}" class="text-decoration-none w-text-75 ">{{ news_item.title|truncatechars:50 }}</a></h5>
+                                        <h5 class="card-title"><a href="{% url 'find_house_app:news_read' pk=news_item.pk %}" class="text-decoration-none w-text-75 ">{{ news_item.title|truncatechars:50 }}</a></h5>
                                         <small  class="card-text text-muted">Date: {{ news_item.date_added }}</small>
                                         <p class="card-text">{{ news_item.content|truncatechars:30|safe|linebreaks }}</p>
                                     </div>
@@ -188,7 +188,7 @@
                     </div>
 
                     <div class="text-center mb-3 mt-3">
-                        <a href="{% url 'news_list' %}" class="text-decoration-none w-text-75">More News</a>
+                        <a href="{% url 'find_house_app:news_list' %}" class="text-decoration-none w-text-75">More News</a>
                     </div>
 
                 {% else %}

@@ -33,11 +33,11 @@
                                             <br>
                                             <small class="text-muted">{{ message.timestamp }}</small>
                                             {% if user == message.sender %}
-                                                <form method="post" action="{% url 'chat_read' chat_id=chat.id %}">
+                                                <form method="post" action="{% url 'chat_app:chat_read' chat_id=chat.id %}">
                                                     {% csrf_token %}
                                                     <input type="hidden" name="message_id" value="{{ message.id }}">
                                                     <button type="submit" name="delete_message" class="btn btn-sm btn-red float-right">Delete</button>
-                                                    <a href="{% url 'edit_message' chat_id=chat.id message_id=message.id %}" class="btn btn-sm btn-blue float-right mr-2">Edit</a>
+                                                    <a href="{% url 'chat_app:edit_message' chat_id=chat.id message_id=message.id %}" class="btn btn-sm btn-blue float-right mr-2">Edit</a>
                                                 </form>
                                             {% endif %}
                                         </div>

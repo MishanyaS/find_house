@@ -16,53 +16,53 @@
 
         <nav class="navbar navbar-expand-lg bg-orange">
             <div class="container-fluid">
-                <a class="navbar-brand w-text-75" href="{% url 'admin_index' %}">Admin Panel</a>
+                <a class="navbar-brand w-text-75" href="{% url 'admin_panel_app:admin_index' %}">Admin Panel</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_index' %}">Home</a>
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_index' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_user_list_index' %}">Users</a>
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_user_list_index' %}">Users</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_announcement_list' %}">Announcements</a>
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_announcement_list' %}">Announcements</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_announcement_images_list' %}">Announcement Images</a>
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_announcement_images_list' %}">Announcement Images</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_categories_list' %}">Categories</a>
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_categories_list' %}">Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_favorites_list' %}">Favorites</a>
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_favorites_list' %}">Favorites</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_news_list' %}">News</a>
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_news_list' %}">News</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_announcement_view_histories_list' %}">Ann View History</a>
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_announcement_view_histories_list' %}">Ann View History</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_comments_list' %}">Comments</a>
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_comments_list' %}">Comments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_content_list' %}">Content</a>
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_content_list' %}">Content</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle w-text-75" href="#" id="navbarChat" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Chat
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark bg-orange" aria-labelledby="navbarChat">
-                          <li><a class="dropdown-item w-text-75" href="{% url 'admin_chats_list' %}">Chats</a></li>
-                          <li><a class="dropdown-item w-text-75" href="{% url 'admin_messages_list' %}">Messages</a></li>
+                          <li><a class="dropdown-item w-text-75" href="{% url 'admin_panel_app:admin_chats_list' %}">Chats</a></li>
+                          <li><a class="dropdown-item w-text-75" href="{% url 'admin_panel_app:admin_messages_list' %}">Messages</a></li>
                         </ul>
                       </li>
                     <li class="nav-item">
-                        <a class="nav-link text-danger" aria-current="page" href="{% url 'home' %}">Back</a>
+                        <a class="nav-link text-danger" aria-current="page" href="{% url 'find_house_app:home' %}">Back</a>
                     </li>
                 </ul>
                 </div>

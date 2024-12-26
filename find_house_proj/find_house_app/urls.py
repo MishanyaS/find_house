@@ -1,6 +1,8 @@
 from django.urls import path, include
 from find_house_app import views
 
+app_name = 'find_house_app'
+
 urlpatterns = [
     # Home URLs
     path('', views.HomeView.as_view(), name='home'),

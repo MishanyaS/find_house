@@ -11,7 +11,7 @@
                 <div class="list-group">
                     {% if chats %}
                         {% for chat in chats %}
-                            <a href="{% url 'chat_read' chat.id %}" class="list-group-item list-group-item-action bg-orange w-text-75 -white mb-3">
+                            <a href="{% url 'chat_app:chat_read' chat.id %}" class="list-group-item list-group-item-action bg-orange w-text-75 -white mb-3">
                                 <strong>Chat with:</strong>
                                 {% for participant in chat.participants.all %}
                                     {% if participant != user %}
@@ -24,7 +24,7 @@
                                 {% else %}
                                     No messages yet
                                 {% endif %}
-                                <form action="{% url 'delete_chat' chat.id %}" method="post">
+                                <form action="{% url 'chat_app:delete_chat' chat.id %}" method="post">
                                     {% csrf_token %}
                                     <button type="submit" class="btn btn-sm btn-red float-right">Delete</button>
                                 </form>

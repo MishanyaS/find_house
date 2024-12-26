@@ -34,17 +34,17 @@
                             <td>{{ news_item.views_count }}</td>
                             <td>{{ news_item.date_added }}</td>
                             <td>
-                                <a href="{% url 'admin_news_update' pk=news_item.pk %}" class="btn btn-blue btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                <a href="{% url 'admin_panel_app:admin_news_update' pk=news_item.pk %}" class="btn btn-blue btn-sm w-text-75 d-flex align-items-center text-decoration-none">
                                     <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/edit.svg' %}" alt="Edit" class="mr-1">Edit
                                 </a>
                             </td>
                             <td>
-                                <a href="{% url 'admin_news_read' pk=news_item.pk %}" class="btn btn-grey btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                <a href="{% url 'admin_panel_app:admin_news_read' pk=news_item.pk %}" class="btn btn-grey btn-sm w-text-75 d-flex align-items-center text-decoration-none">
                                     <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/details.svg' %}" alt="Edit" class="mr-1">Details
                                 </a>
                             </td>
                             <td>
-                                <a href="{% url 'admin_news_delete' pk=news_item.pk %}" class="btn btn-red btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                <a href="{% url 'admin_panel_app:admin_news_delete' pk=news_item.pk %}" class="btn btn-red btn-sm w-text-75 d-flex align-items-center text-decoration-none">
                                     <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/delete.svg' %}" alt="Edit" class="mr-1">Delete
                                 </a>
                             </td>
@@ -58,7 +58,7 @@
     {% endif %}
 
     <div class="mb-3">
-        <a class="btn btn-orange btn-sm" href="{% url 'admin_news_create' %}">Add News</a>
+        <a class="btn btn-orange btn-sm" href="{% url 'admin_panel_app:admin_news_create' %}">Add News</a>
     </div>
 
     <script src="{% static 'admin_panel_app/js/news_tables_search.js' %}"></script>

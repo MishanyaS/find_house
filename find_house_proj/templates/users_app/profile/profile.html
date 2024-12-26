@@ -31,11 +31,11 @@
                     <li class="list-group-item bg-orange-list"><strong>Is Admin:</strong> {{ user.is_admin }}</li>
                 </ul>
                 <div class="card-footer text-center">
-                    <a href="{% url 'announcement_create' %}" class="btn btn-orange btn-sm me-2 mb-2">Add Announcement</a>
-                    <a href="{% url 'user_settings_update' pk=request.user.pk %}" class="btn btn-orange btn-sm me-2 mb-2">Edit User Settings</a>
-                    <a href="{% url 'user_delete' pk=user.pk %}" class="btn btn-orange btn-sm me-2 mb-2">Delete User</a>
+                    <a href="{% url 'find_house_app:announcement_create' %}" class="btn btn-orange btn-sm me-2 mb-2">Add Announcement</a>
+                    <a href="{% url 'users_app:user_settings_update' pk=request.user.pk %}" class="btn btn-orange btn-sm me-2 mb-2">Edit User Settings</a>
+                    <a href="{% url 'users_app:user_delete' pk=user.pk %}" class="btn btn-orange btn-sm me-2 mb-2">Delete User</a>
                     {% if user.is_authenticated and user.is_admin == 0 %}
-                        <a href="{% url 'create_or_get_chat' other_user_id=1 %}" class="btn btn-orange btn-sm me-2 mb-2" id="id_chat_owner_btn">Chat Admin</a>
+                        <a href="{% url 'chat_app:create_or_get_chat' other_user_id=1 %}" class="btn btn-orange btn-sm me-2 mb-2" id="id_chat_owner_btn">Chat Admin</a>
                     {% endif %}
                 </div>
             </div>
@@ -68,17 +68,17 @@
                                 <td>{{ announcement.category }}</td>
                                 <td>{{ announcement.description|truncatechars:100 }}</td>
                                 <td>
-                                    <a href="{% url 'announcement_update' announcement.pk %}" class="btn btn-blue btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                    <a href="{% url 'find_house_app:announcement_update' announcement.pk %}" class="btn btn-blue btn-sm w-text-75 d-flex align-items-center text-decoration-none">
                                         <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/edit.svg' %}" alt="Edit" class="mr-1">Edit
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="{% url 'announcement_read' announcement.pk %}" class="btn btn-grey btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                    <a href="{% url 'find_house_app:announcement_read' announcement.pk %}" class="btn btn-grey btn-sm w-text-75 d-flex align-items-center text-decoration-none">
                                         <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/details.svg' %}" alt="Edit" class="mr-1">Details
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="{% url 'announcement_delete' announcement.pk %}" class="btn btn-red btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                    <a href="{% url 'find_house_app:announcement_delete' announcement.pk %}" class="btn btn-red btn-sm w-text-75 d-flex align-items-center text-decoration-none">
                                         <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/delete.svg' %}" alt="Edit" class="mr-1">Delete
                                     </a>
                                 </td>
@@ -109,7 +109,7 @@
                         <tbody>
                             {% for entry in view_history %}
                                 <tr>
-                                    <td><a href="{% url 'announcement_read' pk=entry.announcement.pk %}" class="text-decoration-none w-text-75 ">{{ entry.announcement.title }}</a></td>
+                                    <td><a href="{% url 'find_house_app:announcement_read' pk=entry.announcement.pk %}" class="text-decoration-none w-text-75 ">{{ entry.announcement.title }}</a></td>
                                     <td>{{ entry.announcement.category }}</td>
                                     <td>{{ entry.date }}</td>
                                 </tr>
@@ -140,16 +140,16 @@
                         <tbody>
                             {% for comment in user_comments %}
                                 <tr>
-                                    <td><a href="{% url 'announcement_read' pk=comment.announcement.pk %}" class="text-decoration-none w-text-75">{{ comment.announcement.title }}</a></td>
+                                    <td><a href="{% url 'find_house_app:announcement_read' pk=comment.announcement.pk %}" class="text-decoration-none w-text-75">{{ comment.announcement.title }}</a></td>
                                     <td>{{ comment.text }}</td>
                                     <td>{{ comment.date_added }}</td>
                                     <td>
-                                        <a href="{% url 'comment_edit' pk=comment.pk %}" class="btn btn-blue btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                        <a href="{% url 'find_house_app:comment_edit' pk=comment.pk %}" class="btn btn-blue btn-sm w-text-75 d-flex align-items-center text-decoration-none">
                                             <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/edit.svg' %}" alt="Edit" class="mr-1">Edit
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="{% url 'comment_delete' pk=comment.pk %}" class="btn btn-red btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                        <a href="{% url 'find_house_app:comment_delete' pk=comment.pk %}" class="btn btn-red btn-sm w-text-75 d-flex align-items-center text-decoration-none">
                                             <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/delete.svg' %}" alt="Edit" class="mr-1">Delete
                                         </a>
                                     </td>

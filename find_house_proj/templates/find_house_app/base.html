@@ -16,48 +16,48 @@
 
         <nav class="navbar navbar-expand-lg bg-orange">
             <div class="container-fluid">
-                <a class="navbar-brand w-text-75" href="{% url 'home' %}"><img width="30px" height="30px" src="{% static "find_house_app/images/icons/favicon.jpg" %}"></a>
+                <a class="navbar-brand w-text-75" href="{% url 'find_house_app:home' %}"><img width="30px" height="30px" src="{% static "find_house_app/images/icons/favicon.jpg" %}"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'home' %}">Home</a>
+                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'find_house_app:home' %}">Home</a>
                         </li>
                         {% if not user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link w-text-75" aria-current="page" href="{% url 'registration' %}">Registration</a>
+                                <a class="nav-link w-text-75" aria-current="page" href="{% url 'users_app:registration' %}">Registration</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link w-text-75" aria-current="page" href="{% url 'login' %}">Login</a>
-                            </li>
-                        {% endif %}
-                        <li class="nav-item">
-                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'news_list' %}">News</a>
-                        </li>
-                        {% if user.is_authenticated %}
-                            <li class="nav-item">
-                                <a class="nav-link w-text-75" aria-current="page" href="{% url 'announcement_create' %}">Add Announcement</a>
+                                <a class="nav-link w-text-75" aria-current="page" href="{% url 'users_app:login' %}">Login</a>
                             </li>
                         {% endif %}
                         <li class="nav-item">
-                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'help' %}">Help</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'contacts' %}">Contacts</a>
+                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'find_house_app:news_list' %}">News</a>
                         </li>
                         {% if user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link w-text-75" aria-current="page" href="{% url 'favorite' %}">Favorite</a>
+                                <a class="nav-link w-text-75" aria-current="page" href="{% url 'find_house_app:announcement_create' %}">Add Announcement</a>
                             </li>
                         {% endif %}
                         <li class="nav-item">
-                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'categories_list' %}">Categories</a>
+                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'find_house_app:help' %}">Help</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'find_house_app:contacts' %}">Contacts</a>
                         </li>
                         {% if user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link w-text-75" aria-current="page" href="{% url 'chat_list' %}">Chats</a>
+                                <a class="nav-link w-text-75" aria-current="page" href="{% url 'find_house_app:favorite' %}">Favorite</a>
+                            </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'find_house_app:categories_list' %}">Categories</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link w-text-75" aria-current="page" href="{% url 'chat_app:chat_list' %}">Chats</a>
                             </li>
                         {% endif %}
                         {% if user.is_authenticated %}
@@ -76,15 +76,15 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark bg-orange">
                                     {% if user.is_admin == True %}
-                                        <li><a class="dropdown-item w-text-75" aria-current="page" href="{% url 'admin_index' %}">Admin Panel</a></li>
+                                        <li><a class="dropdown-item w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_index' %}">Admin Panel</a></li>
                                     {% endif %}
                                     {% if user.id %}
-                                        <li><a class="dropdown-item w-text-75" href="{% url 'profile_read' pk=user.pk %}">Profile</a></li>
-                                        <li><a class="dropdown-item w-text-75" href="{% url 'user_settings_update' pk=request.user.pk %}">Edit User Settings</a></li>
-                                        <li><a class="dropdown-item text-danger" href="{% url 'user_delete' pk=user.pk %}">Delete Account</a></li>
+                                        <li><a class="dropdown-item w-text-75" href="{% url 'users_app:profile_read' pk=user.pk %}">Profile</a></li>
+                                        <li><a class="dropdown-item w-text-75" href="{% url 'users_app:user_settings_update' pk=request.user.pk %}">Edit User Settings</a></li>
+                                        <li><a class="dropdown-item text-danger" href="{% url 'users_app:user_delete' pk=user.pk %}">Delete Account</a></li>
                                     {% endif %}
                                     <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item text-danger" href="{% url 'logout' %}">Logout</a></li>
+                                    <li><a class="dropdown-item text-danger" href="{% url 'users_app:logout' %}">Logout</a></li>
                                 </ul>
                             </li>
                         {% endif %}
@@ -116,22 +116,22 @@
             
                     <ul class="list-unstyled mb-0">
                     <li>
-                        <a class="text-decoration-none w-text-75" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="text-decoration-none w-text-75" aria-current="page" href="{% url 'find_house_app:home' %}">Home</a>
                     </li>
                     {% if user.is_authenticated %}
                         <li>
-                            <a class="text-decoration-none w-text-75" aria-current="page" href="{% url 'profile_read' pk=user.pk %}">Profile</a>
+                            <a class="text-decoration-none w-text-75" aria-current="page" href="{% url 'users_app:profile_read' pk=user.pk %}">Profile</a>
                         </li>
                     {% else %}
                         <li>
-                            <a class="text-decoration-none w-text-75" aria-current="page" href="{% url 'registration' %}">Registration</a>
+                            <a class="text-decoration-none w-text-75" aria-current="page" href="{% url 'users_app:registration' %}">Registration</a>
                         </li>
                         <li>
-                            <a class="text-decoration-none w-text-75" aria-current="page" href="{% url 'login' %}">Login</a>
+                            <a class="text-decoration-none w-text-75" aria-current="page" href="{% url 'users_app:login' %}">Login</a>
                         </li>
                     {% endif %}
                     <li>
-                        <a class="text-decoration-none w-text-75" aria-current="page" href="{% url 'categories_list' %}">Categories</a>
+                        <a class="text-decoration-none w-text-75" aria-current="page" href="{% url 'find_house_app:categories_list' %}">Categories</a>
                     </li>
                     </ul>
                 </div>
@@ -141,15 +141,15 @@
             
                     <ul class="list-unstyled mb-0">
                     <li>
-                        <a class="text-decoration-none w-text-75" aria-current="page" href="{% url 'contacts' %}">Contacts</a>
+                        <a class="text-decoration-none w-text-75" aria-current="page" href="{% url 'find_house_app:contacts' %}">Contacts</a>
                     </li>
 
                     <li>
-                        <a class="text-decoration-none w-text-75" aria-current="page" href="{% url 'help' %}">Help</a>
+                        <a class="text-decoration-none w-text-75" aria-current="page" href="{% url 'find_house_app:help' %}">Help</a>
                     </li>
 
                     <li>
-                        <a class="text-decoration-none w-text-75" aria-current="page" href="{% url 'news_list' %}">News</a>
+                        <a class="text-decoration-none w-text-75" aria-current="page" href="{% url 'find_house_app:news_list' %}">News</a>
                     </li>
 
                     </ul>

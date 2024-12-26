@@ -57,10 +57,10 @@
                 <a class="w-text-75 text-decoration-none" href="javascript:void(0);" id="showMoreLink">More</a>
 
                 {% if announcement.owner and announcement.owner != user and user.is_authenticated %}
-                    <a href="{% url 'create_or_get_chat' other_user_id=announcement.owner.id %}" class="btn btn-orange btn-sm mt-2" id="id_chat_owner_btn">Chat Owner</a>
+                    <a href="{% url 'chat_app:create_or_get_chat' other_user_id=announcement.owner.id %}" class="btn btn-orange btn-sm mt-2" id="id_chat_owner_btn">Chat Owner</a>
                 {% endif %}
 
-                <a href="{% url 'home' %}" class="btn btn-red btn-sm mt-2">Back</a>
+                <a href="{% url 'find_house_app:home' %}" class="btn btn-red btn-sm mt-2">Back</a>
             </div>
 
         </div>
@@ -73,7 +73,7 @@
             <div class="col-md-6">
                 <h3>Leave a Comment</h3>
                 <div id="error-container2"></div>
-                <form action="{% url 'comment_add' pk=announcement.pk %}" method="post" id="commentForm">
+                <form action="{% url 'find_house_app:comment_add' pk=announcement.pk %}" method="post" id="commentForm">
                     {% csrf_token %}
                     <div class="mb-3">
                         <label for="comment_your_name" hidden class="form-label">Name</label>
@@ -109,8 +109,8 @@
                             
                             {% if comment.user == user %}
                                 <div class="ml-auto">
-                                    <a class="w-text-75 text-decoration-none btn btn-blue btn-sm" href="{% url 'comment_edit' pk=comment.pk %}">Edit</a>
-                                    <a class="w-text-75 text-decoration-none btn btn-red btn-sm" href="{% url 'comment_delete' pk=comment.pk %}">Delete</a>
+                                    <a class="w-text-75 text-decoration-none btn btn-blue btn-sm" href="{% url 'find_house_app:comment_edit' pk=comment.pk %}">Edit</a>
+                                    <a class="w-text-75 text-decoration-none btn btn-red btn-sm" href="{% url 'find_house_app:comment_delete' pk=comment.pk %}">Delete</a>
                                 </div>
                             {% endif %}
                         </div>

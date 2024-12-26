@@ -13,13 +13,13 @@
                 <h3>Categories</h3>
                 <ul class="list-group mb-3 ">
                     {% for category in categories %}
-                        <li class="list-group-item list-group-item-action bg-orange-list"><a href="{% url 'category_announcements' category.name|slugify %}" class="text-decoration-none w-text-75 stretched-link text-capitalize">{{ category.name }}</a></li>
+                        <li class="list-group-item list-group-item-action bg-orange-list"><a href="{% url 'find_house_app:category_announcements' category.name|slugify %}" class="text-decoration-none w-text-75 stretched-link text-capitalize">{{ category.name }}</a></li>
                     {% endfor %}
                 </ul>
 
                 <h3>Search</h3>
                 <!-- Search Bar -->
-                <form method="get" action="{% url 'search' %}" class="mb-3">
+                <form method="get" action="{% url 'find_house_app:search' %}" class="mb-3">
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
                         <input type="text" class="custom-form-control" name="q" id="title" placeholder="Search by Title" value="{{ query }}">
@@ -83,7 +83,7 @@
                             <img src="{% static 'find_house_app/images/announcements/default/default_house.jpg' %}" height="500px" class="card-img-top" alt="...">
                         {% endif %}
                         <div class="card-body">
-                            <h5 class="card-title"><a href="{% url 'announcement_read' announcement.pk %}" class="text-decoration-none w-text-75 ">{{ announcement.title|truncatechars:50 }}</a></h5>
+                            <h5 class="card-title"><a href="{% url 'find_house_app:announcement_read' announcement.pk %}" class="text-decoration-none w-text-75 ">{{ announcement.title|truncatechars:50 }}</a></h5>
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item bg-orange-list"><p class="card-text">Price: {{ announcement.price }} $</p></li>
@@ -92,9 +92,9 @@
                         </ul>
 
                         {% if user.is_authenticated %}
-                            <form method="post" action="{% url 'category_announcements' announcement.category.pk %}" class="m-1">
+                            <form method="post" action="{% url 'find_house_app:category_announcements' announcement.category.pk %}" class="m-1">
                                 {% csrf_token %}
-                                <input type="hidden" name="action" value="add_to_favorites">
+                                <input type="hidden" name="action" value="find_house_app:add_to_favorites">
                                 <input type="hidden" name="announcement_id" value="{{ announcement.id }}">
                                 <button type="submit" class="#" style="background: none; border: none; padding: 0;">
                                     <img width="30px" height="30px" src="{% static 'find_house_app/images/icons/favorite/add_favorite.svg' %}" alt="Add to Favorite">

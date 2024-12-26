@@ -2,6 +2,7 @@ from django.urls import path
 from users_app.views import CustomUserRegistrationView, CustomUserLoginView, ProfileDetailView, CustomUserDeleteView, CustomUserUpdateView
 from django.contrib.auth.views import LogoutView
 
+app_name = 'users_app'
 
 urlpatterns = [
     # Register and Login URLs

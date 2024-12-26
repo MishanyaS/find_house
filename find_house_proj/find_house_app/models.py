@@ -19,7 +19,7 @@ class Category(models.Model):
         return f"{self.name}"
 
     def get_absolute_url(self):
-        return reverse("category_announcements", args=[str(self.name)])
+        return reverse("find_house_app:category_announcements", args=[str(self.name)])
 # endregion
 
 # region Announcement model

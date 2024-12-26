@@ -10,7 +10,7 @@
 
     <div class="list-group">
 
-        <form method="GET" action="{% url 'category_list' %}" class="mb-3">
+        <form method="GET" action="{% url 'find_house_app:category_list' %}" class="mb-3">
             <div class="inline-form">
                 <input type="text" name="q" class="custom-form-control mb-3" placeholder="Input category name and press 'Enter'">
                 <button type="submit" class="btn btn-orange btn-sm" hidden>Search</button>
@@ -21,7 +21,7 @@
             <div href="#" class="list-group-item list-group-item-action bg-orange-list d-flex align-items-center justify-content-between" aria-current="true">
                 <div>
                     <h5 class="mb-1">
-                        <a class="text-decoration-none w-text-75 stretched-link text-capitalize" href="{% url 'category_announcements' category.name|slugify %}">{{ category.name }}</a>
+                        <a class="text-decoration-none w-text-75 stretched-link text-capitalize" href="{% url 'find_house_app:category_announcements' category.name|slugify %}">{{ category.name }}</a>
                     </h5>
                     <p class="mb-1">{{ category.description }}</p>
                 </div>

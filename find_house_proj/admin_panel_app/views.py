@@ -37,7 +37,7 @@ class UserCreateView(CreateView):
     model = CustomUser
     form_class = UserForm
     template_name = 'admin_panel_app/users/create.html'
-    success_url = reverse_lazy('admin_user_list_index')
+    success_url = reverse_lazy('admin_panel_app:admin_user_list_index')
 
     def form_valid(self, form):
         form.instance.password = make_password(form.cleaned_data['password'])
@@ -52,7 +52,7 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
     model = CustomUser
     form_class = EditUserForm
     template_name = 'admin_panel_app/users/update.html'
-    success_url = reverse_lazy('admin_user_list_index')
+    success_url = reverse_lazy('admin_panel_app:admin_user_list_index')
     
     def get_object(self, queryset=None):
         pk = self.kwargs.get('pk')
@@ -78,7 +78,7 @@ class UserDeleteView(LoginRequiredMixin, DeleteView):
     model = CustomUser
     template_name = 'admin_panel_app/users/delete.html'
     context_object_name = 'user'
-    success_url = reverse_lazy('admin_user_list_index')
+    success_url = reverse_lazy('admin_panel_app:admin_user_list_index')
 
 class UserDetailView(LoginRequiredMixin, DetailView):
     model = CustomUser
@@ -101,7 +101,7 @@ class AnnouncementCreateView(CreateView):
     model = Announcement
     form_class = AnnouncementForm
     template_name = 'admin_panel_app/announcement/create.html'
-    success_url = reverse_lazy('admin_announcement_list')
+    success_url = reverse_lazy('admin_panel_app:admin_announcement_list')
     
     def form_valid(self, form):
         context = self.get_context_data()
@@ -138,7 +138,7 @@ class AnnouncementUpdateView(LoginRequiredMixin, UpdateView):
     model = Announcement
     form_class = AnnouncementForm
     template_name = 'admin_panel_app/announcement/update.html'
-    success_url = reverse_lazy('admin_announcement_list')
+    success_url = reverse_lazy('admin_panel_app:admin_announcement_list')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -156,7 +156,7 @@ class AnnouncementDeleteView(LoginRequiredMixin, DeleteView):
     model = Announcement
     template_name = 'admin_panel_app/announcement/delete.html'
     context_object_name = 'announcement'
-    success_url = reverse_lazy('admin_announcement_list')
+    success_url = reverse_lazy('admin_panel_app:admin_announcement_list')
 
 class AnnouncementDetailView(LoginRequiredMixin, DetailView):
     model = Announcement
@@ -179,19 +179,19 @@ class AnnouncementImageCreateView(CreateView):
     model = AnnouncementImage
     form_class = AnnouncementImageForm
     template_name = 'admin_panel_app/announcement image/create.html'
-    success_url = reverse_lazy('admin_announcement_images_list')
+    success_url = reverse_lazy('admin_panel_app:admin_announcement_images_list')
 
 class AnnouncementImageUpdateView(LoginRequiredMixin, UpdateView):
     model = AnnouncementImage
     form_class = AnnouncementImageForm
     template_name = 'admin_panel_app/announcement image/update.html'
-    success_url = reverse_lazy('admin_announcement_images_list')
+    success_url = reverse_lazy('admin_panel_app:admin_announcement_images_list')
 
 class AnnouncementImageDeleteView(LoginRequiredMixin, DeleteView):
     model = AnnouncementImage
     template_name = 'admin_panel_app/announcement image/delete.html'
     context_object_name = 'announcement_images'
-    success_url = reverse_lazy('admin_announcement_images_list')
+    success_url = reverse_lazy('admin_panel_app:admin_announcement_images_list')
 
 class AnnouncementImageDetailView(LoginRequiredMixin, DetailView):
     model = AnnouncementImage
@@ -214,19 +214,19 @@ class CategoryCreateView(CreateView):
     model = Category
     form_class = CategoryForm
     template_name = 'admin_panel_app/category/create.html'
-    success_url = reverse_lazy('admin_categories_list')
+    success_url = reverse_lazy('admin_panel_app:admin_categories_list')
 
 class CategoryUpdateView(LoginRequiredMixin, UpdateView):
     model = Category
     form_class = CategoryForm
     template_name = 'admin_panel_app/category/update.html'
-    success_url = reverse_lazy('admin_categories_list')
+    success_url = reverse_lazy('admin_panel_app:admin_categories_list')
 
 class CategoryDeleteView(LoginRequiredMixin, DeleteView):
     model = Category
     template_name = 'admin_panel_app/category/delete.html'
     context_object_name = 'category'
-    success_url = reverse_lazy('admin_categories_list')
+    success_url = reverse_lazy('admin_panel_app:admin_categories_list')
 
 class CategoryDetailView(LoginRequiredMixin, DetailView):
     model = Category
@@ -249,7 +249,7 @@ class FavoriteCreateView(CreateView):
     model = Favorite
     form_class = FavoriteForm
     template_name = 'admin_panel_app/favorite/create.html'
-    success_url = reverse_lazy('admin_favorites_list')
+    success_url = reverse_lazy('admin_panel_app:admin_favorites_list')
     
     def form_valid(self, form):
         return super().form_valid(form)
@@ -258,7 +258,7 @@ class FavoriteUpdateView(LoginRequiredMixin, UpdateView):
     model = Favorite
     form_class = FavoriteForm
     template_name = 'admin_panel_app/favorite/update.html'
-    success_url = reverse_lazy('admin_favorites_list')
+    success_url = reverse_lazy('admin_panel_app:admin_favorites_list')
     
     def form_valid(self, form):
         return super().form_valid(form)
@@ -267,7 +267,7 @@ class FavoriteDeleteView(LoginRequiredMixin, DeleteView):
     model = Favorite
     template_name = 'admin_panel_app/favorite/delete.html'
     context_object_name = 'favorite'
-    success_url = reverse_lazy('admin_favorites_list')
+    success_url = reverse_lazy('admin_panel_app:admin_favorites_list')
 
 class FavoriteDetailView(LoginRequiredMixin, DetailView):
     model = Favorite
@@ -290,19 +290,19 @@ class NewsCreateView(CreateView):
     model = News
     form_class = NewsForm
     template_name = 'admin_panel_app/news/create.html'
-    success_url = reverse_lazy('admin_news_list')
+    success_url = reverse_lazy('admin_panel_app:admin_news_list')
 
 class NewsUpdateView(LoginRequiredMixin, UpdateView):
     model = News
     form_class = NewsForm
     template_name = 'admin_panel_app/news/update.html'
-    success_url = reverse_lazy('admin_news_list')
+    success_url = reverse_lazy('admin_panel_app:admin_news_list')
 
 class NewsDeleteView(LoginRequiredMixin, DeleteView):
     model = News
     template_name = 'admin_panel_app/news/delete.html'
     context_object_name = 'news_item'
-    success_url = reverse_lazy('admin_news_list')
+    success_url = reverse_lazy('admin_panel_app:admin_news_list')
 
 class NewsDetailView(LoginRequiredMixin, DetailView):
     model = News
@@ -325,19 +325,19 @@ class AnnouncementViewHistoryCreateView(CreateView):
     model = AnnouncementViewHistory
     form_class = AnnouncementViewHistoryForm
     template_name = 'admin_panel_app/announcement view history/create.html'
-    success_url = reverse_lazy('admin_announcement_view_histories_list')
+    success_url = reverse_lazy('admin_panel_app:admin_announcement_view_histories_list')
 
 class AnnouncementViewHistoryUpdateView(LoginRequiredMixin, UpdateView):
     model = AnnouncementViewHistory
     form_class = AnnouncementViewHistoryForm
     template_name = 'admin_panel_app/announcement view history/update.html'
-    success_url = reverse_lazy('admin_announcement_view_histories_list')
+    success_url = reverse_lazy('admin_panel_app:admin_announcement_view_histories_list')
 
 class AnnouncementViewHistoryDeleteView(LoginRequiredMixin, DeleteView):
     model = AnnouncementViewHistory
     template_name = 'admin_panel_app/announcement view history/delete.html'
     context_object_name = 'announcement_view_history'
-    success_url = reverse_lazy('admin_announcement_view_histories_list')
+    success_url = reverse_lazy('admin_panel_app:admin_announcement_view_histories_list')
 
 class AnnouncementViewHistoryDetailView(LoginRequiredMixin, DetailView):
     model = AnnouncementViewHistory
@@ -360,19 +360,19 @@ class CommentCreateView(CreateView):
     model = Comment
     form_class = CommentForm
     template_name = 'admin_panel_app/comment/create.html'
-    success_url = reverse_lazy('admin_comments_list')
+    success_url = reverse_lazy('admin_panel_app:admin_comments_list')
 
 class CommentUpdateView(LoginRequiredMixin, UpdateView):
     model = Comment
     form_class = CommentForm
     template_name = 'admin_panel_app/comment/update.html'
-    success_url = reverse_lazy('admin_comments_list')
+    success_url = reverse_lazy('admin_panel_app:admin_comments_list')
 
 class CommentDeleteView(LoginRequiredMixin, DeleteView):
     model = Comment
     template_name = 'admin_panel_app/comment/delete.html'
     context_object_name = 'comment'
-    success_url = reverse_lazy('admin_comments_list')
+    success_url = reverse_lazy('admin_panel_app:admin_comments_list')
 
 class CommentDetailView(LoginRequiredMixin, DetailView):
     model = Comment
@@ -395,19 +395,19 @@ class ChatCreateView(CreateView):
     model = Chat
     form_class = ChatForm
     template_name = 'admin_panel_app/chats/create.html'
-    success_url = reverse_lazy('admin_chats_list')
+    success_url = reverse_lazy('admin_panel_app:admin_chats_list')
 
 class ChatUpdateView(LoginRequiredMixin, UpdateView):
     model = Chat
     form_class = ChatForm
     template_name = 'admin_panel_app/chats/update.html'
-    success_url = reverse_lazy('admin_chats_list')
+    success_url = reverse_lazy('admin_panel_app:admin_chats_list')
 
 class ChatDeleteView(LoginRequiredMixin, DeleteView):
     model = Chat
     template_name = 'admin_panel_app/chats/delete.html'
     context_object_name = 'chat'
-    success_url = reverse_lazy('admin_chats_list')
+    success_url = reverse_lazy('admin_panel_app:admin_chats_list')
 
 class ChatDetailView(LoginRequiredMixin, DetailView):
     model = Chat
@@ -430,19 +430,19 @@ class MessageCreateView(CreateView):
     model = Message
     form_class = MessageForm
     template_name = 'admin_panel_app/messages/create.html'
-    success_url = reverse_lazy('admin_messages_list')
+    success_url = reverse_lazy('admin_panel_app:admin_messages_list')
 
 class MessageUpdateView(LoginRequiredMixin, UpdateView):
     model = Message
     form_class = MessageForm
     template_name = 'admin_panel_app/messages/update.html'
-    success_url = reverse_lazy('admin_messages_list')
+    success_url = reverse_lazy('admin_panel_app:admin_messages_list')
 
 class MessageDeleteView(LoginRequiredMixin, DeleteView):
     model = Message
     template_name = 'admin_panel_app/messages/delete.html'
     context_object_name = 'message'
-    success_url = reverse_lazy('admin_messages_list')
+    success_url = reverse_lazy('admin_panel_app:admin_messages_list')
 
 class MessageDetailView(LoginRequiredMixin, DetailView):
     model = Message
@@ -465,19 +465,19 @@ class ContentCreateView(CreateView):
     model = Content
     form_class = ContentForm
     template_name = 'admin_panel_app/content/create.html'
-    success_url = reverse_lazy('admin_content_list')
+    success_url = reverse_lazy('admin_panel_app:admin_content_list')
 
 class ContentUpdateView(LoginRequiredMixin, UpdateView):
     model = Content
     form_class = ContentForm
     template_name = 'admin_panel_app/content/update.html'
-    success_url = reverse_lazy('admin_content_list')
+    success_url = reverse_lazy('admin_panel_app:admin_content_list')
 
 class ContentDeleteView(LoginRequiredMixin, DeleteView):
     model = Content
     template_name = 'admin_panel_app/content/delete.html'
     context_object_name = 'content'
-    success_url = reverse_lazy('admin_content_list')
+    success_url = reverse_lazy('admin_panel_app:admin_content_list')
 
 class ContentDetailView(LoginRequiredMixin, DetailView):
     model = Content
