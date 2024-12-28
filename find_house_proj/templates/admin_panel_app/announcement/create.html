@@ -75,7 +75,7 @@
             
                         <!-- Form for images -->
                         {{ image_formset.management_form }}
-                        {% for form in image_formset.forms|slice:"10" %}slice:"10"
+                        {% for form in image_formset.forms|slice:"10" %}
             
                             <div class="mb-3">
                                 {{ form.image.label_tag }}

@@ -11,6 +11,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from users_app.models import CustomUser
 from django.http import JsonResponse
 from admin_panel_app.models import Content
+from slugify import slugify
 
 # Create your views here.
 # region Basic views
@@ -107,6 +108,7 @@ class AnnouncementCreateView(CreateView):
         if form.is_valid() and image_formset.is_valid():
             self.object = form.save(commit=False)
             self.object.owner = form.cleaned_data['owner']
+            self.object.slug = slugify(form.cleaned_data['title'])
             self.object.save()
 
             image_formset.instance = self.object
@@ -140,7 +142,7 @@ class AnnouncementDetailView(DetailView):
         obj = super().get_object(queryset=queryset)
         obj.views += 1
         obj.save()
-        
+
         if self.request.user.is_authenticated:
             obj.views -= 1
             AnnouncementViewHistory.objects.create(user=self.request.user, announcement=obj)

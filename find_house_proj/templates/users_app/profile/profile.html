@@ -73,7 +73,7 @@
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="{% url 'find_house_app:announcement_read' announcement.pk %}" class="btn btn-grey btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                    <a href="{% url 'find_house_app:announcement_read' announcement.slug|slugify %}" class="btn btn-grey btn-sm w-text-75 d-flex align-items-center text-decoration-none">
                                         <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/details.svg' %}" alt="Edit" class="mr-1">Details
                                     </a>
                                 </td>
@@ -109,7 +109,7 @@
                         <tbody>
                             {% for entry in view_history %}
                                 <tr>
-                                    <td><a href="{% url 'find_house_app:announcement_read' pk=entry.announcement.pk %}" class="text-decoration-none w-text-75 ">{{ entry.announcement.title }}</a></td>
+                                    <td><a href="{% url 'find_house_app:announcement_read' slug=entry.announcement.slug|slugify %}" class="text-decoration-none w-text-75 ">{{ entry.announcement.title }}</a></td>
                                     <td>{{ entry.announcement.category }}</td>
                                     <td>{{ entry.date }}</td>
                                 </tr>
@@ -140,7 +140,7 @@
                         <tbody>
                             {% for comment in user_comments %}
                                 <tr>
-                                    <td><a href="{% url 'find_house_app:announcement_read' pk=comment.announcement.pk %}" class="text-decoration-none w-text-75">{{ comment.announcement.title }}</a></td>
+                                    <td><a href="{% url 'find_house_app:announcement_read' slug=comment.announcement.slug|slugify %}" class="text-decoration-none w-text-75">{{ comment.announcement.title }}</a></td>
                                     <td>{{ comment.text }}</td>
                                     <td>{{ comment.date_added }}</td>
                                     <td>

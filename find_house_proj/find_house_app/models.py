@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from users_app.models import CustomUser
+from slugify import slugify
 
 # Create your models here.
 # region Category model
@@ -39,6 +40,7 @@ class Announcement(models.Model):
     address = models.CharField(max_length=255, unique=True, verbose_name="Address")
     views = models.IntegerField(default=0, verbose_name="Views")
     date_added = models.DateTimeField(auto_now_add=True, verbose_name="Date Added")
+    slug = models.SlugField(max_length=255, unique=True, null=False, blank=False, default='', editable=False)
 
     class Meta:
         verbose_name = "Announcement"
@@ -103,10 +105,11 @@ class Comment(models.Model):
 
 # region News model
 class News(models.Model):
-    title = models.CharField(max_length=255, verbose_name="Title")
+    title = models.CharField(max_length=255, unique=True, verbose_name="Title")
     content = models.TextField(blank=False, null=False, max_length=5000, verbose_name="Content")
     views_count = models.IntegerField(default=0, verbose_name="Views Count")
     date_added = models.DateTimeField(auto_now_add=True, verbose_name="Date Added")
+    slug = models.SlugField(max_length=255, unique=True, null=False, blank=False, default='', editable=False)
     
     class Meta:
         verbose_name = "News"

@@ -8,11 +8,11 @@ urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
 
     # Announcement URLs
-    path('announcement/<int:pk>/', views.AnnouncementDetailView.as_view(), name='announcement_read'),
     path('announcement/create/', views.AnnouncementCreateView.as_view(), name='announcement_create'),
     path('announcement/update/<int:pk>/', views.AnnouncementUpdateView.as_view(), name='announcement_update'),
     path('announcement/delete/<int:pk>/', views.AnnouncementDeleteView.as_view(), name='announcement_delete'),
     path('add-to-favorites/', views.AddToFavoritesView.as_view(), name='add_to_favorites'),
+    path('announcement/<slug:slug>/', views.AnnouncementDetailView.as_view(), name='announcement_read'),
 
     # Search URLs
     path('search/', views.SearchAnnouncementView.as_view(), name='search'),
@@ -24,7 +24,7 @@ urlpatterns = [
 
     # News URLs
     path('news-list/', views.NewsList.as_view(), name='news_list'),
-    path('news/<int:pk>/', views.NewsDetail.as_view(), name='news_read'),
+    path('news/<slug:slug>/', views.NewsDetail.as_view(), name='news_read'),
 
     # Category URLs
     path('categories/', views.CategoryListView.as_view(), name='category_list'),

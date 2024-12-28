@@ -77,7 +77,7 @@
                     <div class="carousel-inner">
                         {% for announcement in top_announcements %}
                             {% if announcement.status == 1 %}
-                                <a href="{% url 'find_house_app:announcement_read' announcement.pk %}" class="carousel-item {% if forloop.first %}active{% endif %}">
+                                <a href="{% url 'find_house_app:announcement_read' announcement.slug|slugify %}" class="carousel-item {% if forloop.first %}active{% endif %}">
                                     <img src="{{ announcement.images.first.image.url }}" height="500px" class="d-block w-100" alt="#">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5 class="text-white text-decoration-none">{{ announcement.title|truncatechars:50 }}</h5>
@@ -111,7 +111,7 @@
                                 <img src="{% static 'find_house_app/images/announcements/default/default_house.jpg' %}" height="500px" class="card-img-top" alt="...">
                             {% endif %}
                             <div class="card-body">
-                                <h5 class="card-title"><a href="{% url 'find_house_app:announcement_read' announcement.pk %}" class="text-decoration-none w-text-75 ">{{ announcement.title|truncatechars:50 }}</a></h5>
+                                <h5 class="card-title"><a href="{% url 'find_house_app:announcement_read' announcement.slug|slugify %}" class="text-decoration-none w-text-75 ">{{ announcement.title|truncatechars:50 }}</a></h5>
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item bg-orange-list"><p class="card-text">Price: {{ announcement.price }} $</p></li>
@@ -178,7 +178,7 @@
                                 <div class="card  shadow-lg bg-orange-list ">
                                     <img src="{% static 'find_house_app/images/news/default/default_house.jpg' %}" class="card-img-top" alt="...">
                                     <div class="card-body">
-                                        <h5 class="card-title"><a href="{% url 'find_house_app:news_read' pk=news_item.pk %}" class="text-decoration-none w-text-75 ">{{ news_item.title|truncatechars:50 }}</a></h5>
+                                        <h5 class="card-title"><a href="{% url 'find_house_app:news_read' slug=news_item.slug|slugify %}" class="text-decoration-none w-text-75 ">{{ news_item.title|truncatechars:50 }}</a></h5>
                                         <small  class="card-text text-muted">Date: {{ news_item.date_added }}</small>
                                         <p class="card-text">{{ news_item.content|truncatechars:30|safe|linebreaks }}</p>
                                     </div>

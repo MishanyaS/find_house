@@ -16,10 +16,10 @@ urlpatterns = [
     
     # Admin Announcements URLs
     path('announcements-list/', views.AnnouncementListView.as_view(), name='admin_announcement_list'),
-    path('announcements-details/<int:pk>/', views.AnnouncementDetailView.as_view(), name='admin_announcement_read'),
     path('announcement/delete/<int:pk>/', views.AnnouncementDeleteView.as_view(), name='admin_announcement_delete'),
     path('announcement/add/', views.AnnouncementCreateView.as_view(), name='admin_announcement_create'),
     path('announcement/edit/<int:pk>/', views.AnnouncementUpdateView.as_view(), name='admin_announcement_update'),
+    path('announcements-details/<slug:slug>/', views.AnnouncementDetailView.as_view(), name='admin_announcement_read'),
     
     # Admin Announcement Images URLs
     path('announcement-images-list/', views.AnnouncementImageListView.as_view(), name='admin_announcement_images_list'),
@@ -44,10 +44,10 @@ urlpatterns = [
     
     # Admin News URLs
     path('news-list/', views.NewsListView.as_view(), name='admin_news_list'),
-    path('news-details/<int:pk>/', views.NewsDetailView.as_view(), name='admin_news_read'),
     path('news/delete/<int:pk>/', views.NewsDeleteView.as_view(), name='admin_news_delete'),
     path('news/add/', views.NewsCreateView.as_view(), name='admin_news_create'),
     path('news/edit/<int:pk>/', views.NewsUpdateView.as_view(), name='admin_news_update'),
+    path('news-details/<slug:slug>/', views.NewsDetailView.as_view(), name='admin_news_read'),
     
     # Admin Announcement View Histories URLs
     path('announcement-view-histories-list/', views.AnnouncementViewHistoryListView.as_view(), name='admin_announcement_view_histories_list'),

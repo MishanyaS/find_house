@@ -83,7 +83,7 @@
                             <img src="{% static 'find_house_app/images/announcements/default/default_house.jpg' %}" height="500px" class="card-img-top" alt="...">
                         {% endif %}
                         <div class="card-body">
-                            <h5 class="card-title"><a href="{% url 'find_house_app:announcement_read' announcement.pk %}" class="text-decoration-none w-text-75 ">{{ announcement.title|truncatechars:50 }}</a></h5>
+                            <h5 class="card-title"><a href="{% url 'find_house_app:announcement_read' announcement.slug|slugify %}" class="text-decoration-none w-text-75 ">{{ announcement.title|truncatechars:50 }}</a></h5>
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item bg-orange-list"><p class="card-text">Price: {{ announcement.price }} $</p></li>

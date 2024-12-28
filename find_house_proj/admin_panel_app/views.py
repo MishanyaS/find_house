@@ -14,6 +14,7 @@ from admin_panel_app.forms import (UserForm, EditUserForm, AnnouncementForm, Ann
 from django.contrib.auth.hashers import make_password
 from admin_panel_app.models import Content
 from admin_panel_app.forms import ContentForm
+from slugify import slugify
 
 # region Basic views
 class AdminPanelHomeView(TemplateView):
@@ -110,6 +111,7 @@ class AnnouncementCreateView(CreateView):
         if form.is_valid() and image_formset.is_valid():
             self.object = form.save(commit=False)
             self.object.owner = form.cleaned_data['owner']
+            self.object.slug = slugify(form.cleaned_data['title'])
             self.object.save()
 
             image_formset.instance = self.object
@@ -291,6 +293,16 @@ class NewsCreateView(CreateView):
     form_class = NewsForm
     template_name = 'admin_panel_app/news/create.html'
     success_url = reverse_lazy('admin_panel_app:admin_news_list')
+
+    def form_valid(self, form):
+        if form.is_valid():
+            self.object = form.save(commit=False)
+            self.object.slug = slugify(form.cleaned_data['title'])
+            self.object.save()
+
+            return super().form_valid(form)
+        else:
+            return self.form_invalid(form)
 
 class NewsUpdateView(LoginRequiredMixin, UpdateView):
     model = News

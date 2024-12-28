@@ -40,7 +40,7 @@
                                 <div class="card bg-orange-list ">
                                 <img src="{% static 'find_house_app/images/news/default/default_house.jpg' %}" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="{% url 'find_house_app:news_read' pk=news.pk %}" class="text-decoration-none w-text-75 ">{{ news.title }}</a></h5>
+                                    <h5 class="card-title"><a href="{% url 'find_house_app:news_read' slug=news.slug|slugify %}" class="text-decoration-none w-text-75 ">{{ news.title }}</a></h5>
                                     <small  class="card-text text-muted">Date: {{ news.date_added }}</small>
                                     <p class="card-text">{{ news.content|truncatechars:30|safe|linebreaks }}</p>
                                 </div>

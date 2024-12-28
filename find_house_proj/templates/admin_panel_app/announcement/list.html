@@ -43,7 +43,7 @@
                                 </a>
                             </td>
                             <td>
-                                <a href="{% url 'admin_panel_app:admin_announcement_read' pk=announcement.pk %}" class="btn btn-grey btn-sm w-text-75 d-flex align-items-center text-decoration-none">
+                                <a href="{% url 'admin_panel_app:admin_announcement_read' slug=announcement.slug|slugify %}" class="btn btn-grey btn-sm w-text-75 d-flex align-items-center text-decoration-none">
                                     <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/details.svg' %}" alt="Edit" class="mr-1">Details
                                 </a>
                             </td>
