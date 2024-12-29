@@ -237,3 +237,11 @@ It is distinguished by the presence of "Is Admin" field.
 
 ![](https://github.com/MishanyaS/find_house/blob/main/photos/content/add%20content.png?raw=true)
 ![](https://github.com/MishanyaS/find_house/blob/main/photos/content/content%20list.png?raw=true)
+
+**Sorting announcements:**
+
+![](https://github.com/MishanyaS/find_house/blob/main/photos/announcement/sort%20announcement.png?raw=true)
+
+**Sorting news:**
+
+![](https://github.com/MishanyaS/find_house/blob/main/photos/news/sort%20news.png?raw=true)
