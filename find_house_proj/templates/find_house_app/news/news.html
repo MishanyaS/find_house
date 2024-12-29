@@ -26,6 +26,39 @@
                     <button type="submit" class="btn btn-orange btn-sm">Search</button>
                 </form>
             </div>
+            <h3>Sorting News</h3>
+            <div class="col-md-12 mb-3">
+                <form method="get" action="{% url 'find_house_app:sort_news' %}" class="mb-3">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="sort_news" id="sort_news" value="title" {% if sort_news_by == 'title' %}checked{% endif %}>
+                        <label class="form-check-label" for="sort_news">
+                            Sort by Title (In Alphabetical Order)
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="sort_news" id="sort_news" value="-title" {% if sort_news_by == '-title' %}checked{% endif %}>
+                        <label class="form-check-label" for="sort_news">
+                            Sort by Title (In Reverse Order)
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="sort_news" id="sort_news" value="-date_added" {% if sort_news_by == '-date_added' %}checked{% endif %}>
+                        <label class="form-check-label" for="sort_news">
+                            Sort by Date (New to Old)
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="sort_news" id="sort_news" value="date_added" {% if sort_news_by == 'date_added' %}checked{% endif %}>
+                        <label class="form-check-label" for="sort_news">
+                            Sort by Date (Old to New)
+                        </label>
+                    </div>
+    
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-orange btn-sm" id="id_sort_news_btn">Sort</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <div class="col-md-9">

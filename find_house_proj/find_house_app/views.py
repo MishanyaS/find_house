@@ -261,6 +261,44 @@ class SearchAnnouncementView(View):
 
         return render(request, self.template_name, context)
 
+class SortAnnouncementView(View):
+    template_name = 'find_house_app/index.html'
+    paginate_by = 5
+
+    def get(self, request, *args, **kwargs):
+        sort_announcements_by = request.GET.get('sort', 'name')
+        allowed_sort_fields = ['title', '-title', 'price', '-price', 'square', '-square', 'date_added', '-date_added']
+
+        if sort_announcements_by not in allowed_sort_fields:
+            sort_announcements_by = 'title'
+
+        announcements = Announcement.objects.all().order_by(sort_announcements_by)
+    
+        # Pagination
+        paginator = Paginator(announcements, self.paginate_by)
+        page = request.GET.get('page')
+
+        try:
+            announcements = paginator.page(page)
+        except PageNotAnInteger:
+            announcements = paginator.page(1)
+        except EmptyPage:
+            announcements = paginator.page(paginator.num_pages)
+
+        categories = Category.objects.all()
+        news = News.objects.all().order_by('-date_added')[:4]
+        top_announcements = Announcement.objects.filter(status=Announcement.ACTIVE).order_by('-views')[:3]
+
+        context = {
+            'announcements': announcements,
+            'news': news,
+            'categories': categories,
+            'sort_announcements_by': sort_announcements_by,
+            'top_announcements': top_announcements,
+        }
+
+        return render(request, self.template_name, context)
+    
 class AddToFavoritesView(View):
     def post(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
@@ -357,6 +395,39 @@ class SearchNewsView(ListView):
         context = {
             'news': news,
             'query': query,
+        }
+
+        return render(request, self.template_name, context)
+    
+class SortNewsView(ListView):
+    model = News
+    template_name = 'find_house_app/news/news.html'
+    context_object_name = 'news'
+    paginate_by = 6
+
+    def get(self, request):
+        sort_news_by = request.GET.get('sort_news', 'name')
+        allowed_sort_fields = ['title', '-title', 'date_added', '-date_added']
+
+        if sort_news_by not in allowed_sort_fields:
+            sort_news_by = 'title'
+
+        news = News.objects.all().order_by(sort_news_by)
+            
+        # Pagination
+        paginator = Paginator(news, self.paginate_by)
+        page = request.GET.get('page')
+
+        try:
+            news = paginator.page(page)
+        except PageNotAnInteger:
+            news = paginator.page(1)
+        except EmptyPage:
+            news = paginator.page(paginator.num_pages)
+
+        context = {
+            'news': news,
+            'sort_news_by': sort_news_by,
         }
 
         return render(request, self.template_name, context)

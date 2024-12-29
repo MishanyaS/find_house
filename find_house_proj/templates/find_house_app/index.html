@@ -67,6 +67,63 @@
 
                 <button type="submit" class="btn btn-orange btn-sm" id="id_search_btn">Search</button>
             </form>
+
+            <h3>Sorting</h3>
+            <!-- Sort Bar -->
+            <form method="get" action="{% url 'find_house_app:sort' %}" class="mb-3">
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="sort" id="sort" value="title" {% if sort_announcements_by == 'title' %}checked{% endif %}>
+                    <label class="form-check-label" for="sort">
+                        Sort by Title (In Alphabetical Order)
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="sort" id="sort" value="-title" {% if sort_announcements_by == '-title' %}checked{% endif %}>
+                    <label class="form-check-label" for="sort">
+                        Sort by Title (In Reverse Order)
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="sort" id="sort" value="price" {% if sort_announcements_by == 'price' %}checked{% endif %}>
+                    <label class="form-check-label" for="sort">
+                        Sort by Price (Low to High)
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="sort" id="sort" value="-price" {% if sort_announcements_by == '-price' %}checked{% endif %}>
+                    <label class="form-check-label" for="sort">
+                        Sort by Price (High to Low)
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="sort" id="sort" value="square" {% if sort_announcements_by == 'square' %}checked{% endif %}>
+                    <label class="form-check-label" for="sort">
+                        Sort by Square (Low to High)
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="sort" id="sort" value="-square" {% if sort_announcements_by == '-square' %}checked{% endif %}>
+                    <label class="form-check-label" for="sort">
+                        Sort by Square (High to Low)
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="sort" id="sort" value="-date_added" {% if sort_announcements_by == '-date_added' %}checked{% endif %}>
+                    <label class="form-check-label" for="sort">
+                        Sort by Date (New to Old)
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="sort" id="sort" value="date_added" {% if sort_announcements_by == 'date_added' %}checked{% endif %}>
+                    <label class="form-check-label" for="sort">
+                        Sort by Date (Old to New)
+                    </label>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-orange btn-sm" id="id_sort_btn">Sort</button>
+                </div>
+            </form>
         </div>
 
         <div class="col-md-9">
