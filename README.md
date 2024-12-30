@@ -245,3 +245,8 @@ It is distinguished by the presence of "Is Admin" field.
 **Sorting news:**
 
 ![](https://github.com/MishanyaS/find_house/blob/main/photos/news/sort%20news.png?raw=true)
+
+**Search by site:**
+
+![](https://github.com/MishanyaS/find_house/blob/main/photos/search%20by%20site/search%20form.png?raw=true)
+![](https://github.com/MishanyaS/find_house/blob/main/photos/search%20by%20site/search%20by%20site.png?raw=true)
