@@ -92,6 +92,29 @@ class ContactsView(TemplateView):
         context['content'] = Content.objects.order_by('-change_date').first()
         
         return context
+
+class SearchBySiteView(View):
+    template_name = 'find_house_app/search/search_by_site.html'
+    
+    def get(self, request):
+        search_site = self.request.GET.get('search_site', '')
+        announcements = Announcement.objects.all()
+        news = News.objects.all()
+        categories = Category.objects.all()
+
+        if search_site:
+            announcements = announcements.filter(Q(title__icontains=search_site) | Q(description__icontains=search_site))
+            news = news.filter(Q(title__icontains=search_site) | Q(content__icontains=search_site))
+            categories = categories.filter(Q(name__icontains=search_site) | Q(description__icontains=search_site))
+
+        context = {
+            'search_site': search_site,
+            'announcements': announcements,
+            'categories': categories,
+            'news': news,
+        }
+
+        return render(request, self.template_name, context)
 # endregion
 
 # region Announcement views

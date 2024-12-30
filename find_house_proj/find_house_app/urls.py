@@ -19,6 +19,7 @@ urlpatterns = [
     path('sort/', views.SortAnnouncementView.as_view(), name='sort'),
     path('search-news/', views.SearchNewsView.as_view(), name='search_news'),
     path('sort-news/', views.SortNewsView.as_view(), name='sort_news'),
+    path('search-by-site/', views.SearchBySiteView.as_view(), name='search_by_site'),
 
     # Help URLs
     path('help/', views.HelpView.as_view(), name='help'),

@@ -89,6 +89,10 @@
                             </li>
                         {% endif %}
                     </ul>
+                    <form class="d-flex" role="search" method="get" action="{% url 'find_house_app:search_by_site' %}">
+                        <input class="custom-form-control me-2" name="search_site" type="search" placeholder="Search by site" aria-label="Search">
+                        <button class="btn btn-blue btn-sm" type="submit">Search</button>
+                    </form>
                 </div>
             </div>
         </nav>    
