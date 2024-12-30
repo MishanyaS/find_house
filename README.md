@@ -240,7 +240,7 @@ It is distinguished by the presence of "Is Admin" field.
 
 **Sorting announcements:**
 
-![] (https://github.com/MishanyaS/find_house/blob/main/photos/announcement/sort%20announcement.png?raw=true)
+![](https://github.com/MishanyaS/find_house/blob/main/photos/announcement/sort%20announcement.png?raw=true)
 
 **Sorting news:**
 
