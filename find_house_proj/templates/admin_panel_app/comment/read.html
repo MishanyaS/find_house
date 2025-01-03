@@ -1,31 +1,32 @@
 {% extends "admin_panel_app/base.html" %}
+{% load i18n %}
 
-{% block title %}Comments Details{% endblock %}
+{% block title %}{% trans 'Comments Details' %}{% endblock %}
 
 {% block content %}
 
-    <h3 class="text-center">Comments Details</h3>
+    <h3 class="text-center">{% trans 'Comments Details' %}</h3>
 
     <table class="table table-striped">
         <tbody>
             <tr>
-                <th>ID</th>
+                <th>{% trans 'ID' %}</th>
                 <td>{{ comment.id }}</td>
             </tr>
             <tr>
-                <th>Date Added</th>
+                <th>{% trans 'Date Added' %}</th>
                 <td>{{ comment.date_added }}</td>
             </tr>
             <tr>
-                <th>Announcement ID</th>
+                <th>{% trans 'Announcement ID' %}</th>
                 <td>{{ comment.announcement_id }}</td>
             </tr>
             <tr>
-                <th>User ID</th>
+                <th>{% trans 'User ID' %}</th>
                 <td>{{ comment.user_id }}</td>
             </tr>
             <tr>
-                <th>Text</th>
+                <th>{% trans 'Text' %}</th>
                 <td>{{ comment.text }}</td>
             </tr>
 
@@ -33,7 +34,7 @@
     </table>
 
     <div class="mb-3 mt-3">
-        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_comments_list' %}">Back</a>
+        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_comments_list' %}">{% trans 'Back' %}</a>
     </div>
 
 {% endblock content %}

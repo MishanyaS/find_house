@@ -1,4 +1,5 @@
 {% extends "admin_panel_app/base.html" %}
+{% load i18n %}
 
 {% block title %}Announcement Details{% endblock %}
 
@@ -9,31 +10,31 @@
     <table class="table table-striped">
         <tbody>
             <tr>
-                <th>ID</th>
+                <th>{% trans 'ID' %}</th>
                 <td>{{ announcement.id }}</td>
             </tr>
             <tr>
-                <th>Date Added</th>
+                <th>{% trans 'Date Added' %}</th>
                 <td>{{ announcement.date_added }}</td>
             </tr>
             <tr>
-                <th>Category ID</th>
+                <th>{% trans 'Category ID' %}</th>
                 <td>{{ announcement.category_id }}</td>
             </tr>
             <tr>
-                <th>Owner ID</th>
+                <th>{% trans 'Owner ID' %}</th>
                 <td>{{ announcement.owner_id }}</td>
             </tr>
             <tr>
-                <th>Status</th>
+                <th>{% trans 'Status' %}</th>
                 <td>{{ announcement.status }}</td>
             </tr>
             <tr>
-                <th>Title</th>
+                <th>{% trans 'Title' %}</th>
                 <td>{{ announcement.title  }}</td>
             </tr>
             <tr>
-                <th>Views</th>
+                <th>{% trans 'Views' %}</th>
                 <td>{{ announcement.views }}</td>
             </tr>
 
@@ -41,7 +42,7 @@
     </table>
 
     <div class="mb-3 mt-3">
-        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_announcement_list' %}">Back</a>
+        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_announcement_list' %}">{% trans 'Back' %}</a>
     </div>
 
 {% endblock content %}

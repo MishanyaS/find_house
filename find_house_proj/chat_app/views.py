@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Chat, Message
 from .forms import MessageForm
 from users_app.models import CustomUser
+from admin_panel_app.models import Content
 
 
 # region Chat views
@@ -28,6 +29,7 @@ def chat_list(request):
         context['user_profile'] = request.user.profile
     
     context['chats'] = request.user.chats.all()
+    context['content'] = Content.objects.order_by('-change_date').first()
     
     return render(request, 'chat_app/chat/chat_list.html', context)
 
@@ -68,6 +70,7 @@ def chat_read(request, chat_id):
     
     context['chat'] = chat
     context['form'] = form
+    context['content'] = Content.objects.order_by('-change_date').first()
     
     return render(request, 'chat_app/chat/chat_read.html', context)
 
@@ -93,6 +96,7 @@ def edit_message(request, chat_id, message_id):
     
     context['chat'] = chat
     context['form'] = form
+    context['content'] = Content.objects.order_by('-change_date').first()
     
     return render(request, 'chat_app/chat/chat_read.html', context)
 # endregion

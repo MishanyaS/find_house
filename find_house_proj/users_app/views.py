@@ -8,6 +8,7 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth.views import LoginView
 from find_house_app.models import Announcement, AnnouncementViewHistory, Comment
 from django.contrib.auth import update_session_auth_hash
+from admin_panel_app.models import Content
 
 # Create your views here.
 # region CustomUser views
@@ -17,14 +18,32 @@ class CustomUserRegistrationView(CreateView):
     template_name = 'users_app/registration/registration.html'
     success_url = reverse_lazy('users_app:login')
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['content'] = Content.objects.order_by('-change_date').first()
+            
+        return context
+
 class CustomUserLoginView(LoginView):
     form_class = LoginForm
     template_name = 'users_app/registration/login.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['content'] = Content.objects.order_by('-change_date').first()
+            
+        return context
 
 class CustomUserDeleteView(LoginRequiredMixin, DeleteView):
     model = CustomUser
     template_name = 'users_app/registration/delete_user.html'
     success_url = reverse_lazy('find_house_app:home')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['content'] = Content.objects.order_by('-change_date').first()
+            
+        return context
 
 class CustomUserUpdateView(LoginRequiredMixin, UpdateView):
     model = CustomUser
@@ -57,9 +76,10 @@ class CustomUserUpdateView(LoginRequiredMixin, UpdateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['content'] = Content.objects.order_by('-change_date').first()
 
         return context
-
+    
 class ProfileDetailView(LoginRequiredMixin, DetailView):
     model = CustomUser
     template_name = 'users_app/profile/profile.html'
@@ -75,6 +95,8 @@ class ProfileDetailView(LoginRequiredMixin, DetailView):
 
         view_history = AnnouncementViewHistory.objects.filter(user=self.request.user)
         context['view_history'] = view_history
-        
+
+        context['content'] = Content.objects.order_by('-change_date').first()
+
         return context
 # endregion

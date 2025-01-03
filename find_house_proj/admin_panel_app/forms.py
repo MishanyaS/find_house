@@ -9,6 +9,7 @@ from django.forms.models import inlineformset_factory
 from django.core.exceptions import ValidationError
 from django.utils.safestring import mark_safe
 from admin_panel_app.models import Content
+from django.utils.translation import gettext_lazy as _
 
 
 # region User forms
@@ -21,33 +22,33 @@ class UserForm(forms.ModelForm):
         fields = ['username', 'email', 'password', 'password2', 'first_name', 'last_name', 'phone_number', 'birth_date', 'address', 'avatar', 'description', 'is_admin']
 
         widgets = {
-            'username': forms.TextInput(attrs={'placeholder': 'Username', 'class': 'custom-form-control'}),
-            'email': forms.EmailInput(attrs={'placeholder': 'Email Address', 'class': 'custom-form-control'}),
-            'password': forms.PasswordInput(attrs={'placeholder': 'Enter Password', 'class': 'custom-form-control'}),
-            'password2' : forms.PasswordInput(attrs={'placeholder': 'Confirm Password', 'class': 'custom-form-control'}),
-            'first_name': forms.TextInput(attrs={'placeholder': 'First Name', 'class': 'custom-form-control'}),
-            'last_name': forms.TextInput(attrs={'placeholder': 'Last Name', 'class': 'custom-form-control'}),
+            'username': forms.TextInput(attrs={'placeholder': _('Username'), 'class': 'custom-form-control'}),
+            'email': forms.EmailInput(attrs={'placeholder': _('Email Address'), 'class': 'custom-form-control'}),
+            'password': forms.PasswordInput(attrs={'placeholder': _('Enter Password'), 'class': 'custom-form-control'}),
+            'password2' : forms.PasswordInput(attrs={'placeholder': _('Confirm Password'), 'class': 'custom-form-control'}),
+            'first_name': forms.TextInput(attrs={'placeholder': _('First Name'), 'class': 'custom-form-control'}),
+            'last_name': forms.TextInput(attrs={'placeholder': _('Last Name'), 'class': 'custom-form-control'}),
             'phone_number': forms.TextInput(attrs={'placeholder': '999999999', 'class': 'custom-form-control'}),
             'birth_date': forms.DateInput(attrs={'type': 'date', 'class': 'custom-form-control'}),
-            'address': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': 'Enter your Address'}),
+            'address': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': _('Enter your Address')}),
             'avatar': forms.ClearableFileInput(attrs={'class': 'custom-form-control form-control'}),
-            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 4, 'cols': 50, 'placeholder': 'Tell us something about yourself'}),
+            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 4, 'cols': 50, 'placeholder': _('Tell us something about yourself')}),
             'is_admin': forms.CheckboxInput(attrs={'class': 'form-check-input',})
         }
         
         labels = {
-            'username': 'Username',
-            'email': 'Email',
-            'password': 'Password',
-            'password2' : 'Confirm Password',
-            'first_name': 'First Name',
-            'last_name': 'Last Name',
-            'phone_number': 'Phone Number',
-            'birth_date': 'Birth Date',
-            'address': 'Address',
-            'avatar': 'Avatar',
-            'description': 'Description',
-            'is_admin': 'Is Admin'
+            'username': _('Username'),
+            'email': _('Email'),
+            'password': _('Password'),
+            'password2' : _('Confirm Password'),
+            'first_name': _('First Name'),
+            'last_name': _('Last Name'),
+            'phone_number': _('Phone Number'),
+            'birth_date': _('Birth Date'),
+            'address': _('Address'),
+            'avatar': _('Avatar'),
+            'description': _('Description'),
+            'is_admin': _('Is Admin')
         }
         
     def __init__(self, *args, **kwargs):
@@ -193,38 +194,38 @@ class UserForm(forms.ModelForm):
         return user
 
 class EditUserForm(forms.ModelForm):
-    old_password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Old Password', 'class': 'custom-form-control'}), required=False, label="Old Password")
-    new_password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'New Password', 'class': 'custom-form-control'}), required=False, label="New Password")
-    new_password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm New Password', 'class': 'custom-form-control'}), required=False, label="Confirm New Password")
+    old_password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': _('Old Password'), 'class': 'custom-form-control'}), required=False, label=_('Old Password'))
+    new_password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': _('New Password'), 'class': 'custom-form-control'}), required=False, label=_('New Password'))
+    new_password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': _('Confirm New Password'), 'class': 'custom-form-control'}), required=False, label=_('Confirm New Password'))
     
     class Meta:
         model = CustomUser
         fields = ['username', 'email', 'first_name', 'last_name', 'phone_number', 'birth_date', 'address', 'avatar', 'description', 'is_admin']
 
         widgets = {
-            'username': forms.TextInput(attrs={'placeholder': 'Username', 'class': 'custom-form-control'}),
-            'email': forms.EmailInput(attrs={'placeholder': 'Email Address', 'class': 'custom-form-control'}),
-            'first_name': forms.TextInput(attrs={'placeholder': 'First Name', 'class': 'custom-form-control'}),
-            'last_name': forms.TextInput(attrs={'placeholder': 'Last Name', 'class': 'custom-form-control'}),
+            'username': forms.TextInput(attrs={'placeholder': _('Username'), 'class': 'custom-form-control'}),
+            'email': forms.EmailInput(attrs={'placeholder': _('Email Address'), 'class': 'custom-form-control'}),
+            'first_name': forms.TextInput(attrs={'placeholder': _('First Name'), 'class': 'custom-form-control'}),
+            'last_name': forms.TextInput(attrs={'placeholder': _('Last Name'), 'class': 'custom-form-control'}),
             'phone_number': forms.TextInput(attrs={'placeholder': '999999999', 'class': 'custom-form-control'}),
             'birth_date': forms.DateInput(attrs={'type': 'date', 'class': 'custom-form-control'}),
-            'address': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': 'Enter your Address'}),
+            'address': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': _('Enter your Address')}),
             'avatar': forms.ClearableFileInput(attrs={'class': 'custom-form-control form-control'}),
-            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 4, 'cols': 50, 'placeholder': 'Tell us something about yourself'}),
+            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 4, 'cols': 50, 'placeholder': _('Tell us something about yourself')}),
             'is_admin': forms.CheckboxInput(attrs={'class': 'form-check-input',})
         }
         
         labels = {
-            'username': 'Username',
-            'email': 'Email',
-            'first_name': 'First Name',
-            'last_name': 'Last Name',
-            'phone_number': 'Phone Number',
-            'birth_date': 'Birth Date',
-            'address': 'Address',
-            'avatar': 'Avatar',
-            'description': 'Description',
-            'is_admin': 'Is Admin',
+            'username': _('Username'),
+            'email': _('Email'),
+            'first_name': _('First Name'),
+            'last_name': _('Last Name'),
+            'phone_number': _('Phone Number'),
+            'birth_date': _('Birth Date'),
+            'address': _('Address'),
+            'avatar': _('Avatar'),
+            'description': _('Description'),
+            'is_admin': _('Is Admin'),
         }
         
     def __init__(self, *args, **kwargs):
@@ -388,25 +389,25 @@ class AnnouncementForm(forms.ModelForm):
         exclude = ['views', 'date_added']
 
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder' : 'Title'}),
-            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': 'Enter description'}),
-            'price': forms.NumberInput(attrs={'class': 'custom-form-control', 'placeholder' : 'Price'}),
-            'square': forms.NumberInput(attrs={'class': 'custom-form-control', 'placeholder' : 'Square'}),
+            'title': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder' : _('Title')}),
+            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': _('Enter description')}),
+            'price': forms.NumberInput(attrs={'class': 'custom-form-control', 'placeholder' : _('Price')}),
+            'square': forms.NumberInput(attrs={'class': 'custom-form-control', 'placeholder' : _('Square')}),
             'owner': forms.HiddenInput(),
             'category': forms.Select(attrs={'class': 'custom-form-select'}),
             'status': forms.Select(attrs={'class': 'custom-form-select'}),
-            'address': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder' : 'Address'}),
+            'address': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder' : _('Address')}),
         }
 
         labels = {
-            'title': 'Title',
-            'description': 'Description',
-            'price': 'Price',
-            'square': 'Square',
-            'owner': 'Owner',
-            'category': 'Category',
-            'status': 'Status',
-            'address': 'Address',
+            'title': _('Title'),
+            'description': _('Description'),
+            'price': _('Price'),
+            'square': _('Square'),
+            'owner': _('Owner'),
+            'category': _('Category'),
+            'status': _('Status'),
+            'address': _('Address'),
         }
 
     def __init__(self, *args, **kwargs):
@@ -515,13 +516,13 @@ class AnnouncementImageForm(forms.ModelForm):
         widgets = {
             'announcement': forms.Select(attrs={'class': 'custom-form-select'}),
             'image': forms.ClearableFileInput(attrs={'class': 'custom-form-control form-control'}),
-            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': 'Enter a description or caption for the image'}),
+            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': _('Enter a description or caption for the image')}),
         }
         
         labels = {
-            'announcement': 'Select Announcement',
-            'image': 'Upload Image',
-            'description': 'Image Description'
+            'announcement': _('Select Announcement'),
+            'image': _('Upload Image'),
+            'description': _('Image Description')
         }
         
     def __init__(self, *args, **kwargs):
@@ -569,13 +570,13 @@ class CategoryForm(forms.ModelForm):
         exclude = ['date_added']
         
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': 'Enter category name'}),
-            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': 'Enter description'}),
+            'name': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': _('Enter category name')}),
+            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': _('Enter description')}),
         }
         
         labels = {
-            'name': 'Name',
-            'description': 'Description',
+            'name': _('Name'),
+            'description': _('Description'),
         }
         
     def __init__(self, *args, **kwargs):
@@ -621,9 +622,9 @@ class FavoriteForm(forms.ModelForm):
         }
 
         labels = {
-            'user': 'Select User',
-            'announcement': 'Select Announcement',
-            'is_in_favorite': 'Is in Favorite',
+            'user': _('Select User'),
+            'announcement': _('Select Announcement'),
+            'is_in_favorite': _('Is in Favorite'),
         }
         
     def __init__(self, *args, **kwargs):
@@ -658,13 +659,13 @@ class NewsForm(forms.ModelForm):
         exclude = ['views_count', 'date_added']
         
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': 'Title'}),
-            'content': forms.Textarea(attrs={'class': 'custom-form-control', 'placeholder': 'Content', 'rows': 3}),
+            'title': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': _('Title')}),
+            'content': forms.Textarea(attrs={'class': 'custom-form-control', 'placeholder': _('Content'), 'rows': 3}),
         }
         
         labels = {
-            'title': 'Title',
-            'content': 'Content',
+            'title': _('Title'),
+            'content': _('Content'),
         }
         
     def __init__(self, *args, **kwargs):
@@ -709,8 +710,8 @@ class AnnouncementViewHistoryForm(forms.ModelForm):
         }
 
         labels = {
-            'user': 'Select User',
-            'announcement': 'Select Announcement',
+            'user': _('Select User'),
+            'announcement': _('Select Announcement'),
         }
         
     def __init__(self, *args, **kwargs):
@@ -746,13 +747,13 @@ class CommentForm(forms.ModelForm):
         widgets = {
             'announcement': forms.Select(attrs={'class': 'custom-form-control'}),
             'user': forms.Select(attrs={'class': 'custom-form-control'}),
-            'text': forms.Textarea(attrs={'class': 'custom-form-control', 'placeholder': 'Text', 'rows': 3}),
+            'text': forms.Textarea(attrs={'class': 'custom-form-control', 'placeholder': _('Text'), 'rows': 3}),
         }
 
         labels = {
-            'announcement': 'Announcement',
-            'user': 'User',
-            'text': 'Text',
+            'announcement': _('Announcement'),
+            'user': _('User'),
+            'text': _('Text'),
         }
         
     def __init__(self, *args, **kwargs):
@@ -802,7 +803,7 @@ class ChatForm(forms.ModelForm):
         }
 
         labels = {
-            'participants': 'Participants',
+            'participants': _('Participants'),
         }
         
     def __init__(self, *args, **kwargs):
@@ -829,17 +830,17 @@ class MessageForm(forms.ModelForm):
         widgets = {
             'chat': forms.Select(attrs={'class': 'custom-form-control'}),
             'sender': forms.Select(attrs={'class': 'custom-form-control'}),
-            'content': forms.Textarea(attrs={'class': 'custom-form-control'}),
+            'content': forms.Textarea(attrs={'class': 'custom-form-control', 'placeholder': _('Content'), 'rows': 3}),
             'is_deleted': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
             'is_edited': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
         }
 
         labels = {
-            'chat': 'Chat',
-            'sender': 'Sender',
-            'content': 'Content',
-            'is_deleted': 'Is deleted',
-            'is_edited': 'Is edited',
+            'chat': _('Chat'),
+            'sender': _('Sender'),
+            'content': _('Content'),
+            'is_deleted': _('Is deleted'),
+            'is_edited': _('Is edited'),
         }
         
     def __init__(self, *args, **kwargs):
@@ -887,21 +888,21 @@ class ContentForm(forms.ModelForm):
         exclude = ['change_date']
         
         widgets = {
-            'contacts_page_h5': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': 'Enter contacts page h5'}),
-            'contacts_page_text': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': 'Enter contacts page text'}),
-            'contacts_page_address': forms.TextInput(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': 'Enter contacts page address'}),
-            'contacts_page_telephone': forms.TextInput(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': 'Enter contacts page telephone'}),
-            'contacts_page_email': forms.EmailInput(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': 'Enter contacts page email'}),
-            'footer_text': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': 'Enter footer text'}),
+            'contacts_page_h5': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': _('Enter contacts page h5')}),
+            'contacts_page_text': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': _('Enter contacts page text')}),
+            'contacts_page_address': forms.TextInput(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': _('Enter contacts page address')}),
+            'contacts_page_telephone': forms.TextInput(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': _('Enter contacts page telephone')}),
+            'contacts_page_email': forms.EmailInput(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': _('Enter contacts page email')}),
+            'footer_text': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': _('Enter footer text')}),
         }
         
         labels = {
-            'contacts_page_h5': 'Contacts Page h5',
-            'contacts_page_text': 'Contacts Page Text',
-            'contacts_page_address': 'Contacts Page Address',
-            'contacts_page_telephone': 'Contacts Page Telephone',
-            'contacts_page_email': 'Contacts Page Email',
-            'footer_text': 'Footer Text',
+            'contacts_page_h5': _('Contacts Page h5'),
+            'contacts_page_text': _('Contacts Page Text'),
+            'contacts_page_address': _('Contacts Page Address'),
+            'contacts_page_telephone': _('Contacts Page Telephone'),
+            'contacts_page_email': _('Contacts Page Email'),
+            'footer_text': _('Footer Text'),
         }
         
     def __init__(self, *args, **kwargs):

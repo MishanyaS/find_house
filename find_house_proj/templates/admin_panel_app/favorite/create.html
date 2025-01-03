@@ -1,6 +1,7 @@
 {% extends "admin_panel_app/base.html" %}
+{% load i18n %}
 
-{% block title %}Add To Favorite{% endblock %}
+{% block title %}{% trans 'Add To Favorite' %}{% endblock %}
 
 {% block content %}
 
@@ -18,7 +19,7 @@
         <div class="col-md-12">
             <div class="card mt-5">
                 <div class="card-header bg-orange text-white">
-                    <h3 class="card-title mb-0">Add To Favorite</h3>
+                    <h3 class="card-title mb-0">{% trans 'Add To Favorite' %}</h3>
                 </div>
                 <div class="card-body">
                     <form method="post">
@@ -43,7 +44,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <button type="submit" class="btn btn-orange btn-sm">Add to Favorite</button>
+                            <button type="submit" class="btn btn-orange btn-sm">{% trans 'Add To Favorite' %}</button>
                         </div>
                     </form>
                 </div>
@@ -51,11 +52,11 @@
         </div>
 
     {% else %}
-        <h3 class="text-center text-danger">You do not have access to this page !!!</h1>
+        <h3 class="text-center text-danger">{% trans 'You do not have access to this page !!!' %}</h1>
     {% endif %}
 
     <div class="mb-3 mt-3">
-        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_favorites_list' %}">Back</a>
+        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_favorites_list' %}">{% trans 'Back' %}</a>
     </div>
 
 {% endblock %}

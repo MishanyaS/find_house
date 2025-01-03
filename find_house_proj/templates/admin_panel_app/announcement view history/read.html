@@ -1,34 +1,35 @@
 {% extends "admin_panel_app/base.html" %}
+{% load i18n %}
 
-{% block title %}Announcement View History Details{% endblock %}
+{% block title %}{% trans 'Announcement View History Details' %}{% endblock %}
 
 {% block content %}
 
-    <h3 class="text-center">Announcement View History Details</h3>
+    <h3 class="text-center">{% trans 'Announcement View History Details' %}</h3>
 
     <table class="table table-striped">
         <tbody>
             <tr>
-                <th>ID</th>
+                <th>{% trans 'ID' %}</th>
                 <td>{{ announcement_view_history.id }}</td>
             </tr>
             <tr>
-                <th>Announcement ID</th>
+                <th>{% trans 'Announcement ID' %}</th>
                 <td>{{ announcement_view_history.announcement_id }}</td>
             </tr>
             <tr>
-                <th>User ID</th>
+                <th>{% trans 'User ID' %}</th>
                 <td>{{ announcement_view_history.user_id }}</td>
             </tr>
             <tr>
-                <th>Date</th>
+                <th>{% trans 'Date' %}</th>
                 <td>{{ announcement_view_history.date }}</td>
             </tr>
         </tbody>
     </table>
 
     <div class="mb-3 mt-3">
-        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_announcement_view_histories_list' %}">Back</a>
+        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_announcement_view_histories_list' %}">{% trans 'Back' %}</a>
     </div>
 
 {% endblock content %}

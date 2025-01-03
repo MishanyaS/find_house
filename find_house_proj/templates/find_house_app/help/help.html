@@ -1,148 +1,149 @@
 {% extends "find_house_app/base.html" %}
 
 {% load static %}
+{% load i18n %}
 
-{% block title %}FAQ{% endblock %}
+{% block title %}{% trans 'FAQ' %}{% endblock %}
 
 {% block content %}
 
-    <h3 class="text-center">FAQ</h3>
+    <h3 class="text-center">{% trans 'FAQ' %}</h3>
 
-    <input type="text" id="searchInput" class="custom-form-control mb-3" placeholder="Search FAQ">
+    <input type="text" id="searchInput" class="custom-form-control mb-3" placeholder="{% trans 'Search FAQ' %}">
 
     <div class="list-group" id="faqList">
         <div href="#" class="list-group-item list-group-item-action  bg-orange-list" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Real Estate</h5>
+                <h5 class="mb-1">{% trans 'Real Estate' %}</h5>
             </div>
             <p class="mb-1">
-                Real Estate – Property consisting of land and any buildings or structures on it, as well as natural resources such as crops or minerals.
+                {% trans 'Real Estate – Property consisting of land and any buildings or structures on it, as well as natural resources such as crops or minerals.' %}
             </p>
         </div>
 
         <div href="#" class="list-group-item list-group-item-action  bg-orange-list" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Property</h5>
+                <h5 class="mb-1">{% trans 'Property' %}</h5>
             </div>
             <p class="mb-1">
-                Property – Anything that is owned by a person or entity, including real estate and personal items. In real estate, it typically refers to land and buildings.
+                {% trans 'Property – Anything that is owned by a person or entity, including real estate and personal items. In real estate, it typically refers to land and buildings.' %}
             </p>
         </div>
 
         <div href="#" class="list-group-item list-group-item-action  bg-orange-list" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Landlord</h5>
+                <h5 class="mb-1">{% trans 'Landlord' %}</h5>
             </div>
             <p class="mb-1">
-                Landlord – A person who owns a property and rents it out to tenants for residential or commercial purposes.
+                {% trans 'Landlord – A person who owns a property and rents it out to tenants for residential or commercial purposes.' %}
             </p>
         </div>
 
         <div href="#" class="list-group-item list-group-item-action  bg-orange-list" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Tenant</h5>
+                <h5 class="mb-1">{% trans 'Tenant' %}</h5>
             </div>
             <p class="mb-1">
-                Tenant – A person or entity who rents property from a landlord and has the right to use it for a specific period in exchange for payment (rent).
+                {% trans 'Tenant – A person or entity who rents property from a landlord and has the right to use it for a specific period in exchange for payment (rent).' %}
             </p>
         </div>
 
         <div href="#" class="list-group-item list-group-item-action  bg-orange-list" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Lease</h5>
+                <h5 class="mb-1">{% trans 'Lease' %}</h5>
             </div>
             <p class="mb-1">
-                Lease – A legal contract between a landlord and tenant, outlining the terms and conditions under which the tenant can use the property for a set period.
+                {% trans 'Lease – A legal contract between a landlord and tenant, outlining the terms and conditions under which the tenant can use the property for a set period.' %}
             </p>
         </div>
 
         <div href="#" class="list-group-item list-group-item-action  bg-orange-list" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Rent</h5>
+                <h5 class="mb-1">{% trans 'Rent' %}</h5>
             </div>
             <p class="mb-1">
-                Rent – The regular payment made by a tenant to a landlord for the use of property.
+                {% trans 'Rent – The regular payment made by a tenant to a landlord for the use of property.' %}
             </p>
         </div>
 
         <div href="#" class="list-group-item list-group-item-action  bg-orange-list" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Mortgage</h5>
+                <h5 class="mb-1">{% trans 'Mortgage' %}</h5>
             </div>
             <p class="mb-1">
-                Mortgage – A loan provided by a bank or financial institution to buy real estate, where the property itself serves as collateral for the loan.
+                {% trans 'Mortgage – A loan provided by a bank or financial institution to buy real estate, where the property itself serves as collateral for the loan.' %}
             </p>
         </div>
 
         <div href="#" class="list-group-item list-group-item-action  bg-orange-list" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Down Payment</h5>
+                <h5 class="mb-1">{% trans 'Down Payment' %}</h5>
             </div>
             <p class="mb-1">
-                Down Payment – The initial payment made when buying a property, usually expressed as a percentage of the total purchase price, with the remainder covered by a mortgage.
+                {% trans 'Down Payment – The initial payment made when buying a property, usually expressed as a percentage of the total purchase price, with the remainder covered by a mortgage.' %}
             </p>
         </div>
 
         <div href="#" class="list-group-item list-group-item-action  bg-orange-list" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Appraisal</h5>
+                <h5 class="mb-1">{% trans 'Appraisal' %}</h5>
             </div>
             <p class="mb-1">
-                Appraisal – An assessment of the market value of a property, typically done before a sale or for loan purposes.
+                {% trans 'Appraisal – An assessment of the market value of a property, typically done before a sale or for loan purposes.' %}
             </p>
         </div>
 
         <div href="#" class="list-group-item list-group-item-action  bg-orange-list" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Foreclosure</h5>
+                <h5 class="mb-1">{% trans 'Foreclosure' %}</h5>
             </div>
             <p class="mb-1">
-                Foreclosure – The legal process by which a lender takes possession of a property from a borrower who has defaulted on their mortgage payments.
+                {% trans 'Foreclosure – The legal process by which a lender takes possession of a property from a borrower who has defaulted on their mortgage payments.' %}
             </p>
         </div>
 
         <div href="#" class="list-group-item list-group-item-action  bg-orange-list" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Equity</h5>
+                <h5 class="mb-1">{% trans 'Equity' %}</h5>
             </div>
             <p class="mb-1">
-                Equity – The difference between the market value of a property and the amount still owed on the mortgage. Essentially, it’s the portion of the property that the owner truly owns.
+                {% trans 'Equity – The difference between the market value of a property and the amount still owed on the mortgage. Essentially, it’s the portion of the property that the owner truly owns.' %}
             </p>
         </div>
 
         <div href="#" class="list-group-item list-group-item-action  bg-orange-list" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Zoning</h5>
+                <h5 class="mb-1">{% trans 'Zoning' %}</h5>
             </div>
             <p class="mb-1">
-                Zoning – The legal regulations that dictate how land can be used in different areas, such as residential, commercial, or industrial purposes.
+                {% trans 'Zoning – The legal regulations that dictate how land can be used in different areas, such as residential, commercial, or industrial purposes.' %}
             </p>
         </div>
 
         <div href="#" class="list-group-item list-group-item-action  bg-orange-list" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Closing Costs</h5>
+                <h5 class="mb-1">{% trans 'Closing Costs' %}</h5>
             </div>
             <p class="mb-1">
-                Closing Costs – The various fees and expenses, including taxes and legal fees, paid at the closing of a real estate transaction when the property is officially transferred from seller to buyer.
+                {% trans 'Closing Costs – The various fees and expenses, including taxes and legal fees, paid at the closing of a real estate transaction when the property is officially transferred from seller to buyer.' %}
             </p>
         </div>
 
         <div href="#" class="list-group-item list-group-item-action  bg-orange-list" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Real Estate Agent</h5>
+                <h5 class="mb-1">{% trans 'Real Estate Agent' %}</h5>
             </div>
             <p class="mb-1">
-                Real Estate Agent – A professional who assists buyers, sellers, or renters in the process of purchasing, selling, or leasing real estate, usually earning a commission.
+                {% trans 'Real Estate Agent – A professional who assists buyers, sellers, or renters in the process of purchasing, selling, or leasing real estate, usually earning a commission.' %}
             </p>
         </div>
 
         <div href="#" class="list-group-item list-group-item-action  bg-orange-list" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Broker</h5>
+                <h5 class="mb-1">{% trans 'Broker' %}</h5>
             </div>
             <p class="mb-1">
-                Broker – A licensed individual or company who can facilitate real estate transactions and employ real estate agents. Brokers are often required to have more experience and training than agents.
+                {% trans 'Broker – A licensed individual or company who can facilitate real estate transactions and employ real estate agents. Brokers are often required to have more experience and training than agents.' %}
             </p>
         </div>
     </div>

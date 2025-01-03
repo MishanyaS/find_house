@@ -6,6 +6,7 @@ from users_app.models import CustomUser
 from django.forms.models import inlineformset_factory
 from django.core.exceptions import ValidationError
 from django.utils.safestring import mark_safe
+from django.utils.translation import gettext_lazy as _
 
 # region AnnouncementImage forms
 class AnnouncementImageForm(forms.ModelForm):
@@ -17,13 +18,13 @@ class AnnouncementImageForm(forms.ModelForm):
         widgets = {
             'announcement': forms.Select(attrs={'class': 'custom-form-select'}),
             'image': forms.ClearableFileInput(attrs={'class': 'custom-form-control form-control'}),
-            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': 'Enter a description or caption for the image'}),
+            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': _('Enter a description or caption for the image')}),
         }
         
         labels = {
-            'announcement': 'Select Announcement',
-            'image': 'Upload Image',
-            'description': 'Image Description'
+            'announcement': _('Select Announcement'),
+            'image': _('Upload Image'),
+            'description': _('Image Description')
         }
         
     def __init__(self, *args, **kwargs):
@@ -69,13 +70,13 @@ class CategoryForm(forms.ModelForm):
         exclude = ['date_added']
         
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': 'Enter category name'}),
-            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': 'Enter description'}),
+            'name': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': _('Enter category name')}),
+            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': _('Enter description')}),
         }
         
         labels = {
-            'name': 'Name',
-            'description': 'Description',
+            'name': _('Name'),
+            'description': _('Description'),
         }
         
     def __init__(self, *args, **kwargs):
@@ -115,25 +116,25 @@ class AnnouncementForm(forms.ModelForm):
         exclude = ['views', 'date_added']
 
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder' : 'Title'}),
-            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': 'Enter a description'}),
-            'price': forms.NumberInput(attrs={'class': 'custom-form-control', 'placeholder' : 'Price'}),
-            'square': forms.NumberInput(attrs={'class': 'custom-form-control', 'placeholder' : 'Square'}),
+            'title': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder' : _('Title')}),
+            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': _('Enter a description')}),
+            'price': forms.NumberInput(attrs={'class': 'custom-form-control', 'placeholder' : _('Price')}),
+            'square': forms.NumberInput(attrs={'class': 'custom-form-control', 'placeholder' : _('Square')}),
             'owner': forms.HiddenInput(),
             'category': forms.Select(attrs={'class': 'custom-form-select'}),
             'status': forms.Select(attrs={'class': 'custom-form-select'}),
-            'address': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder' : 'Address'}),
+            'address': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder' : _('Address')}),
         }
 
         labels = {
-            'title': 'Title',
-            'description': 'Description',
-            'price': 'Price',
-            'square': 'Square',
-            'owner': 'Owner',
-            'category': 'Category',
-            'status': 'Status',
-            'address': 'Address'
+            'title': _('Title'),
+            'description': _('Description'),
+            'price': _('Price'),
+            'square': _('Square'),
+            'owner': _('Owner'),
+            'category': _('Category'),
+            'status': _('Status'),
+            'address': _('Address')
         }
 
     def __init__(self, *args, **kwargs):
@@ -243,13 +244,13 @@ class NewsForm(forms.ModelForm):
         exclude = ['date_added']
         
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': 'Title'}),
-            'content': forms.Textarea(attrs={'class': 'custom-form-control', 'placeholder': 'Content', 'rows': 3}),
+            'title': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': _('Title')}),
+            'content': forms.Textarea(attrs={'class': 'custom-form-control', 'placeholder': _('Content'), 'rows': 3}),
         }
         
         labels = {
-            'title': 'Title',
-            'content': 'Content',
+            'title': _('Title'),
+            'content': _('Content'),
         }
         
     def __init__(self, *args, **kwargs):
@@ -294,8 +295,8 @@ class AnnouncementViewHistoryForm(forms.ModelForm):
         }
         
         labels = {
-            'user': 'User',
-            'announcement': 'Announcement Viewed',
+            'user': _('User'),
+            'announcement': _('Announcement Viewed'),
         }
 # endregion
 
@@ -306,11 +307,11 @@ class CommentForm(forms.ModelForm):
         fields = ['text']
         
         widgets = {
-            'text': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': 'Comment'}),
+            'text': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 3, 'placeholder': _('Comment')}),
         }
         
         labels = {
-            'text': 'Comment',
+            'text': _('Comment'),
         }
         
     def __init__(self, *args, **kwargs):

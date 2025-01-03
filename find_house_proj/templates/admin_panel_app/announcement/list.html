@@ -1,12 +1,13 @@
 {% extends "admin_panel_app/base.html" %}
 
 {% load static %}
+{% load i18n %}
 
-{% block title %}Announcements List{% endblock %}
+{% block title %}{% trans 'Announcements List' %}{% endblock %}
 
 {% block content %}
 
-    <h3 class="text-center">Announcements List</h3>
+    <h3 class="text-center">{% trans 'Announcements List' %}</h3>
     <div class="mb-3">
         <input type="text" id="announcementsFilterInput" class="custom-form-control" placeholder="Enter filter...">
     </div>
@@ -15,16 +16,16 @@
             <table class="table table-hover" data-table="announcements">
                 <thead>
                     <tr>
-                        <th class="text-nowrap">ID</th>
-                        <th class="text-nowrap">Date Added</th>
-                        <th class="text-nowrap">Category ID</th>
-                        <th class="text-nowrap">Owner ID</th>
-                        <th class="text-nowrap">Status</th>
-                        <th class="text-nowrap">Title</th>
-                        <th class="text-nowrap">Views</th>
-                        <th class="text-nowrap">Edit</th>
-                        <th class="text-nowrap">Details</th>
-                        <th class="text-nowrap">Delete</th>
+                        <th class="text-nowrap">{% trans 'ID' %}</th>
+                        <th class="text-nowrap">{% trans 'Date Added' %}</th>
+                        <th class="text-nowrap">{% trans 'Category ID' %}</th>
+                        <th class="text-nowrap">{% trans 'Owner ID' %}</th>
+                        <th class="text-nowrap">{% trans 'Status' %}</th>
+                        <th class="text-nowrap">{% trans 'Title' %}</th>
+                        <th class="text-nowrap">{% trans 'Views' %}</th>
+                        <th class="text-nowrap">{% trans 'Edit' %}</th>
+                        <th class="text-nowrap">{% trans 'Details' %}</th>
+                        <th class="text-nowrap">{% trans 'Delete' %}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,17 +40,17 @@
                             <td>{{ announcement.views }}</td>
                             <td>
                                 <a href="{% url 'admin_panel_app:admin_announcement_update' pk=announcement.pk %}" class="btn btn-blue btn-sm w-text-75 d-flex align-items-center text-decoration-none">
-                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/edit.svg' %}" alt="Edit" class="mr-1">Edit
+                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/edit.svg' %}" alt="{% trans 'Edit' %}" class="mr-1">{% trans 'Edit' %}
                                 </a>
                             </td>
                             <td>
                                 <a href="{% url 'admin_panel_app:admin_announcement_read' slug=announcement.slug|slugify %}" class="btn btn-grey btn-sm w-text-75 d-flex align-items-center text-decoration-none">
-                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/details.svg' %}" alt="Edit" class="mr-1">Details
+                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/details.svg' %}" alt="{% trans 'Details' %}" class="mr-1">{% trans 'Details' %}
                                 </a>
                             </td>
                             <td>
                                 <a href="{% url 'admin_panel_app:admin_announcement_delete' pk=announcement.pk %}" class="btn btn-red btn-sm w-text-75 d-flex align-items-center text-decoration-none">
-                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/delete.svg' %}" alt="Edit" class="mr-1">Delete
+                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/delete.svg' %}" alt="{% trans 'Delete' %}" class="mr-1">{% trans 'Delete' %}
                                 </a>
                             </td>
                         </tr>
@@ -58,11 +59,11 @@
             </table>
         </div>
     {% else %}
-        <h3 class="text-center text-danger">You do not have any announcements !!!</h3>
+        <h3 class="text-center text-danger">{% trans 'You do not have any announcements !!!' %}</h3>
     {% endif %}
 
     <div class="mb-3">
-        <a class="btn btn-orange btn-sm" href="{% url 'admin_panel_app:admin_announcement_create' %}">Add Announcement</a>
+        <a class="btn btn-orange btn-sm" href="{% url 'admin_panel_app:admin_announcement_create' %}">{% trans 'Add Announcement' %}</a>
     </div>
 
     <script src="{% static 'admin_panel_app/js/announcements_tables_search.js' %}"></script>

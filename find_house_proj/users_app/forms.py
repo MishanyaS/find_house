@@ -6,43 +6,44 @@ from django.core.exceptions import ValidationError
 import datetime
 from django.contrib.auth import authenticate
 from django.utils.safestring import mark_safe
+from django.utils.translation import gettext_lazy as _
 
 # region Registration forms
 class RegistrationForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Enter Password', 'class': 'custom-form-control'}), label="Password")
-    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password', 'class': 'custom-form-control'}), label="Confirm Password")
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': _('Enter Password'), 'class': 'custom-form-control'}), label=_('Password'))
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': _('Confirm Password'), 'class': 'custom-form-control'}), label=_('Confirm Password'))
     
     class Meta:
         model = CustomUser
         fields = ['username', 'email', 'password', 'password2', 'first_name', 'last_name', 'phone_number', 'birth_date', 'address', 'avatar', 'description', 'is_admin']
 
         widgets = {
-            'username': forms.TextInput(attrs={'placeholder': 'Username', 'class': 'custom-form-control'}),
-            'email': forms.EmailInput(attrs={'placeholder': 'Email Address', 'class': 'custom-form-control'}),
-            'password': forms.PasswordInput(attrs={'placeholder': 'Enter Password', 'class': 'custom-form-control'}),
-            'password2' : forms.PasswordInput(attrs={'placeholder': 'Confirm Password', 'class': 'custom-form-control'}),
-            'first_name': forms.TextInput(attrs={'placeholder': 'First Name', 'class': 'custom-form-control'}),
-            'last_name': forms.TextInput(attrs={'placeholder': 'Last Name', 'class': 'custom-form-control'}),
+            'username': forms.TextInput(attrs={'placeholder': _('Username'), 'class': 'custom-form-control'}),
+            'email': forms.EmailInput(attrs={'placeholder': _('Email Address'), 'class': 'custom-form-control'}),
+            'password': forms.PasswordInput(attrs={'placeholder': _('Enter Password'), 'class': 'custom-form-control'}),
+            'password2' : forms.PasswordInput(attrs={'placeholder': _('Confirm Password'), 'class': 'custom-form-control'}),
+            'first_name': forms.TextInput(attrs={'placeholder': _('First Name'), 'class': 'custom-form-control'}),
+            'last_name': forms.TextInput(attrs={'placeholder': _('Last Name'), 'class': 'custom-form-control'}),
             'phone_number': forms.TextInput(attrs={'placeholder': '999999999', 'class': 'custom-form-control'}),
             'birth_date': forms.DateInput(attrs={'type': 'date', 'class': 'custom-form-control'}),
-            'address': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': 'Enter your Address'}),
+            'address': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': _('Enter your Address')}),
             'avatar': forms.ClearableFileInput(attrs={'class': 'custom-form-control form-control'}),
-            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 4, 'cols': 50, 'placeholder': 'Tell us something about yourself'}),
+            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 4, 'cols': 50, 'placeholder': _('Tell us something about yourself')}),
             'is_admin': forms.HiddenInput(attrs={'class': 'form-check-input',})
         }
         
         labels = {
-            'username': 'Username',
-            'email': 'Email',
-            'password': 'Password',
-            'password2' : 'Confirm Password',
-            'first_name': 'First Name',
-            'last_name': 'Last Name',
-            'phone_number': 'Phone Number',
-            'birth_date': 'Birth Date',
-            'address': 'Address',
-            'avatar': 'Avatar',
-            'description': 'Description',
+            'username': _('Username'),
+            'email': _('Email'),
+            'password': _('Password'),
+            'password2' : _('Confirm Password'),
+            'first_name': _('First Name'),
+            'last_name': _('Last Name'),
+            'phone_number': _('Phone Number'),
+            'birth_date': _('Birth Date'),
+            'address': _('Address'),
+            'avatar': _('Avatar'),
+            'description': _('Description'),
         }
         
     def __init__(self, *args, **kwargs):
@@ -185,38 +186,38 @@ class RegistrationForm(forms.ModelForm):
 
 # region EditUser forms
 class EditUserForm(forms.ModelForm):
-    old_password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Old Password', 'class': 'custom-form-control'}), required=False, label="Old Password")
-    new_password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'New Password', 'class': 'custom-form-control'}), required=False, label="New Password")
-    new_password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm New Password', 'class': 'custom-form-control'}), required=False, label="Confirm New Password")
+    old_password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Old Password', 'class': 'custom-form-control'}), required=False, label=_('Old Password'))
+    new_password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'New Password', 'class': 'custom-form-control'}), required=False, label=_('New Password'))
+    new_password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm New Password', 'class': 'custom-form-control'}), required=False, label=_('Confirm New Password'))
     
     class Meta:
         model = CustomUser
         fields = ['username', 'email', 'first_name', 'last_name', 'phone_number', 'birth_date', 'address', 'avatar', 'description', 'is_admin']
 
         widgets = {
-            'username': forms.TextInput(attrs={'placeholder': 'Username', 'class': 'custom-form-control'}),
-            'email': forms.EmailInput(attrs={'placeholder': 'Email Address', 'class': 'custom-form-control'}),
-            'first_name': forms.TextInput(attrs={'placeholder': 'First Name', 'class': 'custom-form-control'}),
-            'last_name': forms.TextInput(attrs={'placeholder': 'Last Name', 'class': 'custom-form-control'}),
+            'username': forms.TextInput(attrs={'placeholder': _('Username'), 'class': 'custom-form-control'}),
+            'email': forms.EmailInput(attrs={'placeholder': _('Email Address'), 'class': 'custom-form-control'}),
+            'first_name': forms.TextInput(attrs={'placeholder': _('First Name'), 'class': 'custom-form-control'}),
+            'last_name': forms.TextInput(attrs={'placeholder': _('Last Name'), 'class': 'custom-form-control'}),
             'phone_number': forms.TextInput(attrs={'placeholder': '999999999', 'class': 'custom-form-control'}),
             'birth_date': forms.DateInput(attrs={'type': 'date', 'class': 'custom-form-control'}),
-            'address': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': 'Enter your Address'}),
+            'address': forms.TextInput(attrs={'class': 'custom-form-control', 'placeholder': _('Enter your Address')}),
             'avatar': forms.ClearableFileInput(attrs={'class': 'custom-form-control form-control'}),
-            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 4, 'cols': 50, 'placeholder': 'Tell us something about yourself'}),
+            'description': forms.Textarea(attrs={'class': 'custom-form-control', 'rows': 4, 'cols': 50, 'placeholder': _('Tell us something about yourself')}),
             'is_admin': forms.HiddenInput(attrs={'class': 'form-check-input',})
         }
         
         labels = {
-            'username': 'Username',
-            'email': 'Email',
-            'first_name': 'First Name',
-            'last_name': 'Last Name',
-            'phone_number': 'Phone Number',
-            'birth_date': 'Birth Date',
-            'address': 'Address',
-            'avatar': 'Avatar',
-            'description': 'Description',
-            'is_admin': 'Is Admin',
+            'username': _('Username'),
+            'email': _('Email'),
+            'first_name': _('First Name'),
+            'last_name': _('Last Name'),
+            'phone_number': _('Phone Number'),
+            'birth_date': _('Birth Date'),
+            'address': _('Address'),
+            'avatar': _('Avatar'),
+            'description': _('Description'),
+            'is_admin': _('Is Admin'),
         }
         
     def __init__(self, *args, **kwargs):
@@ -374,16 +375,16 @@ class EditUserForm(forms.ModelForm):
 
 # region Login forms
 class LoginForm(AuthenticationForm):
-    username = forms.CharField(label="Username", max_length=150, widget=forms.TextInput(attrs={'placeholder': 'Username', 'class': 'custom-form-control'}))
-    password = forms.CharField(label="Password", strip=False, widget=forms.PasswordInput(attrs={'placeholder': 'Enter Password', 'class': 'custom-form-control'}))
+    username = forms.CharField(label=_('Username'), max_length=150, widget=forms.TextInput(attrs={'placeholder': _('Username'), 'class': 'custom-form-control'}))
+    password = forms.CharField(label=_('Password'), strip=False, widget=forms.PasswordInput(attrs={'placeholder': _('Enter Password'), 'class': 'custom-form-control'}))
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
         self.fields['username'].required = False
         self.fields['password'].required = False
-        self.fields['username'].widget.attrs.update({'class': 'custom-form-control', 'placeholder': 'Username'})
-        self.fields['password'].widget.attrs.update({'class': 'custom-form-control', 'placeholder': 'Enter Password'})
+        self.fields['username'].widget.attrs.update({'class': 'custom-form-control', 'placeholder': _('Username')})
+        self.fields['password'].widget.attrs.update({'class': 'custom-form-control', 'placeholder': _('Enter Password')})
         
     def clean_username(self):
         username = self.cleaned_data.get('username')
@@ -413,7 +414,7 @@ class LoginForm(AuthenticationForm):
 
 # region CustomPasswordReset forms
 class CustomPasswordResetForm(PasswordResetForm):
-    email = forms.EmailField(max_length=255, widget=forms.EmailInput(attrs={'autocomplete': 'email', 'class': 'custom-form-control', 'placeholder': 'Email'}),)
+    email = forms.EmailField(max_length=255, widget=forms.EmailInput(attrs={'autocomplete': 'email', 'class': 'custom-form-control', 'placeholder': _('Email')}),)
     
     class Meta:
         model = CustomUser

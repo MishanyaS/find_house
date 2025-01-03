@@ -1,39 +1,40 @@
 {% extends "admin_panel_app/base.html" %}
+{% load i18n %}
 
-{% block title %}Announcement Image Details{% endblock %}
+{% block title %}{% trans 'Announcement Image Details' %}{% endblock %}
 
 {% block content %}
 
-    <h3 class="text-center">Announcement Image Details</h3>
+    <h3 class="text-center">{% trans 'Announcement Image Details' %}</h3>
 
     <table class="table table-striped">
         <tbody>
             <tr>
-                <th>ID</th>
+                <th>{% trans 'ID' %}</th>
                 <td>{{ announcement_images.id }}</td>
             </tr>
             <tr>
-                <th>Announcement ID</th>
+                <th>{% trans 'Announcement ID' %}</th>
                 <td>{{ announcement_images.car_id }}</td>
             </tr>
             <tr>
-                <th>Date Added</th>
+                <th>{% trans 'Date Added' %}</th>
                 <td>{{ announcement_images.date_added }}</td>
             </tr>
             <tr>
-                <th>Description</th>
+                <th>{% trans 'Description' %}</th>
                 <td>{{ announcement_images.description }}</td>
             </tr>
             <tr>
-                <th>Image Height</th>
+                <th>{% trans 'Image Height' %}</th>
                 <td>{{ announcement_images.image_height }}</td>
             </tr>
             <tr>
-                <th>Image Width</th>
+                <th>{% trans 'Image Width' %}</th>
                 <td>{{ announcement_images.image_width }}</td>
             </tr>
             <tr>
-                <th>Image</th>
+                <th>{% trans 'Image' %}</th>
                 <td>{{ announcement_images.image }}</td>
             </tr>
 
@@ -41,7 +42,7 @@
     </table>
 
     <div class="mb-3 mt-3">
-        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_announcement_images_list' %}">Back</a>
+        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_announcement_images_list' %}">{% trans 'Back' %}</a>
     </div>
 
 {% endblock content %}

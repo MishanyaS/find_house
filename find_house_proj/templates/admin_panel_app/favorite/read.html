@@ -1,31 +1,32 @@
 {% extends "admin_panel_app/base.html" %}
+{% load i18n %}
 
-{% block title %}Favorite Details{% endblock %}
+{% block title %}{% trans 'Favorite Details' %}{% endblock %}
 
 {% block content %}
 
-    <h3 class="text-center">Favorite Details</h3>
+    <h3 class="text-center">{% trans 'Favorite Details' %}</h3>
 
     <table class="table table-striped">
         <tbody>
             <tr>
-                <th>ID</th>
+                <th>{% trans 'ID' %}</th>
                 <td>{{ favorite.id }}</td>
             </tr>
             <tr>
-                <th>Announcement ID</th>
+                <th>{% trans 'Announcement ID' %}</th>
                 <td>{{ favorite.announcement_id }}</td>
             </tr>
             <tr>
-                <th>User ID</th>
+                <th>{% trans 'User ID' %}</th>
                 <td>{{ favorite.user_id }}</td>
             </tr>
             <tr>
-                <th>Is In Favorite</th>
+                <th>{% trans 'Is In Favorite' %}</th>
                 <td>{{ favorite.is_in_favorite }}</td>
             </tr>
             <tr>
-                <th>Date Added</th>
+                <th>{% trans 'Date Added' %}</th>
                 <td>{{ favorite.date_added }}</td>
             </tr>
 
@@ -33,7 +34,7 @@
     </table>
 
     <div class="mb-3 mt-3">
-        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_favorites_list' %}">Back</a>
+        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_favorites_list' %}">{% trans 'Back' %}</a>
     </div>
 
 {% endblock content %}

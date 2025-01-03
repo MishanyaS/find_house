@@ -1,7 +1,8 @@
 {% extends "find_house_app/base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Chat{% endblock %}
+{% block title %}{% trans 'Chat' %}{% endblock %}
 
 {% block content %}
     {% if user.is_authenticated %}
@@ -11,7 +12,7 @@
                     <div class="col-md-12">
                         {% for participant in chat.participants.all %}
                             {% if participant != user %}
-                                <h2 class="text-center">Chats with: {{ participant.username }} ({{ participant.first_name }} {{ participant.last_name }})</h2>
+                                <h2 class="text-center">{% trans 'Chats with' %}: {{ participant.username }} ({{ participant.first_name }} {{ participant.last_name }})</h2>
                             {% endif %}
                         {% endfor %}
 
@@ -29,15 +30,15 @@
                                 {% if not message.is_deleted %}
                                     <div class="card {% if user == message.sender %} bg-orange text-white {% else %} bg-light {% endif %} mb-3 ">
                                         <div class="card-body">
-                                            <strong>{{ message.sender.username }} {% if message.sender.username == user.username %}(You){% endif %}</strong>: {{ message.content }}
+                                            <strong>{{ message.sender.username }} {% if message.sender.username == user.username %}({% trans 'You' %}){% endif %}</strong>: {{ message.content }}
                                             <br>
                                             <small class="text-muted">{{ message.timestamp }}</small>
                                             {% if user == message.sender %}
                                                 <form method="post" action="{% url 'chat_app:chat_read' chat_id=chat.id %}">
                                                     {% csrf_token %}
                                                     <input type="hidden" name="message_id" value="{{ message.id }}">
-                                                    <button type="submit" name="delete_message" class="btn btn-sm btn-red float-right">Delete</button>
-                                                    <a href="{% url 'chat_app:edit_message' chat_id=chat.id message_id=message.id %}" class="btn btn-sm btn-blue float-right mr-2">Edit</a>
+                                                    <button type="submit" name="delete_message" class="btn btn-sm btn-red float-right">{% trans 'Delete' %}</button>
+                                                    <a href="{% url 'chat_app:edit_message' chat_id=chat.id message_id=message.id %}" class="btn btn-sm btn-blue float-right mr-2">{% trans 'Edit' %}</a>
                                                 </form>
                                             {% endif %}
                                         </div>
@@ -45,12 +46,12 @@
                                 {% endif %}
                             {% endfor %}                
                         {% else %}
-                            <h3 class="text-center text-danger">There is no any messages !!!</h1>
+                            <h3 class="text-center text-danger">{% trans 'There is no any messages !!!' %}</h1>
                         {% endif %}
 
                     </div>
                 {% else %}
-                    <h3 class="text-center text-danger">This chat does not exist !!!</h1>
+                    <h3 class="text-center text-danger">{% trans 'This chat does not exist !!!' %}</h1>
                 {% endif %}
             </div>
         </div>
@@ -65,11 +66,11 @@
                 </div>
 
                 <div class="mb-3">
-                    <button type="submit" class="btn btn-orange btn-sm" id="id_send_btn">Send</button>
+                    <button type="submit" class="btn btn-orange btn-sm" id="id_send_btn">{% trans 'Send' %}</button>
                 </div>
             </form>
         </div>
     {% else %}
-        <h3 class="text-center text-danger">You do not have access to this page !!!</h1>
+        <h3 class="text-center text-danger">{% trans 'You do not have access to this page !!!' %}</h1>
     {% endif %}
 {% endblock content %}

@@ -1,8 +1,9 @@
 {% extends "find_house_app/base.html" %}
 
 {% load static %}
+{% load i18n %}
 
-{% block title %}Login{% endblock %}
+{% block title %}{% trans 'Login' %}{% endblock %}
 
 {% block content %}
 
@@ -18,7 +19,7 @@
     <div class="col-md-12">
         <div class="card mt-5">
             <div class="card-header bg-orange text-white">
-                <h3 class="card-title mb-0">Login</h3>
+                <h3 class="card-title mb-0">{% trans 'Login' %}</h3>
             </div>
             <div class="card-body">
                 <form method="POST" id="loginForm">
@@ -37,7 +38,7 @@
                     </div>
             
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-orange btn-sm" id="id_login_btn">Login</button>
+                        <button type="submit" class="btn btn-orange btn-sm" id="id_login_btn">{% trans 'Login' %}</button>
                     </div>
                 </form>
             </div>

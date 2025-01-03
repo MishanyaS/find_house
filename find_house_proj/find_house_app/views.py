@@ -12,6 +12,12 @@ from users_app.models import CustomUser
 from django.http import JsonResponse
 from admin_panel_app.models import Content
 from slugify import slugify
+from django.conf import settings
+from urllib.parse import urlparse
+from django.http import HttpResponseRedirect
+from django.urls.base import resolve, reverse
+from django.urls.exceptions import Resolver404
+from django.utils import translation
 
 # Create your views here.
 # region Basic views
@@ -79,6 +85,7 @@ class HelpView(TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['content'] = Content.objects.order_by('-change_date').first()
 
         return context
 
@@ -113,6 +120,8 @@ class SearchBySiteView(View):
             'categories': categories,
             'news': news,
         }
+
+        context['content'] = Content.objects.order_by('-change_date').first()
 
         return render(request, self.template_name, context)
 # endregion
@@ -149,6 +158,7 @@ class AnnouncementCreateView(CreateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['content'] = Content.objects.order_by('-change_date').first()
         
         if self.request.POST:
             context['image_formset'] = AnnouncementImageFormSet(self.request.POST, self.request.FILES, instance=self.object)
@@ -174,6 +184,7 @@ class AnnouncementDetailView(DetailView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['content'] = Content.objects.order_by('-change_date').first()
         if self.request.POST:
             context['image_formset'] = AnnouncementImageFormSet(self.request.POST, self.request.FILES, instance=self.object)
         else:
@@ -198,6 +209,7 @@ class AnnouncementUpdateView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['content'] = Content.objects.order_by('-change_date').first()
         
         if self.request.POST:
             context['image_formset'] = AnnouncementImageFormSet(self.request.POST, self.request.FILES, instance=self.object)
@@ -217,6 +229,12 @@ class AnnouncementDeleteView(DeleteView):
         
     def get_success_url(self):
         return reverse_lazy('users_app:profile_read', kwargs={'pk': self.request.user.pk})
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['content'] = Content.objects.order_by('-change_date').first()
+        
+        return context
 
 class SearchAnnouncementView(View):
     template_name = 'find_house_app/index.html'
@@ -282,6 +300,8 @@ class SearchAnnouncementView(View):
             'top_announcements': top_announcements,
         }
 
+        context['content'] = Content.objects.order_by('-change_date').first()
+
         return render(request, self.template_name, context)
 
 class SortAnnouncementView(View):
@@ -320,6 +340,8 @@ class SortAnnouncementView(View):
             'top_announcements': top_announcements,
         }
 
+        context['content'] = Content.objects.order_by('-change_date').first()
+
         return render(request, self.template_name, context)
     
 class AddToFavoritesView(View):
@@ -344,6 +366,12 @@ class AddToFavoritesView(View):
             return JsonResponse({'error': 'Error adding to favorites'}, status=500)
 
         return redirect('find_house_app:favorite')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['content'] = Content.objects.order_by('-change_date').first()
+        
+        return context
 # endregion
 
 # region News views
@@ -368,7 +396,8 @@ class NewsList(ListView):
 
         context['news'] = news
         context['categories'] = Category.objects.all()
-                    
+        context['content'] = Content.objects.order_by('-change_date').first()
+                            
         return context
 
 class NewsDetail(DetailView):
@@ -382,6 +411,12 @@ class NewsDetail(DetailView):
         obj.save()
 
         return obj
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['content'] = Content.objects.order_by('-change_date').first()
+        
+        return context
 
 class SearchNewsView(ListView):
     model = News
@@ -420,6 +455,8 @@ class SearchNewsView(ListView):
             'query': query,
         }
 
+        context['content'] = Content.objects.order_by('-change_date').first()
+
         return render(request, self.template_name, context)
     
 class SortNewsView(ListView):
@@ -453,6 +490,8 @@ class SortNewsView(ListView):
             'sort_news_by': sort_news_by,
         }
 
+        context['content'] = Content.objects.order_by('-change_date').first()
+
         return render(request, self.template_name, context)
 # endregion
 
@@ -463,6 +502,7 @@ class CategoriesListView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
+        context['content'] = Content.objects.order_by('-change_date').first()
             
         return context
 
@@ -473,6 +513,7 @@ class CategoryListView(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['content'] = Content.objects.order_by('-change_date').first()
 
         return context
 
@@ -500,6 +541,7 @@ class CategoryAnnouncementsView(ListView):
         context = super().get_context_data(**kwargs)
         context['cats'] = self.kwargs['cats'].title().replace('-', ' ')
         context['categories'] = Category.objects.all()
+        context['content'] = Content.objects.order_by('-change_date').first()
 
         category_announcements_list = self.get_queryset()
         paginator = Paginator(category_announcements_list, self.paginate_by)
@@ -545,6 +587,7 @@ class FavoriteView(ListView):
         context = super().get_context_data(**kwargs)
         context['favorites'] = Favorite.objects.filter(user=self.request.user)
         context['categories'] = Category.objects.all()
+        context['content'] = Content.objects.order_by('-change_date').first()
             
         return context
     
@@ -583,8 +626,15 @@ class CommentEditView(View):
     def get(self, request, pk):
         comment = get_object_or_404(Comment, pk=pk)
         form = CommentForm(instance=comment)
+
+        context = {
+            'form': form,
+            'comment': comment,
+        }
+
+        context['content'] = Content.objects.order_by('-change_date').first()
         
-        return render(request, self.template_name, {'form': form, 'comment': comment})
+        return render(request, self.template_name, context)
 
     def post(self, request, pk):
         comment = get_object_or_404(Comment, pk=pk)
@@ -595,7 +645,7 @@ class CommentEditView(View):
             return redirect('find_house_app:announcement_read', pk=comment.announcement.pk)
         else:
             return render(request, self.template_name, {'form': form, 'comment': comment})
-
+        
 class CommentDeleteView(View):
     def get(self, request, pk):
         comment = get_object_or_404(Comment, pk=pk)
@@ -606,3 +656,23 @@ class CommentDeleteView(View):
         return redirect('find_house_app:announcement_read', pk=comment.announcement.pk)
 # endregion
 
+# region Language views
+def set_language(request, language):
+    for lang, _ in settings.LANGUAGES:
+        translation.activate(lang)
+        try:
+            view = resolve(urlparse(request.META.get("HTTP_REFERER")).path)
+        except Resolver404:
+            view = None
+        if view:
+            break
+    if view:
+        translation.activate(language)
+        #next_url = reverse(view.url_name, args=view.args, kwargs=view.kwargs)
+        next_url = reverse('find_house_app:home')
+        response = HttpResponseRedirect(next_url)
+        response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
+    else:
+        response = HttpResponseRedirect('/')
+    return response
+# endregion

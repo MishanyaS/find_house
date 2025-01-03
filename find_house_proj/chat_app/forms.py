@@ -2,6 +2,7 @@ from django import forms
 from chat_app.models import Message
 from django.core.exceptions import ValidationError
 from django.utils.safestring import mark_safe
+from django.utils.translation import gettext_lazy as _
 
 # region Comment forms
 class MessageForm(forms.ModelForm):
@@ -10,11 +11,11 @@ class MessageForm(forms.ModelForm):
         fields = ['content',]
         
         widgets = {
-            'content': forms.Textarea(attrs={'class': 'custom-form-control', 'placeholder': 'Content', 'rows': '3'}),
+            'content': forms.Textarea(attrs={'class': 'custom-form-control', 'placeholder': _('Content'), 'rows': '3'}),
         }
         
         labels = {
-            'content': 'Message',
+            'content': _('Message'),
         }
         
     def __init__(self, *args, **kwargs):

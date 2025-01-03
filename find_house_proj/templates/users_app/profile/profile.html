@@ -1,63 +1,64 @@
 {% extends "find_house_app/base.html" %}
 
 {% load static %}
+{% load i18n %}
 
-{% block title %}Profile{% endblock %}
+{% block title %}{% trans 'Profile' %}{% endblock %}
 
 {% block content %}
 
-    <h3 class="text-center">Profile</h3>
+    <h3 class="text-center">{% trans 'Profile' %}</h3>
 
     <div class="row">
         <div class="col-md-4">
             <div class="card sticky-top shadow-lg bg-orange-list">
                 <div class="card-body text-center">
                     {% if user.avatar and user.avatar.url %}
-                    <img src="{{ user.avatar.url }}" class="rounded-circle mb-3" style="width: 200px; display: block; margin: auto;" alt="User Image">
+                    <img src="{{ user.avatar.url }}" class="rounded-circle mb-3" style="width: 200px; display: block; margin: auto;" alt="{% trans 'User Image' %}">
                     {% else %}
-                    <img src="{% static 'users_app/images/default/default_user.png' %}" class="rounded-circle mb-3" style="width: 200px; display: block; margin: auto;" alt="User Image">
+                    <img src="{% static 'users_app/images/default/default_user.png' %}" class="rounded-circle mb-3" style="width: 200px; display: block; margin: auto;" alt="{% trans 'User Image' %}">
                     {% endif %}
                     <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
                     <p class="card-text">{{ user.description }}</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item bg-orange-list"><strong>Username:</strong> {{ user.username }}</li>
-                    <li class="list-group-item bg-orange-list"><strong>Email:</strong> {{ user.email }}</li>
-                    <li class="list-group-item bg-orange-list"><strong>Date of Birth:</strong> {{ user.birth_date }}</li>
-                    <li class="list-group-item bg-orange-list"><strong>Phone:</strong> {{ user.phone_number }}</li>
-                    <li class="list-group-item bg-orange-list"><strong>Address:</strong> {{ user.address }}</li>
-                    <li class="list-group-item bg-orange-list"><strong>Last Login:</strong> {{ user.last_login }}</li>
-                    <li class="list-group-item bg-orange-list"><strong>Date Joined:</strong> {{ user.date_joined }}</li>
-                    <li class="list-group-item bg-orange-list"><strong>Is Admin:</strong> {{ user.is_admin }}</li>
+                    <li class="list-group-item bg-orange-list"><strong>{% trans 'Username' %}:</strong> {{ user.username }}</li>
+                    <li class="list-group-item bg-orange-list"><strong>{% trans 'Email' %}:</strong> {{ user.email }}</li>
+                    <li class="list-group-item bg-orange-list"><strong>{% trans 'Date of Birth' %}:</strong> {{ user.birth_date }}</li>
+                    <li class="list-group-item bg-orange-list"><strong>{% trans 'Phone' %}:</strong> {{ user.phone_number }}</li>
+                    <li class="list-group-item bg-orange-list"><strong>{% trans 'Address' %}:</strong> {{ user.address }}</li>
+                    <li class="list-group-item bg-orange-list"><strong>{% trans 'Last Login' %}:</strong> {{ user.last_login }}</li>
+                    <li class="list-group-item bg-orange-list"><strong>{% trans 'Date Joined' %}:</strong> {{ user.date_joined }}</li>
+                    <li class="list-group-item bg-orange-list"><strong>{% trans 'Is Admin' %}:</strong> {{ user.is_admin }}</li>
                 </ul>
                 <div class="card-footer text-center">
-                    <a href="{% url 'find_house_app:announcement_create' %}" class="btn btn-orange btn-sm me-2 mb-2">Add Announcement</a>
-                    <a href="{% url 'users_app:user_settings_update' pk=request.user.pk %}" class="btn btn-orange btn-sm me-2 mb-2">Edit User Settings</a>
-                    <a href="{% url 'users_app:user_delete' pk=user.pk %}" class="btn btn-orange btn-sm me-2 mb-2">Delete User</a>
+                    <a href="{% url 'find_house_app:announcement_create' %}" class="btn btn-orange btn-sm me-2 mb-2">{% trans 'Add Announcement' %}</a>
+                    <a href="{% url 'users_app:user_settings_update' pk=request.user.pk %}" class="btn btn-orange btn-sm me-2 mb-2">{% trans 'Edit User Settings' %}</a>
+                    <a href="{% url 'users_app:user_delete' pk=user.pk %}" class="btn btn-orange btn-sm me-2 mb-2">{% trans 'Delete User' %}</a>
                     {% if user.is_authenticated and user.is_admin == 0 %}
-                        <a href="{% url 'chat_app:create_or_get_chat' other_user_id=1 %}" class="btn btn-orange btn-sm me-2 mb-2" id="id_chat_owner_btn">Chat Admin</a>
+                        <a href="{% url 'chat_app:create_or_get_chat' other_user_id=1 %}" class="btn btn-orange btn-sm me-2 mb-2" id="id_chat_owner_btn">{% trans 'Chat Admin' %}</a>
                     {% endif %}
                 </div>
             </div>
         </div>        
 
         <div class="col-md-8">
-            <h3 class="text-center">Announcements</h3>
+            <h3 class="text-center">{% trans 'Announcements' %}</h3>
             <div class="mb-3">
-                <input type="text" id="announcementsFilterInput" class="custom-form-control" placeholder="Enter filter...">
+                <input type="text" id="announcementsFilterInput" class="custom-form-control" placeholder="{% trans 'Enter filter...' %}">
             </div>
             {% if user_announcements %}
                 <div class="table-responsive">
                     <table class="table table-hover " data-table="announcements">
                         <thead>
                             <tr>
-                                <th class="text-nowrap">User</th>
-                                <th class="text-nowrap">Announcement Title</th>
-                                <th class="text-nowrap">Category</th>
-                                <th class="text-nowrap">Description</th>
-                                <th class="text-nowrap">Edit</th>
-                                <th class="text-nowrap">Details</th>
-                                <th class="text-nowrap">Delete</th>
+                                <th class="text-nowrap">{% trans 'User' %}</th>
+                                <th class="text-nowrap">{% trans 'Announcement Title' %}</th>
+                                <th class="text-nowrap">{% trans 'Category' %}</th>
+                                <th class="text-nowrap">{% trans 'Description' %}</th>
+                                <th class="text-nowrap">{% trans 'Edit' %}</th>
+                                <th class="text-nowrap">{% trans 'Details' %}</th>
+                                <th class="text-nowrap">{% trans 'Delete' %}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -69,17 +70,17 @@
                                 <td>{{ announcement.description|truncatechars:100 }}</td>
                                 <td>
                                     <a href="{% url 'find_house_app:announcement_update' announcement.pk %}" class="btn btn-blue btn-sm w-text-75 d-flex align-items-center text-decoration-none">
-                                        <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/edit.svg' %}" alt="Edit" class="mr-1">Edit
+                                        <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/edit.svg' %}" alt="{% trans 'Edit' %}" class="mr-1">{% trans 'Edit' %}
                                     </a>
                                 </td>
                                 <td>
                                     <a href="{% url 'find_house_app:announcement_read' announcement.slug|slugify %}" class="btn btn-grey btn-sm w-text-75 d-flex align-items-center text-decoration-none">
-                                        <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/details.svg' %}" alt="Edit" class="mr-1">Details
+                                        <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/details.svg' %}" alt="{% trans 'Details' %}" class="mr-1">{% trans 'Details' %}
                                     </a>
                                 </td>
                                 <td>
                                     <a href="{% url 'find_house_app:announcement_delete' announcement.pk %}" class="btn btn-red btn-sm w-text-75 d-flex align-items-center text-decoration-none">
-                                        <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/delete.svg' %}" alt="Edit" class="mr-1">Delete
+                                        <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/delete.svg' %}" alt="{% trans 'Delete' %}" class="mr-1">{% trans 'Delete' %}
                                     </a>
                                 </td>
                             </tr>
@@ -89,21 +90,21 @@
                     </table>
                 </div>
             {% else %}
-                <h3 class="text-center text-danger">You do not have any announcements !!!</h3>
+                <h3 class="text-center text-danger">{% trans 'You do not have any announcements !!!' %}</h3>
             {% endif %}
 
-            <h3 class="text-center">History</h3>
+            <h3 class="text-center">{% trans 'History' %}</h3>
             <div class="mb-3">
-                <input type="text" id="historyFilterInput" class="custom-form-control" placeholder="Enter filter...">
+                <input type="text" id="historyFilterInput" class="custom-form-control" placeholder="{% trans 'Enter filter...' %}">
             </div>
             {% if user_announcements %}
                 <div class="table-responsive" id="scrollableTableContainer">
                     <table class="table table-hover " data-table="history">
                         <thead>
                             <tr>
-                                <th class="text-nowrap">Title</th>
-                                <th class="text-nowrap">Category</th>
-                                <th class="text-nowrap">Date</th>
+                                <th class="text-nowrap">{% trans 'Title' %}</th>
+                                <th class="text-nowrap">{% trans 'Category' %}</th>
+                                <th class="text-nowrap">{% trans 'Date' %}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -118,10 +119,10 @@
                     </table>
                 </div>
             {% else %}
-                <h3 class="text-center text-danger">You do not have any history !!!</h3>
+                <h3 class="text-center text-danger">{% trans 'You do not have any history !!!' %}</h3>
             {% endif %}
 
-            <h3 class="text-center">Comments</h3>
+            <h3 class="text-center">{% trans 'Comments' %}</h3>
             <div class="mb-3">
                 <input type="text" id="commentsFilterInput" class="custom-form-control" placeholder="Enter filter...">
             </div>
@@ -130,11 +131,11 @@
                     <table class="table table-hover " data-table="comments">
                         <thead>
                             <tr>
-                                <th class="text-nowrap">Announcement Title</th>
-                                <th class="text-nowrap">Text</th>
-                                <th class="text-nowrap">Date Added</th>
-                                <th class="text-nowrap">Edit</th>
-                                <th class="text-nowrap">Delete</th>
+                                <th class="text-nowrap">{% trans 'Announcement Title' %}</th>
+                                <th class="text-nowrap">{% trans 'Text' %}</th>
+                                <th class="text-nowrap">{% trans 'Date Added' %}</th>
+                                <th class="text-nowrap">{% trans 'Edit' %}</th>
+                                <th class="text-nowrap">{% trans 'Delete' %}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -145,12 +146,12 @@
                                     <td>{{ comment.date_added }}</td>
                                     <td>
                                         <a href="{% url 'find_house_app:comment_edit' pk=comment.pk %}" class="btn btn-blue btn-sm w-text-75 d-flex align-items-center text-decoration-none">
-                                            <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/edit.svg' %}" alt="Edit" class="mr-1">Edit
+                                            <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/edit.svg' %}" alt="{% trans 'Edit' %}" class="mr-1">{% trans 'Edit' %}
                                         </a>
                                     </td>
                                     <td>
                                         <a href="{% url 'find_house_app:comment_delete' pk=comment.pk %}" class="btn btn-red btn-sm w-text-75 d-flex align-items-center text-decoration-none">
-                                            <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/delete.svg' %}" alt="Edit" class="mr-1">Delete
+                                            <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/delete.svg' %}" alt="{% trans 'Delete' %}" class="mr-1">{% trans 'Delete' %}
                                         </a>
                                     </td>
                                 </tr>
@@ -159,7 +160,7 @@
                     </table>
                 </div>
             {% else %}
-                <h3 class="text-center text-danger">You do not have any comments !!!</h3>
+                <h3 class="text-center text-danger">{% trans 'You do not have any comments !!!' %}</h3>
             {% endif %}
 
         </div>

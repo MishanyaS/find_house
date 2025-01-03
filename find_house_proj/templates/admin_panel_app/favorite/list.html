@@ -1,12 +1,13 @@
 {% extends "admin_panel_app/base.html" %}
 
 {% load static %}
+{% load i18n %}
 
-{% block title %}Favorites List{% endblock %}
+{% block title %}{% trans 'Favorites List' %}{% endblock %}
 
 {% block content %}
 
-    <h3 class="text-center">Favorites List</h3>
+    <h3 class="text-center">{% trans 'Favorites List' %}</h3>
     <div class="mb-3">
         <input type="text" id="favoritesFilterInput" class="custom-form-control" placeholder="Enter filter...">
     </div>
@@ -15,14 +16,14 @@
             <table class="table table-hover " data-table="favorites">
                 <thead>
                     <tr>
-                        <th class="text-nowrap">ID</th>
-                        <th class="text-nowrap">Announcement ID</th>
-                        <th class="text-nowrap">User ID</th>
-                        <th class="text-nowrap">Is In Favorite</th>
-                        <th class="text-nowrap">Date Added</th>
-                        <th class="text-nowrap">Edit</th>
-                        <th class="text-nowrap">Details</th>
-                        <th class="text-nowrap">Delete</th>
+                        <th class="text-nowrap">{% trans 'ID' %}</th>
+                        <th class="text-nowrap">{% trans 'Announcement ID' %}</th>
+                        <th class="text-nowrap">{% trans 'User ID' %}</th>
+                        <th class="text-nowrap">{% trans 'Is In Favorite' %}</th>
+                        <th class="text-nowrap">{% trans 'Date Added' %}</th>
+                        <th class="text-nowrap">{% trans 'Edit' %}</th>
+                        <th class="text-nowrap">{% trans 'Details' %}</th>
+                        <th class="text-nowrap">{% trans 'Delete' %}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,17 +36,17 @@
                             <td>{{ favorite.date_added }}</td>
                             <td>
                                 <a href="{% url 'admin_panel_app:admin_favorite_update' pk=favorite.pk %}" class="btn btn-blue btn-sm w-text-75 d-flex align-items-center text-decoration-none">
-                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/edit.svg' %}" alt="Edit" class="mr-1">Edit
+                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/edit.svg' %}" alt="{% trans 'Edit' %}" class="mr-1">{% trans 'Edit' %}
                                 </a>
                             </td>
                             <td>
                                 <a href="{% url 'admin_panel_app:admin_favorite_read' pk=favorite.pk %}" class="btn btn-grey btn-sm w-text-75 d-flex align-items-center text-decoration-none">
-                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/details.svg' %}" alt="Edit" class="mr-1">Details
+                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/details.svg' %}" alt="{% trans 'Details' %}" class="mr-1">{% trans 'Details' %}
                                 </a>
                             </td>
                             <td>
                                 <a href="{% url 'admin_panel_app:admin_favorite_delete' pk=favorite.pk %}" class="btn btn-red btn-sm w-text-75 d-flex align-items-center text-decoration-none">
-                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/delete.svg' %}" alt="Edit" class="mr-1">Delete
+                                    <img width="20px" height="20px" src="{% static 'users_app/images/icons/profile/delete.svg' %}" alt="{% trans 'Delete' %}" class="mr-1">{% trans 'Delete' %}
                                 </a>
                             </td>
                         </tr>
@@ -54,10 +55,10 @@
             </table>
         </div>
     {% else %}
-        <h3 class="text-center text-danger">You do not have any favorites !!!</h3>
+        <h3 class="text-center text-danger">{% trans 'You do not have any favorites !!!' %}</h3>
     {% endif %}
     <div class="mb-3">
-        <a class="btn btn-orange btn-sm" href="{% url 'admin_panel_app:admin_favorite_create' %}">Add Favorite</a>
+        <a class="btn btn-orange btn-sm" href="{% url 'admin_panel_app:admin_favorite_create' %}">{% trans 'Add Favorite' %}</a>
     </div>
 
     <script src="{% static 'admin_panel_app/js/favorites_tables_search.js' %}"></script>

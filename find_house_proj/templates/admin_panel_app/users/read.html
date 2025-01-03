@@ -1,47 +1,48 @@
 {% extends "admin_panel_app/base.html" %}
+{% load i18n %}
 
-{% block title %}User Details{% endblock %}
+{% block title %}{% trans 'User Details' %}{% endblock %}
 
 {% block content %}
 
-    <h3 class="text-center">User Details</h3>
+    <h3 class="text-center">{% trans 'User Details' %}</h3>
 
     <table class="table table-striped">
         <tbody>
             <tr>
-                <th>ID</th>
+                <th>{% trans 'ID' %}</th>
                 <td>{{ user.id }}</td>
             </tr>
             <tr>
-                <th>Username</th>
+                <th>{% trans 'Username' %}</th>
                 <td>{{ user.username }}</td>
             </tr>
             <tr>
-                <th>First Name</th>
+                <th>{% trans 'First Name' %}</th>
                 <td>{{ user.first_name }}</td>
             </tr>
             <tr>
-                <th>Last Name</th>
+                <th>{% trans 'Last Name' %}</th>
                 <td>{{ user.last_name }}</td>
             </tr>
             <tr>
-                <th>Email</th>
+                <th>{% trans 'Email' %}</th>
                 <td>{{ user.email }}</td>
             </tr>
             <tr>
-                <th>Phone</th>
+                <th>{% trans 'Phone' %}</th>
                 <td>{{ user.phone_number }}</td>
             </tr>
             <tr>
-                <th>Last Login</th>
+                <th>{% trans 'Last Login' %}</th>
                 <td>{{ user.last_login }}</td>
             </tr>
             <tr>
-                <th>Date Joined</th>
+                <th>{% trans 'Date Joined' %}</th>
                 <td>{{ user.date_joined }}</td>
             </tr>
             <tr>
-                <th>Is Admin</th>
+                <th>{% trans 'Is Admin' %}</th>
                 <td>{{ user.is_admin }}</td>
             </tr>
 
@@ -49,7 +50,7 @@
     </table>
 
     <div class="mb-3 mt-3">
-        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_user_list_index' %}">Back</a>
+        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_user_list_index' %}">{% trans 'Back' %}</a>
     </div>
 
 {% endblock content %}

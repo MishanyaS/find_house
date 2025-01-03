@@ -16,22 +16,24 @@ ___
 
 ## Functional capabilities
 
-1. **View ads:** It is necessary to implement the ability to view ads for real estate. This ability should be available to users of all types.
+1. **Viewing ads:** It is necessary to implement the ability to view real estate ads. This ability should be available to users of all types.
 2. **Search for real estate:** It is necessary to implement the ability to search for real estate by specified criteria. This ability should be available to users of all types.
-3. **Contact the owner:** It is necessary to implement the ability to contact the owner of the real estate by email, as well as using the built-in chat. This ability should be available to users of the User and Administrator types
-4. **Comment system:** It is necessary to implement the ability to add, edit and delete comments. This ability should be available to users of the User and Administrator types.
-5. **Favorites:** It is necessary to implement the ability to add (and delete) a real estate object to favorites. This ability should be available to users of the User and Administrator types.
-6. **FAQ:** It is necessary to implement a separate page with answers to popular user questions with the ability to dynamically search. This ability should be available to users of all types.
-7. **Registration and authorization system:** It is necessary to implement a registration and authorization system in the information system. It should contain the ability to register, authorize, edit and delete an account, as well as change and restore the password for the account.
-8. **Working with ads:** It is necessary to implement the ability to add, edit and delete ads for real estate. This feature should be available to the User and Administrator types of users.
-9. **Admin panel:** It is necessary to implement an administrative panel for moderating the information system. This feature should be available to the Administrator type of users.
-10. **Contact the administrator:** It is necessary to implement the ability to contact the administrator of the information system. This feature should be available to users of all types.
-11. **Subscribe to ads:** It is necessary to implement the ability to subscribe to new ads. This feature should be available to the User and Administrator types of users.
-12. **News:** It is necessary to implement the ability to read and search for news related to real estate. This feature should be available to users of all types.
-13. **Profile:** It is necessary to implement a user profile that will contain information about the user. This feature should be available to users of all types.
-14. **Language selection:** It is necessary to implement the ability to select the interface language. This feature should be available to users of all types.
-15. **News subscription:** It is necessary to implement the ability to subscribe to receive news. This feature should be available to the User and Administrator types of users.
-16. **Description of categories:** It is necessary to implement a page with a description of real estate categories, as well as the ability to filter by category. This feature should be available to users of all types.
+3. **Sorting real estate:** It is necessary to implement the ability to sort real estate by specified criteria. This ability should be available to users of all types.
+4. **Contact the owner:** It is necessary to implement the ability to contact the property owner using the built-in chat. This ability should be available to users of the User and Administrator types.
+5. **Comment system:** It is necessary to implement the ability to add, edit and delete comments to ads. This ability should be available to users of the User and Administrator types.
+6. **Favorites:** It is necessary to implement the ability to add (and delete) an ad to favorites. This ability should be available to users of the User and Administrator types.
+7. **Frequently asked questions:** It is necessary to implement a separate page with answers to popular user questions with the ability to dynamically search. This ability should be available to users of all types.
+8. **Registration and authorization system:** It is necessary to implement a registration and authorization system in the information system. It should contain the ability to register, authorize, edit and delete an account, as well as change and restore the password to the account.
+9. **Working with ads:** It is necessary to implement the ability to add, edit and delete real estate ads. This ability should be available to users of the User and Administrator types.
+10. **Administrator panel:** It is necessary to implement an administrative panel for moderating the information system. This ability should be available to users of the Administrator type.
+11. **Communication with the administrator:** It is necessary to implement the ability to communicate with the administrator of the information system using the built-in chat. This ability should be available to users of all types.
+12. **News:** It is necessary to implement the ability to read news related to real estate. This ability should be available to users of all types.
+13. **News search:** It is necessary to implement the ability to search for news by specified criteria. This ability should be available to users of all types.
+14. **News sorting:** It is necessary to implement the ability to sort news by specified criteria. This ability should be available to users of all types.
+15. **Profile:** It is necessary to implement a user profile that will contain information about the user, as well as his ads, comments and ad viewing history. This function should be available to users of all types.
+16. **Language selection:** It is necessary to implement the ability to select the interface language. This function should be available to users of all types.
+17. **Description of categories:** It is necessary to implement a page with a description of real estate categories, as well as the ability to filter by category. This function should be available to users of all types.
+18. **Site search:** It is necessary to implement the ability to search the site. This function should be available to users of all types.
 
 ___
 

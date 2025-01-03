@@ -1,61 +1,62 @@
 {% extends "find_house_app/base.html" %}
 
 {% load static %}
+{% load i18n %}
 
-{% block title %}News Page{% endblock %}
+{% block title %}{% trans 'News Page' %}{% endblock %}
 
 {% block content %}
 
     <div class="row">
         <div class="col-md-3">
 
-            <h3>News Search</h3>
+            <h3>{% trans 'News Search' %}</h3>
             <div class="col-md-12 mb-3">
                 <form method="get" action="{% url 'find_house_app:search_news' %}">
                     
                     <div class="mb-3">
-                        <label for="year" class="form-label">Title</label>
-                        <input type="text" class="custom-form-control" name="q" placeholder="Search by title" value="{{ query }}">
+                        <label for="year" class="form-label">{% trans 'Title' %}</label>
+                        <input type="text" class="custom-form-control" name="q" placeholder="{% trans 'Search by title' %}" value="{{ query }}">
                     </div>
 
                     <div class="mb-3">
-                        <label for="date" class="form-label">Date</label>
-                        <input type="date" class="custom-form-control" name="date" placeholder="Search by date" value="{{ date_query }}">
+                        <label for="date" class="form-label">{% trans 'Date' %}</label>
+                        <input type="date" class="custom-form-control" name="date" placeholder="{% trans 'Search by date' %}" value="{{ date_query }}">
                     </div>
 
-                    <button type="submit" class="btn btn-orange btn-sm">Search</button>
+                    <button type="submit" class="btn btn-orange btn-sm">{% trans 'Search' %}</button>
                 </form>
             </div>
-            <h3>Sorting News</h3>
+            <h3>{% trans 'Sorting News' %}</h3>
             <div class="col-md-12 mb-3">
                 <form method="get" action="{% url 'find_house_app:sort_news' %}" class="mb-3">
                     <div class="form-check mb-3">
                         <input class="form-check-input" type="radio" name="sort_news" id="sort_news" value="title" {% if sort_news_by == 'title' %}checked{% endif %}>
                         <label class="form-check-label" for="sort_news">
-                            Sort by Title (In Alphabetical Order)
+                            {% trans 'Sort by Title (In Alphabetical Order)' %}
                         </label>
                     </div>
                     <div class="form-check mb-3">
                         <input class="form-check-input" type="radio" name="sort_news" id="sort_news" value="-title" {% if sort_news_by == '-title' %}checked{% endif %}>
                         <label class="form-check-label" for="sort_news">
-                            Sort by Title (In Reverse Order)
+                            {% trans 'Sort by Title (In Reverse Order)' %}
                         </label>
                     </div>
                     <div class="form-check mb-3">
                         <input class="form-check-input" type="radio" name="sort_news" id="sort_news" value="-date_added" {% if sort_news_by == '-date_added' %}checked{% endif %}>
                         <label class="form-check-label" for="sort_news">
-                            Sort by Date (New to Old)
+                            {% trans 'Sort by Date (New to Old)' %}
                         </label>
                     </div>
                     <div class="form-check mb-3">
                         <input class="form-check-input" type="radio" name="sort_news" id="sort_news" value="date_added" {% if sort_news_by == 'date_added' %}checked{% endif %}>
                         <label class="form-check-label" for="sort_news">
-                            Sort by Date (Old to New)
+                            {% trans 'Sort by Date (Old to New)' %}
                         </label>
                     </div>
     
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-orange btn-sm" id="id_sort_news_btn">Sort</button>
+                        <button type="submit" class="btn btn-orange btn-sm" id="id_sort_news_btn">{% trans 'Sort' %}</button>
                     </div>
                 </form>
             </div>
@@ -64,14 +65,14 @@
         <div class="col-md-9">
 
             <div class="mb-3">
-                <h3 class="text-center">All News</h3>
+                <h3 class="text-center">{% trans 'All News' %}</h3>
 
                 {% if news %} 
                     <div class="row row-cols-1 row-cols-md-2 g-4">
                         {% for news in news %}
                             <div class="col">
                                 <div class="card bg-orange-list ">
-                                <img src="{% static 'find_house_app/images/news/default/default_house.jpg' %}" class="card-img-top" alt="...">
+                                <img src="{% static 'find_house_app/images/news/default/default_house.jpg' %}" class="card-img-top" alt="{% trans 'News Image' %}">
                                 <div class="card-body">
                                     <h5 class="card-title"><a href="{% url 'find_house_app:news_read' slug=news.slug|slugify %}" class="text-decoration-none w-text-75 ">{{ news.title }}</a></h5>
                                     <small  class="card-text text-muted">Date: {{ news.date_added }}</small>
@@ -82,7 +83,7 @@
                         {% endfor %}
                     </div>
                 {% else %}
-                    <h3 class="text-center text-danger">There is no any news !!!</h1>
+                    <h3 class="text-center text-danger">{% trans 'There is no any news !!!' %}</h1>
                 {% endif %}
             </div>
 
@@ -91,10 +92,10 @@
                     <ul class="pagination justify-content-center">
                         {% if news.has_previous %}
                             <li class="page-item">
-                                <a class="page-link " href="?page=1" tabindex="-1" aria-disabled="true">First</a>
+                                <a class="page-link " href="?page=1" tabindex="-1" aria-disabled="true">{% trans 'First' %}</a>
                             </li>
                             <li class="page-item">
-                                <a class="page-link " href="?page={{ news.previous_page_number }}">Previous</a>
+                                <a class="page-link " href="?page={{ news.previous_page_number }}">{% trans 'Previous' %}</a>
                             </li>
                         {% endif %}
 
@@ -106,10 +107,10 @@
 
                         {% if news.has_next %}
                             <li class="page-item">
-                                <a class="page-link " href="?page={{ news.next_page_number }}">Next</a>
+                                <a class="page-link " href="?page={{ news.next_page_number }}">{% trans 'Next' %}</a>
                             </li>
                             <li class="page-item">
-                                <a class="page-link " href="?page={{ news.paginator.num_pages }}">Last</a>
+                                <a class="page-link " href="?page={{ news.paginator.num_pages }}">{% trans 'Last' %}</a>
                             </li>
                         {% endif %}
                     </ul>

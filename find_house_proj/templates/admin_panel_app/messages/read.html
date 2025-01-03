@@ -1,46 +1,47 @@
 {% extends "admin_panel_app/base.html" %}
+{% load i18n %}
 
-{% block title %}Message Details{% endblock %}
+{% block title %}{% trans 'Message Details' %}{% endblock %}
 
 {% block content %}
 
-    <h3 class="text-center">Message Details</h3>
+    <h3 class="text-center">{% trans 'Message Details' %}</h3>
 
     <table class="table table-striped">
         <tbody>
             <tr>
-                <th>ID</th>
+                <th>{% trans 'ID' %}</th>
                 <td>{{ message.id }}</td>
             </tr>
             <tr>
-                <th>Chat</th>
+                <th>{% trans 'Chat' %}</th>
                 <td>{{ message.chat }}</td>
             </tr>
             <tr>
-                <th>Sender</th>
+                <th>{% trans 'Sender' %}</th>
                 <td>{{ message.sender }}</td>
             </tr>
             <tr>
-                <th>Content</th>
+                <th>{% trans 'Content' %}</th>
                 <td>{{ message.content }}</td>
             </tr>
             <tr>
-                <th>Is deleted</th>
+                <th>{% trans 'Is deleted' %}</th>
                 <td>{{ message.is_deleted }}</td>
             </tr>
             <tr>
-                <th>Is edited</th>
+                <th>{% trans 'Is edited' %}</th>
                 <td>{{ message.is_edited }}</td>
             </tr>
             <tr>
-                <th>Date Added</th>
+                <th>{% trans 'Date Added' %}</th>
                 <td>{{ message.timestamp }}</td>
             </tr>
         </tbody>
     </table>
 
     <div class="mb-3 mt-3">
-        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_messages_list' %}">Back</a>
+        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_messages_list' %}">{% trans 'Back' %}</a>
     </div>
 
 {% endblock content %}

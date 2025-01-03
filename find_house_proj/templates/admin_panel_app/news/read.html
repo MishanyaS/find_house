@@ -1,31 +1,32 @@
 {% extends "admin_panel_app/base.html" %}
+{% load i18n %}
 
-{% block title %}News Details{% endblock %}
+{% block title %}{% trans 'News Details' %}{% endblock %}
 
 {% block content %}
 
-    <h3 class="text-center">News Details</h3>
+    <h3 class="text-center">{% trans 'News Details' %}</h3>
 
     <table class="table table-striped">
         <tbody>
             <tr>
-                <th>ID</th>
+                <th>{% trans 'ID' %}</th>
                 <td>{{ news_item.id }}</td>
             </tr>
             <tr>
-                <th>Title</th>
+                <th>{% trans 'Title' %}</th>
                 <td>{{ news_item.title }}</td>
             </tr>
             <tr>
-                <th>Content</th>
+                <th>{% trans 'Content' %}</th>
                 <td>{{ news_item.content }}</td>
             </tr>
             <tr>
-                <th>Views_Count</th>
+                <th>{% trans 'Views Count' %}</th>
                 <td>{{ news_item.views_count }}</td>
             </tr>
             <tr>
-                <th>Date Added</th>
+                <th>{% trans 'Date Added' %}</th>
                 <td>{{ news_item.date_added }}</td>
             </tr>
 
@@ -33,7 +34,7 @@
     </table>
 
     <div class="mb-3 mt-3">
-        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_news_list' %}">Back</a>
+        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_news_list' %}">{% trans 'Back' %}</a>
     </div>
 
 {% endblock content %}

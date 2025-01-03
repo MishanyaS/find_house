@@ -1,13 +1,14 @@
 {% extends "find_house_app/base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Chats{% endblock %}
+{% block title %}{% trans 'Chats' %}{% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="text-center">Chats</h2>
+                <h2 class="text-center">{% trans 'Chats' %}</h2>
                 <div class="list-group">
                     {% if chats %}
                         {% for chat in chats %}
@@ -20,18 +21,18 @@
                                 {% endfor %}
                                 <br>
                                 {% if chat.messages.all %}
-                                    Last message: {{ chat.messages.last.content|truncatechars:20 }} - {{ chat.messages.last.timestamp }}
+                                    {% trans 'Last message' %}: {{ chat.messages.last.content|truncatechars:20 }} - {{ chat.messages.last.timestamp }}
                                 {% else %}
-                                    No messages yet
+                                    {% trans 'No messages yet' %}
                                 {% endif %}
                                 <form action="{% url 'chat_app:delete_chat' chat.id %}" method="post">
                                     {% csrf_token %}
-                                    <button type="submit" class="btn btn-sm btn-red float-right">Delete</button>
+                                    <button type="submit" class="btn btn-sm btn-red float-right">{% trans 'Delete' %}</button>
                                 </form>
                             </a>
                         {% endfor %}
                     {% else %}
-                        <h3 class="text-center text-danger">There is no any chats !!!</h1>
+                        <h3 class="text-center text-danger">{% trans 'There is no any chats !!!' %}</h1>
                     {% endif %}
                 </div>
             </div>

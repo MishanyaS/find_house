@@ -1,6 +1,7 @@
 {% extends "admin_panel_app/base.html" %}
+{% load i18n %}
 
-{% block title %}Edit Chat{% endblock %}
+{% block title %}{% trans 'Edit Chat' %}{% endblock %}
 
 {% block content %}
     {% if user.is_authenticated %}
@@ -17,7 +18,7 @@
         <div class="col-md-12">
             <div class="card mt-5">
                 <div class="card-header bg-blue text-white">
-                    <h3 class="card-title mb-0">Edit Chat</h3>
+                    <h3 class="card-title mb-0">{% trans 'Edit Chat' %}</h3>
                 </div>
                 <div class="card-body">
                     <form method="POST" enctype="multipart/form-data">
@@ -30,7 +31,7 @@
                         </div>
             
                         <div class="mb-3">
-                            <button type="submit" class="btn btn-blue btn-sm">Edit Chat</button>
+                            <button type="submit" class="btn btn-blue btn-sm">{% trans 'Edit Chat' %}</button>
                         </div>
                     </form>
                 </div>
@@ -38,11 +39,11 @@
         </div>
 
     {% else %}
-        <h3 class="text-center text-danger">You do not have access to this page !!!</h1>
+        <h3 class="text-center text-danger">{% trans 'You do not have access to this page !!!' %}</h1>
     {% endif %}
 
     <div class="mb-3 mt-3">
-        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_chats_list' %}">Back</a>
+        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_chats_list' %}">{% trans 'Back' %}</a>
     </div>
 
 {% endblock content %}

@@ -1,8 +1,9 @@
 {% extends "find_house_app/base.html" %}
 
 {% load static %}
+{% load i18n %}
 
-{% block title %}Edit Announcement{% endblock %}
+{% block title %}{% trans 'Edit Announcement' %}{% endblock %}
 
 {% block content %}
 
@@ -24,7 +25,7 @@
         <div class="col-md-12">
             <div class="card mt-5">
                 <div class="card-header bg-blue text-white">
-                    <h3 class="card-title mb-0">Edit Announcement</h3>
+                    <h3 class="card-title mb-0">{% trans 'Edit Announcement' %}</h3>
                 </div>
                 <div class="card-body">
                     <form method="POST" enctype="multipart/form-data" class="announcement-form" id="announcementForm">
@@ -97,7 +98,7 @@
                         {% endfor %}
                     
                         <div class="mb-3">
-                            <input type="submit" value="Edit Announcement" class="btn btn-blue btn-sm" id="id_update_btn">
+                            <input type="submit" value="{% trans 'Edit Announcement' %}" class="btn btn-blue btn-sm" id="id_update_btn">
                         </div>
                     </form>
                 </div>
@@ -105,7 +106,7 @@
         </div>
 
     {% else %}
-        <h3 class="text-center text-danger">You do not have access to this page !!!</h1>
+        <h3 class="text-center text-danger">{% trans 'You do not have access to this page !!!' %}</h1>
     {% endif %}
 
 {% endblock content %}

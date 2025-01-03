@@ -1,30 +1,31 @@
 {% extends "admin_panel_app/base.html" %}
+{% load i18n %}
 
-{% block title %}Chat Details{% endblock %}
+{% block title %}{% trans 'Chat Details' %}{% endblock %}
 
 {% block content %}
 
-    <h3 class="text-center">Chat Details</h3>
+    <h3 class="text-center">{% trans 'Chat Details' %}</h3>
 
     <table class="table table-striped">
         <tbody>
             <tr>
-                <th>ID</th>
+                <th>{% trans 'ID' %}</th>
                 <td>{{ chat.id }}</td>
             </tr>
             <tr>
-                <th>Participants</th>
+                <th>{% trans 'Participants' %}</th>
                 <td>{{ chat.participants.all }}</td>
             </tr>
             <tr>
-                <th>Date Added</th>
+                <th>{% trans 'Date Added' %}</th>
                 <td>{{ chat.date_added }}</td>
             </tr>
         </tbody>
     </table>
 
     <div class="mb-3 mt-3">
-        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_chats_list' %}">Back</a>
+        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_chats_list' %}">{% trans 'Back' %}</a>
     </div>
 
 {% endblock content %}

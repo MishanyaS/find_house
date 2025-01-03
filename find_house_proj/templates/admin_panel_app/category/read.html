@@ -1,27 +1,28 @@
 {% extends "admin_panel_app/base.html" %}
+{% load i18n %}
 
-{% block title %}Categories Details{% endblock %}
+{% block title %}{% trans 'Categories Details' %}{% endblock %}
 
 {% block content %}
 
-    <h3 class="text-center">Categories Details</h3>
+    <h3 class="text-center">{% trans 'Categories Details' %}</h3>
 
     <table class="table table-striped">
         <tbody>
             <tr>
-                <th>ID</th>
+                <th>{% trans 'ID' %}</th>
                 <td>{{ category.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>{% trans 'Name' %}</th>
                 <td>{{ category.name }}</td>
             </tr>
             <tr>
-                <th>Description</th>
+                <th>{% trans 'Description' %}</th>
                 <td>{{ category.description }}</td>
             </tr>
             <tr>
-                <th>Date Added</th>
+                <th>{% trans 'Date Added' %}</th>
                 <td>{{ category.date_added }}</td>
             </tr>
 
@@ -29,7 +30,7 @@
     </table>
 
     <div class="mb-3 mt-3">
-        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_categories_list' %}">Back</a>
+        <a class="btn btn-red btn-sm" href="{% url 'admin_panel_app:admin_categories_list' %}">{% trans 'Back' %}</a>
     </div>
 
 {% endblock content %}

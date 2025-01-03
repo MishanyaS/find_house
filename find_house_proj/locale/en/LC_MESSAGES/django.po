@@ -1,0 +1,1889 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-01 20:22+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: admin_panel_app/forms.py:25 admin_panel_app/forms.py:40
+#: admin_panel_app/forms.py:206 admin_panel_app/forms.py:219
+#: templates/admin_panel_app/users/list.html:21
+#: templates/admin_panel_app/users/read.html:17
+#: templates/users_app/profile/profile.html:25 users_app/forms.py:21
+#: users_app/forms.py:36 users_app/forms.py:198 users_app/forms.py:211
+#: users_app/forms.py:378 users_app/forms.py:386
+msgid "Username"
+msgstr ""
+
+#: admin_panel_app/forms.py:26 admin_panel_app/forms.py:207
+#: users_app/forms.py:22 users_app/forms.py:199
+msgid "Email Address"
+msgstr ""
+
+#: admin_panel_app/forms.py:27 users_app/forms.py:13 users_app/forms.py:23
+#: users_app/forms.py:379 users_app/forms.py:387
+msgid "Enter Password"
+msgstr ""
+
+#: admin_panel_app/forms.py:28 admin_panel_app/forms.py:43
+#: users_app/forms.py:14 users_app/forms.py:24 users_app/forms.py:39
+msgid "Confirm Password"
+msgstr ""
+
+#: admin_panel_app/forms.py:29 admin_panel_app/forms.py:44
+#: admin_panel_app/forms.py:208 admin_panel_app/forms.py:221
+#: templates/admin_panel_app/users/list.html:22
+#: templates/admin_panel_app/users/read.html:21 users_app/forms.py:25
+#: users_app/forms.py:40 users_app/forms.py:200 users_app/forms.py:213
+msgid "First Name"
+msgstr ""
+
+#: admin_panel_app/forms.py:30 admin_panel_app/forms.py:45
+#: admin_panel_app/forms.py:209 admin_panel_app/forms.py:222
+#: templates/admin_panel_app/users/list.html:23
+#: templates/admin_panel_app/users/read.html:25 users_app/forms.py:26
+#: users_app/forms.py:41 users_app/forms.py:201 users_app/forms.py:214
+msgid "Last Name"
+msgstr ""
+
+#: admin_panel_app/forms.py:33 admin_panel_app/forms.py:212
+#: users_app/forms.py:29 users_app/forms.py:204
+msgid "Enter your Address"
+msgstr ""
+
+#: admin_panel_app/forms.py:35 admin_panel_app/forms.py:214
+#: users_app/forms.py:31 users_app/forms.py:206
+msgid "Tell us something about yourself"
+msgstr ""
+
+#: admin_panel_app/forms.py:41 admin_panel_app/forms.py:220
+#: templates/admin_panel_app/users/list.html:24
+#: templates/admin_panel_app/users/read.html:29
+#: templates/find_house_app/help/contacts.html:36
+#: templates/find_house_app/help/contacts.html:38
+#: templates/users_app/profile/profile.html:26 users_app/forms.py:37
+#: users_app/forms.py:212 users_app/forms.py:417
+msgid "Email"
+msgstr ""
+
+#: admin_panel_app/forms.py:42 users_app/forms.py:13 users_app/forms.py:38
+#: users_app/forms.py:379
+msgid "Password"
+msgstr ""
+
+#: admin_panel_app/forms.py:46 admin_panel_app/forms.py:223
+#: users_app/forms.py:42 users_app/forms.py:215
+msgid "Phone Number"
+msgstr ""
+
+#: admin_panel_app/forms.py:47 admin_panel_app/forms.py:224
+#: users_app/forms.py:43 users_app/forms.py:216
+msgid "Birth Date"
+msgstr ""
+
+#: admin_panel_app/forms.py:48 admin_panel_app/forms.py:225
+#: admin_panel_app/forms.py:399 admin_panel_app/forms.py:410
+#: find_house_app/forms.py:126 find_house_app/forms.py:137
+#: templates/find_house_app/announcement/read.html:47
+#: templates/find_house_app/category/category_announcements.html:63
+#: templates/find_house_app/favorite/favorite.html:62
+#: templates/find_house_app/help/contacts.html:24
+#: templates/find_house_app/index.html:62
+#: templates/users_app/profile/profile.html:29 users_app/forms.py:44
+#: users_app/forms.py:217
+msgid "Address"
+msgstr ""
+
+#: admin_panel_app/forms.py:49 admin_panel_app/forms.py:226
+#: users_app/forms.py:45 users_app/forms.py:218
+msgid "Avatar"
+msgstr ""
+
+#: admin_panel_app/forms.py:50 admin_panel_app/forms.py:227
+#: admin_panel_app/forms.py:404 admin_panel_app/forms.py:579
+#: find_house_app/forms.py:79 find_house_app/forms.py:131
+#: templates/admin_panel_app/announcement image/list.html:22 image/read.html:25
+#: templates/admin_panel_app/category/list.html:21
+#: templates/admin_panel_app/category/read.html:21
+#: templates/find_house_app/announcement/read.html:20
+#: templates/find_house_app/category/category_announcements.html:41
+#: templates/find_house_app/favorite/favorite.html:40
+#: templates/find_house_app/index.html:40
+#: templates/users_app/profile/profile.html:58 users_app/forms.py:46
+#: users_app/forms.py:219
+msgid "Description"
+msgstr ""
+
+#: admin_panel_app/forms.py:51 admin_panel_app/forms.py:228
+#: templates/admin_panel_app/users/list.html:28
+#: templates/admin_panel_app/users/read.html:45
+#: templates/users_app/profile/profile.html:32 users_app/forms.py:220
+msgid "Is Admin"
+msgstr ""
+
+#: admin_panel_app/forms.py:197 users_app/forms.py:189
+msgid "Old Password"
+msgstr ""
+
+#: admin_panel_app/forms.py:198 users_app/forms.py:190
+msgid "New Password"
+msgstr ""
+
+#: admin_panel_app/forms.py:199 users_app/forms.py:191
+msgid "Confirm New Password"
+msgstr ""
+
+#: admin_panel_app/forms.py:392 admin_panel_app/forms.py:403
+#: admin_panel_app/forms.py:662 admin_panel_app/forms.py:667
+#: find_house_app/forms.py:119 find_house_app/forms.py:130
+#: find_house_app/forms.py:247 find_house_app/forms.py:252
+#: templates/admin_panel_app/announcement/list.html:24
+#: templates/admin_panel_app/announcement/read.html:33
+#: templates/admin_panel_app/news/list.html:20
+#: templates/admin_panel_app/news/read.html:17
+#: templates/find_house_app/category/category_announcements.html:25
+#: templates/find_house_app/favorite/favorite.html:24
+#: templates/find_house_app/index.html:24
+#: templates/find_house_app/news/news.html:18
+#: templates/users_app/profile/profile.html:105
+msgid "Title"
+msgstr ""
+
+#: admin_panel_app/forms.py:393 admin_panel_app/forms.py:574
+#: find_house_app/forms.py:74
+msgid "Enter description"
+msgstr ""
+
+#: admin_panel_app/forms.py:394 admin_panel_app/forms.py:405
+#: find_house_app/forms.py:121 find_house_app/forms.py:132
+#: templates/find_house_app/announcement/read.html:52
+#: templates/find_house_app/category/category_announcements.html:46
+#: templates/find_house_app/category/category_announcements.html:90
+#: templates/find_house_app/favorite/favorite.html:45
+#: templates/find_house_app/favorite/favorite.html:89
+#: templates/find_house_app/index.html:45
+#: templates/find_house_app/index.html:175
+msgid "Price"
+msgstr ""
+
+#: admin_panel_app/forms.py:395 admin_panel_app/forms.py:406
+#: find_house_app/forms.py:122 find_house_app/forms.py:133
+#: templates/find_house_app/announcement/read.html:51
+#: templates/find_house_app/category/category_announcements.html:52
+#: templates/find_house_app/category/category_announcements.html:91
+#: templates/find_house_app/favorite/favorite.html:51
+#: templates/find_house_app/favorite/favorite.html:90
+#: templates/find_house_app/index.html:51
+#: templates/find_house_app/index.html:176
+msgid "Square"
+msgstr ""
+
+#: admin_panel_app/forms.py:407 find_house_app/forms.py:134
+#: templates/find_house_app/announcement/read.html:48
+msgid "Owner"
+msgstr ""
+
+#: admin_panel_app/forms.py:408 find_house_app/forms.py:135
+#: templates/find_house_app/announcement/read.html:49
+#: templates/find_house_app/category/category_announcements.html:29
+#: templates/find_house_app/favorite/favorite.html:28
+#: templates/find_house_app/index.html:28
+#: templates/users_app/profile/profile.html:57
+#: templates/users_app/profile/profile.html:106
+msgid "Category"
+msgstr ""
+
+#: admin_panel_app/forms.py:409 find_house_app/forms.py:136
+#: templates/admin_panel_app/announcement/list.html:23
+#: templates/admin_panel_app/announcement/read.html:29
+#: templates/find_house_app/announcement/read.html:50
+msgid "Status"
+msgstr ""
+
+#: admin_panel_app/forms.py:519 find_house_app/forms.py:21
+msgid "Enter a description or caption for the image"
+msgstr ""
+
+#: admin_panel_app/forms.py:523 admin_panel_app/forms.py:626
+#: admin_panel_app/forms.py:714 find_house_app/forms.py:25
+msgid "Select Announcement"
+msgstr ""
+
+#: admin_panel_app/forms.py:524 find_house_app/forms.py:26
+msgid "Upload Image"
+msgstr ""
+
+#: admin_panel_app/forms.py:525 find_house_app/forms.py:27
+msgid "Image Description"
+msgstr ""
+
+#: admin_panel_app/forms.py:573 find_house_app/forms.py:73
+msgid "Enter category name"
+msgstr ""
+
+#: admin_panel_app/forms.py:578 find_house_app/forms.py:78
+#: templates/admin_panel_app/category/list.html:20
+#: templates/admin_panel_app/category/read.html:17
+#: templates/find_house_app/announcement/read.html:80
+msgid "Name"
+msgstr ""
+
+#: admin_panel_app/forms.py:625 admin_panel_app/forms.py:713
+msgid "Select User"
+msgstr ""
+
+#: admin_panel_app/forms.py:627
+msgid "Is in Favorite"
+msgstr ""
+
+#: admin_panel_app/forms.py:663 admin_panel_app/forms.py:668
+#: admin_panel_app/forms.py:833 admin_panel_app/forms.py:841
+#: chat_app/forms.py:14 find_house_app/forms.py:248 find_house_app/forms.py:253
+#: templates/admin_panel_app/base.html:54
+#: templates/admin_panel_app/messages/list.html:22
+#: templates/admin_panel_app/messages/read.html:25
+#: templates/admin_panel_app/news/list.html:21
+#: templates/admin_panel_app/news/read.html:21
+msgid "Content"
+msgstr ""
+
+#: admin_panel_app/forms.py:750 admin_panel_app/forms.py:756
+#: templates/admin_panel_app/comment/list.html:23
+#: templates/admin_panel_app/comment/read.html:29
+#: templates/users_app/profile/profile.html:135
+msgid "Text"
+msgstr ""
+
+#: admin_panel_app/forms.py:754
+msgid "Announcement"
+msgstr ""
+
+#: admin_panel_app/forms.py:755 find_house_app/forms.py:298
+#: templates/users_app/profile/profile.html:55
+msgid "User"
+msgstr ""
+
+#: admin_panel_app/forms.py:806 templates/admin_panel_app/chats/list.html:20
+#: templates/admin_panel_app/chats/read.html:17
+msgid "Participants"
+msgstr ""
+
+#: admin_panel_app/forms.py:839 templates/admin_panel_app/messages/list.html:20
+#: templates/admin_panel_app/messages/read.html:17
+#: templates/chat_app/chat/chat_read.html:5
+msgid "Chat"
+msgstr ""
+
+#: admin_panel_app/forms.py:840 templates/admin_panel_app/messages/list.html:21
+#: templates/admin_panel_app/messages/read.html:21
+msgid "Sender"
+msgstr ""
+
+#: admin_panel_app/forms.py:842 templates/admin_panel_app/messages/list.html:23
+#: templates/admin_panel_app/messages/read.html:29
+msgid "Is deleted"
+msgstr ""
+
+#: admin_panel_app/forms.py:843 templates/admin_panel_app/messages/list.html:24
+#: templates/admin_panel_app/messages/read.html:33
+msgid "Is edited"
+msgstr ""
+
+#: admin_panel_app/forms.py:891
+msgid "Enter contacts page h5"
+msgstr ""
+
+#: admin_panel_app/forms.py:892
+msgid "Enter contacts page text"
+msgstr ""
+
+#: admin_panel_app/forms.py:893
+msgid "Enter contacts page address"
+msgstr ""
+
+#: admin_panel_app/forms.py:894
+msgid "Enter contacts page telephone"
+msgstr ""
+
+#: admin_panel_app/forms.py:895
+msgid "Enter contacts page email"
+msgstr ""
+
+#: admin_panel_app/forms.py:896
+msgid "Enter footer text"
+msgstr ""
+
+#: admin_panel_app/forms.py:900 templates/admin_panel_app/content/list.html:20
+#: templates/admin_panel_app/content/read.html:17
+msgid "Contacts Page h5"
+msgstr ""
+
+#: admin_panel_app/forms.py:901 templates/admin_panel_app/content/list.html:21
+#: templates/admin_panel_app/content/read.html:21
+msgid "Contacts Page Text"
+msgstr ""
+
+#: admin_panel_app/forms.py:902 templates/admin_panel_app/content/list.html:22
+#: templates/admin_panel_app/content/read.html:25
+msgid "Contacts Page Address"
+msgstr ""
+
+#: admin_panel_app/forms.py:903
+msgid "Contacts Page Telephone"
+msgstr ""
+
+#: admin_panel_app/forms.py:904 templates/admin_panel_app/content/list.html:23
+#: templates/admin_panel_app/content/read.html:29
+msgid "Contacts Page Email"
+msgstr ""
+
+#: admin_panel_app/forms.py:905 templates/admin_panel_app/content/list.html:24
+#: templates/admin_panel_app/content/read.html:33
+msgid "Footer Text"
+msgstr ""
+
+#: chat_app/forms.py:18
+msgid "Message"
+msgstr ""
+
+#: find_house_app/forms.py:120
+msgid "Enter a description"
+msgstr ""
+
+#: find_house_app/forms.py:299
+msgid "Announcement Viewed"
+msgstr ""
+
+#: find_house_app/forms.py:310 find_house_app/forms.py:314
+#: templates/find_house_app/announcement/read.html:84
+#: templates/find_house_app/announcement/read.html:85
+msgid "Comment"
+msgstr ""
+
+#: find_house_proj/settings.py:125
+msgid "English"
+msgstr ""
+
+#: find_house_proj/settings.py:126
+msgid "Russian"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/create.html:4
+#: image/create.html:22 image/create.html:47 image/list.html:66
+msgid "Add Announcement Image"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/create.html:55
+#: image/delete.html:35 image/update.html:55 view history/create.html:49
+#: history/delete.html:35 history/update.html:49
+#: templates/admin_panel_app/announcement/create.html:106
+#: templates/admin_panel_app/announcement/delete.html:35
+#: templates/admin_panel_app/announcement/update.html:105
+#: templates/admin_panel_app/category/create.html:48
+#: templates/admin_panel_app/category/delete.html:35
+#: templates/admin_panel_app/category/update.html:48
+#: templates/admin_panel_app/chats/create.html:42
+#: templates/admin_panel_app/chats/delete.html:35
+#: templates/admin_panel_app/chats/update.html:42
+#: templates/admin_panel_app/comment/create.html:54
+#: templates/admin_panel_app/comment/delete.html:35
+#: templates/admin_panel_app/comment/update.html:54
+#: templates/admin_panel_app/content/create.html:72
+#: templates/admin_panel_app/content/delete.html:35
+#: templates/admin_panel_app/content/update.html:72
+#: templates/admin_panel_app/favorite/create.html:55
+#: templates/admin_panel_app/favorite/delete.html:35
+#: templates/admin_panel_app/favorite/update.html:55
+#: templates/admin_panel_app/messages/create.html:65
+#: templates/admin_panel_app/messages/delete.html:35
+#: templates/admin_panel_app/messages/update.html:65
+#: templates/admin_panel_app/news/create.html:49
+#: templates/admin_panel_app/news/delete.html:35
+#: templates/admin_panel_app/news/update.html:49
+#: templates/admin_panel_app/users/delete.html:35
+#: templates/chat_app/chat/chat_read.html:74
+#: templates/find_house_app/announcement/create.html:105
+#: templates/find_house_app/announcement/delete.html:34
+#: templates/find_house_app/announcement/update.html:109
+#: templates/find_house_app/comment/edit.html:44
+#: templates/users_app/registration/delete_user.html:36
+msgid "You do not have access to this page !!!"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/create.html:59
+#: image/delete.html:39 image/read.html:45 image/update.html:59 view
+#: history/create.html:53 history/delete.html:39 history/read.html:32
+#: history/update.html:53
+#: templates/admin_panel_app/announcement/create.html:110
+#: templates/admin_panel_app/announcement/delete.html:39
+#: templates/admin_panel_app/announcement/read.html:45
+#: templates/admin_panel_app/announcement/update.html:109
+#: templates/admin_panel_app/base.html:66
+#: templates/admin_panel_app/category/create.html:52
+#: templates/admin_panel_app/category/delete.html:39
+#: templates/admin_panel_app/category/read.html:33
+#: templates/admin_panel_app/category/update.html:52
+#: templates/admin_panel_app/chats/create.html:46
+#: templates/admin_panel_app/chats/delete.html:39
+#: templates/admin_panel_app/chats/read.html:28
+#: templates/admin_panel_app/chats/update.html:46
+#: templates/admin_panel_app/comment/create.html:58
+#: templates/admin_panel_app/comment/delete.html:39
+#: templates/admin_panel_app/comment/read.html:37
+#: templates/admin_panel_app/comment/update.html:58
+#: templates/admin_panel_app/content/create.html:76
+#: templates/admin_panel_app/content/delete.html:39
+#: templates/admin_panel_app/content/read.html:45
+#: templates/admin_panel_app/content/update.html:76
+#: templates/admin_panel_app/favorite/create.html:59
+#: templates/admin_panel_app/favorite/delete.html:39
+#: templates/admin_panel_app/favorite/read.html:37
+#: templates/admin_panel_app/favorite/update.html:59
+#: templates/admin_panel_app/index.html:27
+#: templates/admin_panel_app/messages/create.html:69
+#: templates/admin_panel_app/messages/delete.html:39
+#: templates/admin_panel_app/messages/read.html:44
+#: templates/admin_panel_app/messages/update.html:69
+#: templates/admin_panel_app/news/create.html:53
+#: templates/admin_panel_app/news/delete.html:39
+#: templates/admin_panel_app/news/read.html:37
+#: templates/admin_panel_app/news/update.html:53
+#: templates/admin_panel_app/users/create.html:100
+#: templates/admin_panel_app/users/delete.html:39
+#: templates/admin_panel_app/users/read.html:53
+#: templates/admin_panel_app/users/update.html:100
+#: templates/find_house_app/announcement/read.html:64
+#: templates/find_house_app/news/read.html:24
+msgid "Back"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/delete.html:4
+#: image/delete.html:13 image/delete.html:27
+msgid "Delete Announcement Image"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/delete.html:17 view
+#: history/delete.html:17 templates/admin_panel_app/announcement/delete.html:17
+#: templates/admin_panel_app/category/delete.html:17
+#: templates/admin_panel_app/chats/delete.html:17
+#: templates/admin_panel_app/content/delete.html:17
+#: templates/admin_panel_app/favorite/delete.html:17
+#: templates/admin_panel_app/messages/delete.html:17
+#: templates/admin_panel_app/news/delete.html:17
+#: templates/admin_panel_app/users/delete.html:17
+#: templates/find_house_app/announcement/delete.html:16
+msgid ""
+"Warning: This action is irreversible. This data will be permanently deleted."
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/delete.html:23
+msgid "Are you sure you want to delete this announcement image ?"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/list.html:6 image/list.html:10
+msgid "Announcement Images List"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/list.html:19 image/read.html:13
+#: view history/list.html:19 history/read.html:13
+#: templates/admin_panel_app/announcement/list.html:19
+#: templates/admin_panel_app/announcement/read.html:13
+#: templates/admin_panel_app/category/list.html:19
+#: templates/admin_panel_app/category/read.html:13
+#: templates/admin_panel_app/chats/list.html:19
+#: templates/admin_panel_app/chats/read.html:13
+#: templates/admin_panel_app/comment/list.html:19
+#: templates/admin_panel_app/comment/read.html:13
+#: templates/admin_panel_app/content/list.html:19
+#: templates/admin_panel_app/content/read.html:13
+#: templates/admin_panel_app/favorite/list.html:19
+#: templates/admin_panel_app/favorite/read.html:13
+#: templates/admin_panel_app/messages/list.html:19
+#: templates/admin_panel_app/messages/read.html:13
+#: templates/admin_panel_app/news/list.html:19
+#: templates/admin_panel_app/news/read.html:13
+#: templates/admin_panel_app/users/list.html:20
+#: templates/admin_panel_app/users/read.html:13
+msgid "ID"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/list.html:20 image/read.html:17
+#: view history/list.html:20 history/read.html:17
+#: templates/admin_panel_app/comment/list.html:21
+#: templates/admin_panel_app/comment/read.html:21
+#: templates/admin_panel_app/favorite/list.html:20
+#: templates/admin_panel_app/favorite/read.html:17
+msgid "Announcement ID"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/list.html:21 image/read.html:21
+#: templates/admin_panel_app/announcement/list.html:20
+#: templates/admin_panel_app/announcement/read.html:17
+#: templates/admin_panel_app/category/list.html:22
+#: templates/admin_panel_app/category/read.html:25
+#: templates/admin_panel_app/chats/list.html:21
+#: templates/admin_panel_app/chats/read.html:21
+#: templates/admin_panel_app/comment/list.html:20
+#: templates/admin_panel_app/comment/read.html:17
+#: templates/admin_panel_app/favorite/list.html:23
+#: templates/admin_panel_app/favorite/read.html:29
+#: templates/admin_panel_app/messages/list.html:25
+#: templates/admin_panel_app/messages/read.html:37
+#: templates/admin_panel_app/news/list.html:23
+#: templates/admin_panel_app/news/read.html:29
+#: templates/find_house_app/announcement/read.html:54
+#: templates/find_house_app/category/category_announcements.html:58
+#: templates/find_house_app/favorite/favorite.html:57
+#: templates/find_house_app/index.html:57
+#: templates/users_app/profile/profile.html:136
+msgid "Date Added"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/list.html:23 image/read.html:29
+msgid "Image Height"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/list.html:24 image/read.html:33
+msgid "Image Width"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/list.html:25 image/read.html:37
+msgid "Image"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/list.html:26 image/list.html:43
+#: view history/list.html:23 history/list.html:37
+#: templates/admin_panel_app/announcement/list.html:26
+#: templates/admin_panel_app/announcement/list.html:43
+#: templates/admin_panel_app/category/list.html:23
+#: templates/admin_panel_app/category/list.html:37
+#: templates/admin_panel_app/chats/list.html:23
+#: templates/admin_panel_app/chats/list.html:35
+#: templates/admin_panel_app/comment/list.html:24
+#: templates/admin_panel_app/comment/list.html:39
+#: templates/admin_panel_app/content/list.html:26
+#: templates/admin_panel_app/content/list.html:43
+#: templates/admin_panel_app/favorite/list.html:24
+#: templates/admin_panel_app/favorite/list.html:39
+#: templates/admin_panel_app/messages/list.html:26
+#: templates/admin_panel_app/messages/list.html:43
+#: templates/admin_panel_app/news/list.html:24
+#: templates/admin_panel_app/news/list.html:39
+#: templates/admin_panel_app/users/list.html:29
+#: templates/admin_panel_app/users/list.html:48
+#: templates/chat_app/chat/chat_read.html:41
+#: templates/find_house_app/announcement/read.html:113
+#: templates/users_app/profile/profile.html:59
+#: templates/users_app/profile/profile.html:73
+#: templates/users_app/profile/profile.html:137
+#: templates/users_app/profile/profile.html:149
+msgid "Edit"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/list.html:27 image/list.html:48
+#: view history/list.html:24 history/list.html:42
+#: templates/admin_panel_app/announcement/list.html:27
+#: templates/admin_panel_app/announcement/list.html:48
+#: templates/admin_panel_app/category/list.html:24
+#: templates/admin_panel_app/category/list.html:42
+#: templates/admin_panel_app/chats/list.html:22
+#: templates/admin_panel_app/chats/list.html:40
+#: templates/admin_panel_app/comment/list.html:25
+#: templates/admin_panel_app/comment/list.html:44
+#: templates/admin_panel_app/content/list.html:27
+#: templates/admin_panel_app/content/list.html:48
+#: templates/admin_panel_app/favorite/list.html:25
+#: templates/admin_panel_app/favorite/list.html:44
+#: templates/admin_panel_app/messages/list.html:27
+#: templates/admin_panel_app/messages/list.html:48
+#: templates/admin_panel_app/news/list.html:25
+#: templates/admin_panel_app/news/list.html:44
+#: templates/admin_panel_app/users/list.html:30
+#: templates/admin_panel_app/users/list.html:53
+#: templates/users_app/profile/profile.html:60
+#: templates/users_app/profile/profile.html:78
+msgid "Details"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/list.html:28 image/list.html:53
+#: view history/list.html:25 history/list.html:47
+#: templates/admin_panel_app/announcement/list.html:28
+#: templates/admin_panel_app/announcement/list.html:53
+#: templates/admin_panel_app/category/list.html:25
+#: templates/admin_panel_app/category/list.html:47
+#: templates/admin_panel_app/chats/list.html:24
+#: templates/admin_panel_app/chats/list.html:45
+#: templates/admin_panel_app/comment/list.html:26
+#: templates/admin_panel_app/comment/list.html:49
+#: templates/admin_panel_app/content/list.html:28
+#: templates/admin_panel_app/content/list.html:53
+#: templates/admin_panel_app/favorite/list.html:26
+#: templates/admin_panel_app/favorite/list.html:49
+#: templates/admin_panel_app/messages/list.html:28
+#: templates/admin_panel_app/messages/list.html:53
+#: templates/admin_panel_app/news/list.html:26
+#: templates/admin_panel_app/news/list.html:49
+#: templates/admin_panel_app/users/list.html:31
+#: templates/admin_panel_app/users/list.html:58
+#: templates/chat_app/chat/chat_list.html:30
+#: templates/chat_app/chat/chat_read.html:40
+#: templates/find_house_app/announcement/read.html:114
+#: templates/users_app/profile/profile.html:61
+#: templates/users_app/profile/profile.html:83
+#: templates/users_app/profile/profile.html:138
+#: templates/users_app/profile/profile.html:154
+msgid "Delete"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/list.html:62
+msgid "You do not have any announcement images !!!"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/read.html:4 image/read.html:8
+msgid "Announcement Image Details"
+msgstr ""
+
+#: templates/admin_panel_app/announcement image/update.html:4
+#: image/update.html:22 image/update.html:47
+msgid "Edit Announcement Image"
+msgstr ""
+
+#: templates/admin_panel_app/announcement view history/create.html:4
+#: history/create.html:22 history/create.html:41
+msgid "Add To Announcement View History"
+msgstr ""
+
+#: templates/admin_panel_app/announcement view history/delete.html:4
+#: history/delete.html:13 history/delete.html:27
+msgid "Delete Announcement View History"
+msgstr ""
+
+#: templates/admin_panel_app/announcement view history/delete.html:23
+msgid "Are you sure you want to delete this announcement view history ?"
+msgstr ""
+
+#: templates/admin_panel_app/announcement view history/list.html:6
+#: history/list.html:10
+msgid "Announcement view Histories List"
+msgstr ""
+
+#: templates/admin_panel_app/announcement view history/list.html:21
+#: history/read.html:21 templates/admin_panel_app/comment/list.html:22
+#: templates/admin_panel_app/comment/read.html:25
+#: templates/admin_panel_app/favorite/list.html:21
+#: templates/admin_panel_app/favorite/read.html:21
+msgid "User ID"
+msgstr ""
+
+#: templates/admin_panel_app/announcement view history/list.html:22
+#: history/read.html:25
+#: templates/find_house_app/category/category_announcements.html:92
+#: templates/find_house_app/favorite/favorite.html:91
+#: templates/find_house_app/index.html:177
+#: templates/find_house_app/index.html:240
+#: templates/find_house_app/news/news.html:23
+#: templates/find_house_app/news/read.html:14
+#: templates/users_app/profile/profile.html:107
+msgid "Date"
+msgstr ""
+
+#: templates/admin_panel_app/announcement view history/list.html:56
+msgid "You do not have any announcement view histories !!!"
+msgstr ""
+
+#: templates/admin_panel_app/announcement view history/list.html:60
+msgid "Add To Announcement View Histories"
+msgstr ""
+
+#: templates/admin_panel_app/announcement view history/read.html:4
+#: history/read.html:8
+msgid "Announcement View History Details"
+msgstr ""
+
+#: templates/admin_panel_app/announcement view history/update.html:4
+#: history/update.html:22 history/update.html:41
+msgid "Edit Announcement View History"
+msgstr ""
+
+#: templates/admin_panel_app/announcement/create.html:7
+#: templates/admin_panel_app/announcement/create.html:25
+#: templates/admin_panel_app/announcement/create.html:98
+#: templates/admin_panel_app/announcement/list.html:66
+#: templates/find_house_app/announcement/create.html:6
+#: templates/find_house_app/announcement/create.html:24
+#: templates/find_house_app/announcement/create.html:97
+#: templates/find_house_app/base.html:42
+#: templates/users_app/profile/profile.html:35
+msgid "Add Announcement"
+msgstr ""
+
+#: templates/admin_panel_app/announcement/delete.html:4
+#: templates/admin_panel_app/announcement/delete.html:13
+#: templates/admin_panel_app/announcement/delete.html:27
+#: templates/find_house_app/announcement/delete.html:3
+#: templates/find_house_app/announcement/delete.html:12
+#: templates/find_house_app/announcement/delete.html:26
+msgid "Delete Announcement"
+msgstr ""
+
+#: templates/admin_panel_app/announcement/delete.html:23
+#: templates/find_house_app/announcement/delete.html:22
+msgid "Are you sure you want to delete this announcement ?"
+msgstr ""
+
+#: templates/admin_panel_app/announcement/list.html:6
+#: templates/admin_panel_app/announcement/list.html:10
+#: templates/find_house_app/index.html:161
+msgid "Announcements List"
+msgstr ""
+
+#: templates/admin_panel_app/announcement/list.html:21
+#: templates/admin_panel_app/announcement/read.html:21
+msgid "Category ID"
+msgstr ""
+
+#: templates/admin_panel_app/announcement/list.html:22
+#: templates/admin_panel_app/announcement/read.html:25
+msgid "Owner ID"
+msgstr ""
+
+#: templates/admin_panel_app/announcement/list.html:25
+#: templates/admin_panel_app/announcement/read.html:37
+#: templates/find_house_app/announcement/read.html:70
+msgid "Views"
+msgstr ""
+
+#: templates/admin_panel_app/announcement/list.html:62
+#: templates/users_app/profile/profile.html:93
+msgid "You do not have any announcements !!!"
+msgstr ""
+
+#: templates/admin_panel_app/announcement/update.html:6
+#: templates/admin_panel_app/announcement/update.html:24
+#: templates/admin_panel_app/announcement/update.html:97
+#: templates/find_house_app/announcement/update.html:6
+#: templates/find_house_app/announcement/update.html:28
+#: templates/find_house_app/announcement/update.html:101
+msgid "Edit Announcement"
+msgstr ""
+
+#: templates/admin_panel_app/base.html:20 templates/find_house_app/base.html:80
+msgid "Admin Panel"
+msgstr ""
+
+#: templates/admin_panel_app/base.html:27 templates/find_house_app/base.html:27
+#: templates/find_house_app/base.html:133
+msgid "Home"
+msgstr ""
+
+#: templates/admin_panel_app/base.html:30
+#: templates/admin_panel_app/index.html:17
+msgid "Users"
+msgstr ""
+
+#: templates/admin_panel_app/base.html:33
+#: templates/admin_panel_app/index.html:19
+#: templates/users_app/profile/profile.html:46
+msgid "Announcements"
+msgstr ""
+
+#: templates/admin_panel_app/base.html:36
+#: templates/admin_panel_app/index.html:18
+msgid "Announcement Images"
+msgstr ""
+
+#: templates/admin_panel_app/base.html:39
+#: templates/admin_panel_app/index.html:20
+#: templates/find_house_app/base.html:57 templates/find_house_app/base.html:148
+#: templates/find_house_app/category/categories.html:6
+#: templates/find_house_app/category/categories.html:10
+#: templates/find_house_app/category/category_announcements.html:14
+#: templates/find_house_app/favorite/favorite.html:13
+#: templates/find_house_app/index.html:13
+msgid "Categories"
+msgstr ""
+
+#: templates/admin_panel_app/base.html:42
+#: templates/admin_panel_app/index.html:21
+msgid "Favorites"
+msgstr ""
+
+#: templates/admin_panel_app/base.html:45
+#: templates/admin_panel_app/index.html:22
+#: templates/find_house_app/base.html:38 templates/find_house_app/base.html:166
+msgid "News"
+msgstr ""
+
+#: templates/admin_panel_app/base.html:48
+#: templates/admin_panel_app/index.html:23
+msgid "Ann View History"
+msgstr ""
+
+#: templates/admin_panel_app/base.html:51
+#: templates/admin_panel_app/index.html:24
+#: templates/users_app/profile/profile.html:125
+msgid "Comments"
+msgstr ""
+
+#: templates/admin_panel_app/base.html:61
+#: templates/admin_panel_app/index.html:25
+#: templates/chat_app/chat/chat_list.html:5
+#: templates/chat_app/chat/chat_list.html:11
+#: templates/find_house_app/base.html:61
+msgid "Chats"
+msgstr ""
+
+#: templates/admin_panel_app/base.html:62
+#: templates/admin_panel_app/index.html:26
+msgid "Messages"
+msgstr ""
+
+#: templates/admin_panel_app/category/create.html:4
+#: templates/admin_panel_app/category/create.html:21
+#: templates/admin_panel_app/category/create.html:40
+#: templates/admin_panel_app/category/list.html:60
+msgid "Add Category"
+msgstr ""
+
+#: templates/admin_panel_app/category/delete.html:4
+#: templates/admin_panel_app/category/delete.html:13
+#: templates/admin_panel_app/category/delete.html:27
+msgid "Delete Category"
+msgstr ""
+
+#: templates/admin_panel_app/category/delete.html:23
+msgid "Are you sure you want to delete this category ?"
+msgstr ""
+
+#: templates/admin_panel_app/category/list.html:6
+#: templates/admin_panel_app/category/list.html:10
+msgid "Categories List"
+msgstr ""
+
+#: templates/admin_panel_app/category/list.html:56
+#: templates/admin_panel_app/content/list.html:62
+#: templates/admin_panel_app/news/list.html:58
+msgid "You do not have any categories !!!"
+msgstr ""
+
+#: templates/admin_panel_app/category/read.html:4
+#: templates/admin_panel_app/category/read.html:8
+msgid "Categories Details"
+msgstr ""
+
+#: templates/admin_panel_app/category/update.html:4
+#: templates/admin_panel_app/category/update.html:21
+#: templates/admin_panel_app/category/update.html:40
+msgid "Edit Category"
+msgstr ""
+
+#: templates/admin_panel_app/chats/create.html:4
+#: templates/admin_panel_app/chats/create.html:21
+#: templates/admin_panel_app/chats/create.html:34
+#: templates/admin_panel_app/chats/list.html:58
+msgid "Add Chat"
+msgstr ""
+
+#: templates/admin_panel_app/chats/delete.html:4
+#: templates/admin_panel_app/chats/delete.html:13
+#: templates/admin_panel_app/chats/delete.html:27
+msgid "Delete Chat"
+msgstr ""
+
+#: templates/admin_panel_app/chats/delete.html:23
+msgid "Are you sure you want to delete this chat ?"
+msgstr ""
+
+#: templates/admin_panel_app/chats/list.html:6
+#: templates/admin_panel_app/chats/list.html:10
+msgid "Chats List"
+msgstr ""
+
+#: templates/admin_panel_app/chats/list.html:54
+msgid "You do not have any chats !!!"
+msgstr ""
+
+#: templates/admin_panel_app/chats/read.html:4
+#: templates/admin_panel_app/chats/read.html:8
+msgid "Chat Details"
+msgstr ""
+
+#: templates/admin_panel_app/chats/update.html:4
+#: templates/admin_panel_app/chats/update.html:21
+#: templates/admin_panel_app/chats/update.html:34
+msgid "Edit Chat"
+msgstr ""
+
+#: templates/admin_panel_app/comment/create.html:4
+#: templates/admin_panel_app/comment/create.html:21
+#: templates/admin_panel_app/comment/create.html:46
+#: templates/admin_panel_app/comment/list.html:62
+msgid "Add Comment"
+msgstr ""
+
+#: templates/admin_panel_app/comment/delete.html:4
+#: templates/admin_panel_app/comment/delete.html:13
+#: templates/admin_panel_app/comment/delete.html:27
+msgid "Delete Comment"
+msgstr ""
+
+#: templates/admin_panel_app/comment/delete.html:23
+msgid "Are you sure you want to delete this comment ?"
+msgstr ""
+
+#: templates/admin_panel_app/comment/list.html:6
+#: templates/admin_panel_app/comment/list.html:10
+msgid "Comments List"
+msgstr ""
+
+#: templates/admin_panel_app/comment/list.html:58
+#: templates/users_app/profile/profile.html:163
+msgid "You do not have any comments !!!"
+msgstr ""
+
+#: templates/admin_panel_app/comment/read.html:4
+#: templates/admin_panel_app/comment/read.html:8
+msgid "Comments Details"
+msgstr ""
+
+#: templates/admin_panel_app/comment/update.html:4
+#: templates/admin_panel_app/comment/update.html:21
+#: templates/admin_panel_app/comment/update.html:46
+#: templates/find_house_app/comment/edit.html:6
+#: templates/find_house_app/comment/edit.html:9
+#: templates/find_house_app/comment/edit.html:24
+#: templates/find_house_app/comment/edit.html:37
+msgid "Edit Comment"
+msgstr ""
+
+#: templates/admin_panel_app/content/create.html:4
+#: templates/admin_panel_app/content/create.html:21
+#: templates/admin_panel_app/content/create.html:64
+#: templates/admin_panel_app/content/list.html:66
+msgid "Add Content"
+msgstr ""
+
+#: templates/admin_panel_app/content/delete.html:4
+#: templates/admin_panel_app/content/delete.html:13
+#: templates/admin_panel_app/content/delete.html:27
+msgid "Delete Content"
+msgstr ""
+
+#: templates/admin_panel_app/content/delete.html:23
+msgid "Are you sure you want to delete this content ?"
+msgstr ""
+
+#: templates/admin_panel_app/content/list.html:6
+#: templates/admin_panel_app/content/list.html:10
+msgid "Content List"
+msgstr ""
+
+#: templates/admin_panel_app/content/list.html:25
+#: templates/admin_panel_app/content/read.html:37
+msgid "Change Date"
+msgstr ""
+
+#: templates/admin_panel_app/content/read.html:4
+#: templates/admin_panel_app/content/read.html:8
+msgid "Content Details"
+msgstr ""
+
+#: templates/admin_panel_app/content/update.html:4
+#: templates/admin_panel_app/content/update.html:21
+#: templates/admin_panel_app/content/update.html:64
+msgid "Edit Content"
+msgstr ""
+
+#: templates/admin_panel_app/favorite/create.html:4
+#: templates/admin_panel_app/favorite/create.html:22
+#: templates/admin_panel_app/favorite/create.html:47
+msgid "Add To Favorite"
+msgstr ""
+
+#: templates/admin_panel_app/favorite/delete.html:4
+#: templates/admin_panel_app/favorite/delete.html:13
+#: templates/admin_panel_app/favorite/delete.html:27
+msgid "Delete Favorite"
+msgstr ""
+
+#: templates/admin_panel_app/favorite/delete.html:23
+msgid "Are you sure you want to delete this favorite ?"
+msgstr ""
+
+#: templates/admin_panel_app/favorite/list.html:6
+#: templates/admin_panel_app/favorite/list.html:10
+msgid "Favorites List"
+msgstr ""
+
+#: templates/admin_panel_app/favorite/list.html:22
+#: templates/admin_panel_app/favorite/read.html:25
+msgid "Is In Favorite"
+msgstr ""
+
+#: templates/admin_panel_app/favorite/list.html:58
+msgid "You do not have any favorites !!!"
+msgstr ""
+
+#: templates/admin_panel_app/favorite/list.html:61
+msgid "Add Favorite"
+msgstr ""
+
+#: templates/admin_panel_app/favorite/read.html:4
+#: templates/admin_panel_app/favorite/read.html:8
+msgid "Favorite Details"
+msgstr ""
+
+#: templates/admin_panel_app/favorite/update.html:4
+#: templates/admin_panel_app/favorite/update.html:22
+#: templates/admin_panel_app/favorite/update.html:47
+msgid "Edit Favorite"
+msgstr ""
+
+#: templates/admin_panel_app/index.html:6
+msgid "Admin Home Page"
+msgstr ""
+
+#: templates/admin_panel_app/index.html:16
+msgid "Dashboard"
+msgstr ""
+
+#: templates/admin_panel_app/index.html:33
+msgid "Admin Dashboard"
+msgstr ""
+
+#: templates/admin_panel_app/index.html:40
+msgid "Total Users"
+msgstr ""
+
+#: templates/admin_panel_app/index.html:48
+msgid "Total Announcements"
+msgstr ""
+
+#: templates/admin_panel_app/index.html:56
+msgid "Total News"
+msgstr ""
+
+#: templates/admin_panel_app/index.html:64
+msgid "Total Comments"
+msgstr ""
+
+#: templates/admin_panel_app/index.html:72
+msgid "Total Chats"
+msgstr ""
+
+#: templates/admin_panel_app/index.html:80
+msgid "Total Messages"
+msgstr ""
+
+#: templates/admin_panel_app/messages/create.html:4
+#: templates/admin_panel_app/messages/create.html:21
+#: templates/admin_panel_app/messages/create.html:57
+#: templates/admin_panel_app/messages/list.html:66
+msgid "Add Message"
+msgstr ""
+
+#: templates/admin_panel_app/messages/delete.html:4
+#: templates/admin_panel_app/messages/delete.html:13
+#: templates/admin_panel_app/messages/delete.html:27
+msgid "Delete Message"
+msgstr ""
+
+#: templates/admin_panel_app/messages/delete.html:23
+msgid "Are you sure you want to delete this message ?"
+msgstr ""
+
+#: templates/admin_panel_app/messages/list.html:6
+#: templates/admin_panel_app/messages/list.html:10
+msgid "Messages List"
+msgstr ""
+
+#: templates/admin_panel_app/messages/list.html:62
+msgid "You do not have any messages !!!"
+msgstr ""
+
+#: templates/admin_panel_app/messages/read.html:4
+#: templates/admin_panel_app/messages/read.html:8
+msgid "Message Details"
+msgstr ""
+
+#: templates/admin_panel_app/messages/update.html:4
+#: templates/admin_panel_app/messages/update.html:21
+#: templates/admin_panel_app/messages/update.html:57
+msgid "Edit Message"
+msgstr ""
+
+#: templates/admin_panel_app/news/create.html:4
+#: templates/admin_panel_app/news/create.html:22
+#: templates/admin_panel_app/news/create.html:41
+#: templates/admin_panel_app/news/list.html:62
+msgid "Add News"
+msgstr ""
+
+#: templates/admin_panel_app/news/delete.html:4
+#: templates/admin_panel_app/news/delete.html:13
+#: templates/admin_panel_app/news/delete.html:27
+msgid "Delete News"
+msgstr ""
+
+#: templates/admin_panel_app/news/delete.html:23
+msgid "Are you sure you want to delete this news ?"
+msgstr ""
+
+#: templates/admin_panel_app/news/list.html:6
+#: templates/admin_panel_app/news/list.html:10
+msgid "News List"
+msgstr ""
+
+#: templates/admin_panel_app/news/list.html:22
+#: templates/admin_panel_app/news/read.html:25
+msgid "Views Count"
+msgstr ""
+
+#: templates/admin_panel_app/news/read.html:4
+#: templates/admin_panel_app/news/read.html:8
+#: templates/find_house_app/news/read.html:6
+msgid "News Details"
+msgstr ""
+
+#: templates/admin_panel_app/news/update.html:4
+#: templates/admin_panel_app/news/update.html:22
+#: templates/admin_panel_app/news/update.html:41
+msgid "Edit News"
+msgstr ""
+
+#: templates/admin_panel_app/users/create.html:4
+#: templates/admin_panel_app/users/create.html:20
+#: templates/admin_panel_app/users/create.html:92
+#: templates/admin_panel_app/users/list.html:71
+msgid "Add User"
+msgstr ""
+
+#: templates/admin_panel_app/users/delete.html:4
+#: templates/admin_panel_app/users/delete.html:13
+#: templates/admin_panel_app/users/delete.html:27
+#: templates/users_app/profile/profile.html:37
+#: templates/users_app/registration/delete_user.html:4
+#: templates/users_app/registration/delete_user.html:13
+msgid "Delete User"
+msgstr ""
+
+#: templates/admin_panel_app/users/delete.html:23
+msgid "Are you sure you want to delete this user ?"
+msgstr ""
+
+#: templates/admin_panel_app/users/list.html:6
+#: templates/admin_panel_app/users/list.html:10
+msgid "Users List"
+msgstr ""
+
+#: templates/admin_panel_app/users/list.html:25
+#: templates/admin_panel_app/users/read.html:33
+#: templates/find_house_app/help/contacts.html:32
+#: templates/users_app/profile/profile.html:28
+msgid "Phone"
+msgstr ""
+
+#: templates/admin_panel_app/users/list.html:26
+#: templates/admin_panel_app/users/read.html:37
+#: templates/users_app/profile/profile.html:30
+msgid "Last Login"
+msgstr ""
+
+#: templates/admin_panel_app/users/list.html:27
+#: templates/admin_panel_app/users/read.html:41
+#: templates/users_app/profile/profile.html:31
+msgid "Date Joined"
+msgstr ""
+
+#: templates/admin_panel_app/users/list.html:67
+msgid "You do not have any users !!!"
+msgstr ""
+
+#: templates/admin_panel_app/users/read.html:4
+#: templates/admin_panel_app/users/read.html:8
+msgid "User Details"
+msgstr ""
+
+#: templates/admin_panel_app/users/update.html:4
+#: templates/admin_panel_app/users/update.html:20
+#: templates/admin_panel_app/users/update.html:92
+#: templates/users_app/registration/user_settings_update.html:106
+msgid "Edit User"
+msgstr ""
+
+#: templates/chat_app/chat/chat_list.html:24
+msgid "Last message"
+msgstr ""
+
+#: templates/chat_app/chat/chat_list.html:26
+msgid "No messages yet"
+msgstr ""
+
+#: templates/chat_app/chat/chat_list.html:35
+msgid "There is no any chats !!!"
+msgstr ""
+
+#: templates/chat_app/chat/chat_read.html:15
+msgid "Chats with"
+msgstr ""
+
+#: templates/chat_app/chat/chat_read.html:33
+msgid "You"
+msgstr ""
+
+#: templates/chat_app/chat/chat_read.html:49
+msgid "There is no any messages !!!"
+msgstr ""
+
+#: templates/chat_app/chat/chat_read.html:54
+msgid "This chat does not exist !!!"
+msgstr ""
+
+#: templates/chat_app/chat/chat_read.html:69
+msgid "Send"
+msgstr ""
+
+#: templates/find_house_app/announcement/read.html:6
+msgid "Details Announcement"
+msgstr ""
+
+#: templates/find_house_app/announcement/read.html:18
+#: templates/find_house_app/announcement/read.html:31
+#: templates/find_house_app/category/category_announcements.html:82
+#: templates/find_house_app/category/category_announcements.html:84
+#: templates/find_house_app/favorite/favorite.html:81
+#: templates/find_house_app/favorite/favorite.html:83
+#: templates/find_house_app/index.html:139
+#: templates/find_house_app/index.html:167
+#: templates/find_house_app/index.html:169
+msgid "Announcement Image"
+msgstr ""
+
+#: templates/find_house_app/announcement/read.html:36
+#: templates/find_house_app/category/category_announcements.html:116
+#: templates/find_house_app/index.html:150
+#: templates/find_house_app/index.html:206
+#: templates/find_house_app/news/news.html:98
+msgid "Previous"
+msgstr ""
+
+#: templates/find_house_app/announcement/read.html:40
+#: templates/find_house_app/category/category_announcements.html:128
+#: templates/find_house_app/index.html:154
+#: templates/find_house_app/index.html:218
+#: templates/find_house_app/news/news.html:110
+msgid "Next"
+msgstr ""
+
+#: templates/find_house_app/announcement/read.html:50
+msgid "Active"
+msgstr ""
+
+#: templates/find_house_app/announcement/read.html:50
+msgid "Sold"
+msgstr ""
+
+#: templates/find_house_app/announcement/read.html:50
+msgid "Withdrawn"
+msgstr ""
+
+#: templates/find_house_app/announcement/read.html:53
+msgid "Price per M"
+msgstr ""
+
+#: templates/find_house_app/announcement/read.html:58
+msgid "More"
+msgstr ""
+
+#: templates/find_house_app/announcement/read.html:61
+msgid "Chat Owner"
+msgstr ""
+
+#: templates/find_house_app/announcement/read.html:81
+msgid "Your Name"
+msgstr ""
+
+#: templates/find_house_app/announcement/read.html:88
+msgid "Post Comment"
+msgstr ""
+
+#: templates/find_house_app/announcement/read.html:104
+#: templates/find_house_app/announcement/read.html:106
+#: templates/find_house_app/base.html:73 templates/find_house_app/base.html:75
+msgid "User Photo"
+msgstr ""
+
+#: templates/find_house_app/announcement/read.html:180
+msgid "There is no any comments !!!"
+msgstr ""
+
+#: templates/find_house_app/base.html:31 templates/find_house_app/base.html:141
+#: templates/users_app/registration/registration.html:6
+#: templates/users_app/registration/registration.html:22
+msgid "Registration"
+msgstr ""
+
+#: templates/find_house_app/base.html:34 templates/find_house_app/base.html:144
+#: templates/users_app/registration/login.html:6
+#: templates/users_app/registration/login.html:22
+#: templates/users_app/registration/login.html:41
+msgid "Login"
+msgstr ""
+
+#: templates/find_house_app/base.html:46 templates/find_house_app/base.html:162
+msgid "Help"
+msgstr ""
+
+#: templates/find_house_app/base.html:49 templates/find_house_app/base.html:158
+msgid "Contacts"
+msgstr ""
+
+#: templates/find_house_app/base.html:53
+#: templates/find_house_app/favorite/favorite.html:6
+#: templates/find_house_app/favorite/favorite.html:75
+msgid "Favorite"
+msgstr ""
+
+#: templates/find_house_app/base.html:83 templates/find_house_app/base.html:137
+#: templates/users_app/profile/profile.html:6
+#: templates/users_app/profile/profile.html:10
+msgid "Profile"
+msgstr ""
+
+#: templates/find_house_app/base.html:84
+#: templates/users_app/profile/profile.html:36
+#: templates/users_app/registration/user_settings_update.html:4
+#: templates/users_app/registration/user_settings_update.html:20
+msgid "Edit User Settings"
+msgstr ""
+
+#: templates/find_house_app/base.html:85
+msgid "Delete Account"
+msgstr ""
+
+#: templates/find_house_app/base.html:88
+msgid "Logout"
+msgstr ""
+
+#: templates/find_house_app/base.html:95
+msgid "EN"
+msgstr ""
+
+#: templates/find_house_app/base.html:97
+msgid "RU"
+msgstr ""
+
+#: templates/find_house_app/base.html:103
+msgid "Search by site"
+msgstr ""
+
+#: templates/find_house_app/base.html:104
+#: templates/find_house_app/category/categories.html:17
+#: templates/find_house_app/category/category_announcements.html:21
+#: templates/find_house_app/category/category_announcements.html:70
+#: templates/find_house_app/favorite/favorite.html:20
+#: templates/find_house_app/favorite/favorite.html:69
+#: templates/find_house_app/index.html:20
+#: templates/find_house_app/index.html:69
+#: templates/find_house_app/news/news.html:27
+msgid "Search"
+msgstr ""
+
+#: templates/find_house_app/base.html:129
+msgid "Menu"
+msgstr ""
+
+#: templates/find_house_app/base.html:154
+msgid "Contacts & Other"
+msgstr ""
+
+#: templates/find_house_app/base.html:175
+msgid "2024 FINDHOUSE. All rights reserved."
+msgstr ""
+
+#: templates/find_house_app/category/categories.html:16
+msgid "Input category name and press \"Enter\""
+msgstr ""
+
+#: templates/find_house_app/category/category_announcements.html:6
+msgid "Category Announcements"
+msgstr ""
+
+#: templates/find_house_app/category/category_announcements.html:26
+#: templates/find_house_app/favorite/favorite.html:25
+#: templates/find_house_app/index.html:25
+msgid "Search by Title"
+msgstr ""
+
+#: templates/find_house_app/category/category_announcements.html:31
+#: templates/find_house_app/favorite/favorite.html:30
+#: templates/find_house_app/index.html:30
+msgid "All Categories"
+msgstr ""
+
+#: templates/find_house_app/category/category_announcements.html:42
+#: templates/find_house_app/favorite/favorite.html:41
+#: templates/find_house_app/index.html:41
+msgid "Search by Description"
+msgstr ""
+
+#: templates/find_house_app/category/category_announcements.html:47
+#: templates/find_house_app/favorite/favorite.html:46
+#: templates/find_house_app/index.html:46
+msgid "Min Price"
+msgstr ""
+
+#: templates/find_house_app/category/category_announcements.html:48
+#: templates/find_house_app/favorite/favorite.html:47
+#: templates/find_house_app/index.html:47
+msgid "Max Price"
+msgstr ""
+
+#: templates/find_house_app/category/category_announcements.html:53
+#: templates/find_house_app/favorite/favorite.html:52
+#: templates/find_house_app/index.html:52
+msgid "Min Square"
+msgstr ""
+
+#: templates/find_house_app/category/category_announcements.html:54
+#: templates/find_house_app/favorite/favorite.html:53
+#: templates/find_house_app/index.html:53
+msgid "Max Square"
+msgstr ""
+
+#: templates/find_house_app/category/category_announcements.html:59
+#: templates/find_house_app/favorite/favorite.html:58
+#: templates/find_house_app/index.html:58
+msgid "Enter date"
+msgstr ""
+
+#: templates/find_house_app/category/category_announcements.html:64
+#: templates/find_house_app/favorite/favorite.html:63
+#: templates/find_house_app/index.html:63
+msgid "Enter Address"
+msgstr ""
+
+#: templates/find_house_app/category/category_announcements.html:68
+#: templates/find_house_app/favorite/favorite.html:67
+#: templates/find_house_app/index.html:67
+msgid "More Filters"
+msgstr ""
+
+#: templates/find_house_app/category/category_announcements.html:76
+msgid "Announcements with category"
+msgstr ""
+
+#: templates/find_house_app/category/category_announcements.html:92
+#: templates/find_house_app/favorite/favorite.html:91
+msgid "ago"
+msgstr ""
+
+#: templates/find_house_app/category/category_announcements.html:101
+#: templates/find_house_app/index.html:186
+#: templates/find_house_app/news/read.html:20
+msgid "Add to Favorite"
+msgstr ""
+
+#: templates/find_house_app/category/category_announcements.html:113
+#: templates/find_house_app/index.html:203
+#: templates/find_house_app/news/news.html:95
+msgid "First"
+msgstr ""
+
+#: templates/find_house_app/category/category_announcements.html:131
+#: templates/find_house_app/index.html:221
+#: templates/find_house_app/news/news.html:113
+msgid "Last"
+msgstr ""
+
+#: templates/find_house_app/category/category_announcements.html:140
+msgid "This category does not exist or it does not have any announcements !!!"
+msgstr ""
+
+#: templates/find_house_app/comment/edit.html:33
+msgid "Edit your comment"
+msgstr ""
+
+#: templates/find_house_app/favorite/favorite.html:99
+msgid "Delete from Favorite"
+msgstr ""
+
+#: templates/find_house_app/favorite/favorite.html:105
+msgid "There is no any favorites !!!"
+msgstr ""
+
+#: templates/find_house_app/help/contacts.html:6
+#: templates/find_house_app/help/contacts.html:10
+msgid "Contact Information"
+msgstr ""
+
+#: templates/find_house_app/help/contacts.html:14
+msgid "Favicon"
+msgstr ""
+
+#: templates/find_house_app/help/contacts.html:26
+msgid "Map"
+msgstr ""
+
+#: templates/find_house_app/help/contacts.html:30
+msgid "Telephone"
+msgstr ""
+
+#: templates/find_house_app/help/contacts.html:45
+msgid "Send us a message"
+msgstr ""
+
+#: templates/find_house_app/help/contacts.html:46
+#: templates/users_app/profile/profile.html:39
+msgid "Chat Admin"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:6
+#: templates/find_house_app/help/help.html:10
+msgid "FAQ"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:12
+msgid "Search FAQ"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:17
+msgid "Real Estate"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:20
+msgid ""
+"Real Estate – Property consisting of land and any buildings or structures on "
+"it, as well as natural resources such as crops or minerals."
+msgstr ""
+
+#: templates/find_house_app/help/help.html:26
+msgid "Property"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:29
+msgid ""
+"Property – Anything that is owned by a person or entity, including real "
+"estate and personal items. In real estate, it typically refers to land and "
+"buildings."
+msgstr ""
+
+#: templates/find_house_app/help/help.html:35
+msgid "Landlord"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:38
+msgid ""
+"Landlord – A person who owns a property and rents it out to tenants for "
+"residential or commercial purposes."
+msgstr ""
+
+#: templates/find_house_app/help/help.html:44
+msgid "Tenant"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:47
+msgid ""
+"Tenant – A person or entity who rents property from a landlord and has the "
+"right to use it for a specific period in exchange for payment (rent)."
+msgstr ""
+
+#: templates/find_house_app/help/help.html:53
+msgid "Lease"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:56
+msgid ""
+"Lease – A legal contract between a landlord and tenant, outlining the terms "
+"and conditions under which the tenant can use the property for a set period."
+msgstr ""
+
+#: templates/find_house_app/help/help.html:62
+msgid "Rent"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:65
+msgid ""
+"Rent – The regular payment made by a tenant to a landlord for the use of "
+"property."
+msgstr ""
+
+#: templates/find_house_app/help/help.html:71
+msgid "Mortgage"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:74
+msgid ""
+"Mortgage – A loan provided by a bank or financial institution to buy real "
+"estate, where the property itself serves as collateral for the loan."
+msgstr ""
+
+#: templates/find_house_app/help/help.html:80
+msgid "Down Payment"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:83
+msgid ""
+"Down Payment – The initial payment made when buying a property, usually "
+"expressed as a percentage of the total purchase price, with the remainder "
+"covered by a mortgage."
+msgstr ""
+
+#: templates/find_house_app/help/help.html:89
+msgid "Appraisal"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:92
+msgid ""
+"Appraisal – An assessment of the market value of a property, typically done "
+"before a sale or for loan purposes."
+msgstr ""
+
+#: templates/find_house_app/help/help.html:98
+msgid "Foreclosure"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:101
+msgid ""
+"Foreclosure – The legal process by which a lender takes possession of a "
+"property from a borrower who has defaulted on their mortgage payments."
+msgstr ""
+
+#: templates/find_house_app/help/help.html:107
+msgid "Equity"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:110
+msgid ""
+"Equity – The difference between the market value of a property and the "
+"amount still owed on the mortgage. Essentially, it’s the portion of the "
+"property that the owner truly owns."
+msgstr ""
+
+#: templates/find_house_app/help/help.html:116
+msgid "Zoning"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:119
+msgid ""
+"Zoning – The legal regulations that dictate how land can be used in "
+"different areas, such as residential, commercial, or industrial purposes."
+msgstr ""
+
+#: templates/find_house_app/help/help.html:125
+msgid "Closing Costs"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:128
+msgid ""
+"Closing Costs – The various fees and expenses, including taxes and legal "
+"fees, paid at the closing of a real estate transaction when the property is "
+"officially transferred from seller to buyer."
+msgstr ""
+
+#: templates/find_house_app/help/help.html:134
+msgid "Real Estate Agent"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:137
+msgid ""
+"Real Estate Agent – A professional who assists buyers, sellers, or renters "
+"in the process of purchasing, selling, or leasing real estate, usually "
+"earning a commission."
+msgstr ""
+
+#: templates/find_house_app/help/help.html:143
+msgid "Broker"
+msgstr ""
+
+#: templates/find_house_app/help/help.html:146
+msgid ""
+"Broker – A licensed individual or company who can facilitate real estate "
+"transactions and employ real estate agents. Brokers are often required to "
+"have more experience and training than agents."
+msgstr ""
+
+#: templates/find_house_app/index.html:6
+msgid "Home Page"
+msgstr ""
+
+#: templates/find_house_app/index.html:72
+msgid "Sorting"
+msgstr ""
+
+#: templates/find_house_app/index.html:78
+#: templates/find_house_app/news/news.html:36
+msgid "Sort by Title (In Alphabetical Order)"
+msgstr ""
+
+#: templates/find_house_app/index.html:84
+#: templates/find_house_app/news/news.html:42
+msgid "Sort by Title (In Reverse Order)"
+msgstr ""
+
+#: templates/find_house_app/index.html:90
+msgid "Sort by Price (Low to High)"
+msgstr ""
+
+#: templates/find_house_app/index.html:96
+msgid "Sort by Price (High to Low)"
+msgstr ""
+
+#: templates/find_house_app/index.html:102
+msgid "Sort by Square (Low to High)"
+msgstr ""
+
+#: templates/find_house_app/index.html:108
+msgid "Sort by Square (High to Low)"
+msgstr ""
+
+#: templates/find_house_app/index.html:114
+#: templates/find_house_app/news/news.html:48
+msgid "Sort by Date (New to Old)"
+msgstr ""
+
+#: templates/find_house_app/index.html:120
+#: templates/find_house_app/news/news.html:54
+msgid "Sort by Date (Old to New)"
+msgstr ""
+
+#: templates/find_house_app/index.html:125
+#: templates/find_house_app/news/news.html:59
+msgid "Sort"
+msgstr ""
+
+#: templates/find_house_app/index.html:132
+msgid "Top announcements"
+msgstr ""
+
+#: templates/find_house_app/index.html:158
+#: templates/find_house_app/index.html:194
+#: templates/find_house_app/search/search_by_site.html:22
+msgid "There is no any announcements !!!"
+msgstr ""
+
+#: templates/find_house_app/index.html:230
+msgid "Latest News"
+msgstr ""
+
+#: templates/find_house_app/index.html:237
+#: templates/find_house_app/news/news.html:75
+#: templates/find_house_app/news/read.html:11
+msgid "News Image"
+msgstr ""
+
+#: templates/find_house_app/index.html:249
+msgid "More News"
+msgstr ""
+
+#: templates/find_house_app/index.html:253
+#: templates/find_house_app/news/news.html:86
+#: templates/find_house_app/search/search_by_site.html:31
+msgid "There is no any news !!!"
+msgstr ""
+
+#: templates/find_house_app/news/news.html:6
+msgid "News Page"
+msgstr ""
+
+#: templates/find_house_app/news/news.html:13
+msgid "News Search"
+msgstr ""
+
+#: templates/find_house_app/news/news.html:19
+msgid "Search by title"
+msgstr ""
+
+#: templates/find_house_app/news/news.html:24
+msgid "Search by date"
+msgstr ""
+
+#: templates/find_house_app/news/news.html:30
+msgid "Sorting News"
+msgstr ""
+
+#: templates/find_house_app/news/news.html:68
+msgid "All News"
+msgstr ""
+
+#: templates/find_house_app/search/search_by_site.html:6
+#: templates/find_house_app/search/search_by_site.html:12
+msgid "Search by Site"
+msgstr ""
+
+#: templates/find_house_app/search/search_by_site.html:15
+msgid "Announcements search results for"
+msgstr ""
+
+#: templates/find_house_app/search/search_by_site.html:26
+msgid "News search results for"
+msgstr ""
+
+#: templates/find_house_app/search/search_by_site.html:35
+msgid "Categories search results for"
+msgstr ""
+
+#: templates/find_house_app/search/search_by_site.html:40
+msgid "There is no any categories !!!"
+msgstr ""
+
+#: templates/users_app/profile/profile.html:17
+#: templates/users_app/profile/profile.html:19
+msgid "User Image"
+msgstr ""
+
+#: templates/users_app/profile/profile.html:27
+msgid "Date of Birth"
+msgstr ""
+
+#: templates/users_app/profile/profile.html:48
+#: templates/users_app/profile/profile.html:98
+msgid "Enter filter..."
+msgstr ""
+
+#: templates/users_app/profile/profile.html:56
+#: templates/users_app/profile/profile.html:134
+msgid "Announcement Title"
+msgstr ""
+
+#: templates/users_app/profile/profile.html:96
+msgid "History"
+msgstr ""
+
+#: templates/users_app/profile/profile.html:122
+msgid "You do not have any history !!!"
+msgstr ""
+
+#: templates/users_app/registration/delete_user.html:17
+msgid ""
+"Warning: This action is irreversible.All your data will be permanently "
+"deleted."
+msgstr ""
+
+#: templates/users_app/registration/delete_user.html:23
+msgid "Are you sure you want to delete your user account ?"
+msgstr ""
+
+#: templates/users_app/registration/delete_user.html:27
+msgid "Confirm Deletion"
+msgstr ""
+
+#: templates/users_app/registration/delete_user.html:28
+msgid "Cancel"
+msgstr ""
+
+#: templates/users_app/registration/registration.html:93
+msgid "Register"
+msgstr ""
