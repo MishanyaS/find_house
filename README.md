@@ -252,3 +252,8 @@ It is distinguished by the presence of "Is Admin" field.
 
 ![](https://github.com/MishanyaS/find_house/blob/main/photos/search%20by%20site/search%20form.png?raw=true)
 ![](https://github.com/MishanyaS/find_house/blob/main/photos/search%20by%20site/search%20by%20site.png?raw=true)
+
+**Possibility to choose the interface language:**
+
+![](https://github.com/MishanyaS/find_house/blob/main/photos/language/language.png?raw=true)
+![](https://github.com/MishanyaS/find_house/blob/main/photos/language/language%202.png?raw=true)
