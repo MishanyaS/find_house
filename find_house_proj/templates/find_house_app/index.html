@@ -131,6 +131,7 @@
 
             <h3 class="text-center">{% trans 'Top announcements' %}</h3>
             {% if announcements %}
+                <h4>{% trans 'Total Announcements' %}: {{ announcements_count }}</h4>
                 <div id="topAnnouncementsCarousel" class="carousel slide mb-3 shadow-lg " data-bs-ride="carousel">
                     <div class="carousel-inner">
                         {% for announcement in top_announcements %}

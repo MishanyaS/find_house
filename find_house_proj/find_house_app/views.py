@@ -45,6 +45,7 @@ class HomeView(ListView):
         context['news'] = News.objects.all().order_by('-date_added')[:4]
         context['categories'] = Category.objects.all()
         context['content'] = Content.objects.order_by('-change_date').first()
+        context['announcements_count'] = Announcement.objects.all().count()
 
         # Pagination
         announcements_list = Announcement.objects.filter(status=Announcement.ACTIVE)
@@ -397,6 +398,7 @@ class NewsList(ListView):
         context['news'] = news
         context['categories'] = Category.objects.all()
         context['content'] = Content.objects.order_by('-change_date').first()
+        context['news_count'] = News.objects.all().count()
                             
         return context
 
@@ -588,6 +590,7 @@ class FavoriteView(ListView):
         context['favorites'] = Favorite.objects.filter(user=self.request.user)
         context['categories'] = Category.objects.all()
         context['content'] = Content.objects.order_by('-change_date').first()
+        context['favorites_count'] = Favorite.objects.filter(user=self.request.user).count()
             
         return context
     

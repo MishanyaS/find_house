@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-01 20:22+0200\n"
+"POT-Creation-Date: 2025-01-17 12:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: admin_panel_app/forms.py:25 admin_panel_app/forms.py:40
 #: admin_panel_app/forms.py:206 admin_panel_app/forms.py:219
 #: templates/admin_panel_app/users/list.html:21
@@ -172,7 +173,7 @@ msgstr ""
 #: templates/find_house_app/category/category_announcements.html:46
 #: templates/find_house_app/category/category_announcements.html:90
 #: templates/find_house_app/favorite/favorite.html:45
-#: templates/find_house_app/favorite/favorite.html:89
+#: templates/find_house_app/favorite/favorite.html:90
 #: templates/find_house_app/index.html:45
 #: templates/find_house_app/index.html:175
 msgid "Price"
@@ -184,7 +185,7 @@ msgstr ""
 #: templates/find_house_app/category/category_announcements.html:52
 #: templates/find_house_app/category/category_announcements.html:91
 #: templates/find_house_app/favorite/favorite.html:51
-#: templates/find_house_app/favorite/favorite.html:90
+#: templates/find_house_app/favorite/favorite.html:91
 #: templates/find_house_app/index.html:51
 #: templates/find_house_app/index.html:176
 msgid "Square"
@@ -372,11 +373,11 @@ msgstr ""
 msgid "Comment"
 msgstr ""
 
-#: find_house_proj/settings.py:125
+#: find_house_proj/settings.py:140
 msgid "English"
 msgstr ""
 
-#: find_house_proj/settings.py:126
+#: find_house_proj/settings.py:141
 msgid "Russian"
 msgstr ""
 
@@ -430,7 +431,7 @@ msgstr ""
 #: templates/admin_panel_app/announcement/delete.html:39
 #: templates/admin_panel_app/announcement/read.html:45
 #: templates/admin_panel_app/announcement/update.html:109
-#: templates/admin_panel_app/base.html:66
+#: templates/admin_panel_app/base.html:78
 #: templates/admin_panel_app/category/create.html:52
 #: templates/admin_panel_app/category/delete.html:39
 #: templates/admin_panel_app/category/read.html:33
@@ -690,7 +691,7 @@ msgstr ""
 #: templates/admin_panel_app/announcement view history/list.html:22
 #: history/read.html:25
 #: templates/find_house_app/category/category_announcements.html:92
-#: templates/find_house_app/favorite/favorite.html:91
+#: templates/find_house_app/favorite/favorite.html:92
 #: templates/find_house_app/index.html:177
 #: templates/find_house_app/index.html:240
 #: templates/find_house_app/news/news.html:23
@@ -784,7 +785,7 @@ msgid "Admin Panel"
 msgstr ""
 
 #: templates/admin_panel_app/base.html:27 templates/find_house_app/base.html:27
-#: templates/find_house_app/base.html:133
+#: templates/find_house_app/base.html:136
 msgid "Home"
 msgstr ""
 
@@ -806,7 +807,7 @@ msgstr ""
 
 #: templates/admin_panel_app/base.html:39
 #: templates/admin_panel_app/index.html:20
-#: templates/find_house_app/base.html:57 templates/find_house_app/base.html:148
+#: templates/find_house_app/base.html:57 templates/find_house_app/base.html:151
 #: templates/find_house_app/category/categories.html:6
 #: templates/find_house_app/category/categories.html:10
 #: templates/find_house_app/category/category_announcements.html:14
@@ -822,7 +823,7 @@ msgstr ""
 
 #: templates/admin_panel_app/base.html:45
 #: templates/admin_panel_app/index.html:22
-#: templates/find_house_app/base.html:38 templates/find_house_app/base.html:166
+#: templates/find_house_app/base.html:38 templates/find_house_app/base.html:169
 msgid "News"
 msgstr ""
 
@@ -848,6 +849,19 @@ msgstr ""
 #: templates/admin_panel_app/base.html:62
 #: templates/admin_panel_app/index.html:26
 msgid "Messages"
+msgstr ""
+
+#: templates/admin_panel_app/base.html:67 templates/find_house_app/base.html:94
+msgid "Language"
+msgstr ""
+
+#: templates/admin_panel_app/base.html:71 templates/find_house_app/base.html:98
+msgid "EN"
+msgstr ""
+
+#: templates/admin_panel_app/base.html:73
+#: templates/find_house_app/base.html:100
+msgid "RU"
 msgstr ""
 
 #: templates/admin_panel_app/category/create.html:4
@@ -1263,8 +1277,8 @@ msgstr ""
 #: templates/find_house_app/announcement/read.html:31
 #: templates/find_house_app/category/category_announcements.html:82
 #: templates/find_house_app/category/category_announcements.html:84
-#: templates/find_house_app/favorite/favorite.html:81
-#: templates/find_house_app/favorite/favorite.html:83
+#: templates/find_house_app/favorite/favorite.html:82
+#: templates/find_house_app/favorite/favorite.html:84
 #: templates/find_house_app/index.html:139
 #: templates/find_house_app/index.html:167
 #: templates/find_house_app/index.html:169
@@ -1329,24 +1343,24 @@ msgstr ""
 msgid "There is no any comments !!!"
 msgstr ""
 
-#: templates/find_house_app/base.html:31 templates/find_house_app/base.html:141
+#: templates/find_house_app/base.html:31 templates/find_house_app/base.html:144
 #: templates/users_app/registration/registration.html:6
 #: templates/users_app/registration/registration.html:22
 msgid "Registration"
 msgstr ""
 
-#: templates/find_house_app/base.html:34 templates/find_house_app/base.html:144
+#: templates/find_house_app/base.html:34 templates/find_house_app/base.html:147
 #: templates/users_app/registration/login.html:6
 #: templates/users_app/registration/login.html:22
 #: templates/users_app/registration/login.html:41
 msgid "Login"
 msgstr ""
 
-#: templates/find_house_app/base.html:46 templates/find_house_app/base.html:162
+#: templates/find_house_app/base.html:46 templates/find_house_app/base.html:165
 msgid "Help"
 msgstr ""
 
-#: templates/find_house_app/base.html:49 templates/find_house_app/base.html:158
+#: templates/find_house_app/base.html:49 templates/find_house_app/base.html:161
 msgid "Contacts"
 msgstr ""
 
@@ -1356,7 +1370,7 @@ msgstr ""
 msgid "Favorite"
 msgstr ""
 
-#: templates/find_house_app/base.html:83 templates/find_house_app/base.html:137
+#: templates/find_house_app/base.html:83 templates/find_house_app/base.html:140
 #: templates/users_app/profile/profile.html:6
 #: templates/users_app/profile/profile.html:10
 msgid "Profile"
@@ -1377,19 +1391,11 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: templates/find_house_app/base.html:95
-msgid "EN"
-msgstr ""
-
-#: templates/find_house_app/base.html:97
-msgid "RU"
-msgstr ""
-
-#: templates/find_house_app/base.html:103
+#: templates/find_house_app/base.html:106
 msgid "Search by site"
 msgstr ""
 
-#: templates/find_house_app/base.html:104
+#: templates/find_house_app/base.html:107
 #: templates/find_house_app/category/categories.html:17
 #: templates/find_house_app/category/category_announcements.html:21
 #: templates/find_house_app/category/category_announcements.html:70
@@ -1401,15 +1407,15 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: templates/find_house_app/base.html:129
+#: templates/find_house_app/base.html:132
 msgid "Menu"
 msgstr ""
 
-#: templates/find_house_app/base.html:154
+#: templates/find_house_app/base.html:157
 msgid "Contacts & Other"
 msgstr ""
 
-#: templates/find_house_app/base.html:175
+#: templates/find_house_app/base.html:178
 msgid "2024 FINDHOUSE. All rights reserved."
 msgstr ""
 
@@ -1486,7 +1492,7 @@ msgid "Announcements with category"
 msgstr ""
 
 #: templates/find_house_app/category/category_announcements.html:92
-#: templates/find_house_app/favorite/favorite.html:91
+#: templates/find_house_app/favorite/favorite.html:92
 msgid "ago"
 msgstr ""
 
@@ -1516,11 +1522,15 @@ msgstr ""
 msgid "Edit your comment"
 msgstr ""
 
-#: templates/find_house_app/favorite/favorite.html:99
+#: templates/find_house_app/favorite/favorite.html:78
+msgid "Total in Favorite"
+msgstr ""
+
+#: templates/find_house_app/favorite/favorite.html:100
 msgid "Delete from Favorite"
 msgstr ""
 
-#: templates/find_house_app/favorite/favorite.html:105
+#: templates/find_house_app/favorite/favorite.html:106
 msgid "There is no any favorites !!!"
 msgstr ""
 
