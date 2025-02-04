@@ -18,9 +18,12 @@ from django.http import HttpResponseRedirect
 from django.urls.base import resolve, reverse
 from django.urls.exceptions import Resolver404
 from django.utils import translation
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 
 # Create your views here.
 # region Basic views
+@method_decorator(cache_page(60 * 10), name='dispatch')
 class HomeView(ListView):
     model = Announcement
     template_name = 'find_house_app/index.html'
@@ -81,6 +84,7 @@ class HomeView(ListView):
 
         return redirect('find_house_app:favorite')
 
+@method_decorator(cache_page(60 * 10), name='dispatch')
 class HelpView(TemplateView):
     template_name = 'find_house_app/help/help.html'
     
@@ -90,6 +94,7 @@ class HelpView(TemplateView):
 
         return context
 
+@method_decorator(cache_page(60 * 10), name='dispatch')
 class ContactsView(TemplateView):
     template_name = 'find_house_app/help/contacts.html'
 
@@ -376,6 +381,7 @@ class AddToFavoritesView(View):
 # endregion
 
 # region News views
+@method_decorator(cache_page(60 * 10), name='dispatch')
 class NewsList(ListView):
     model = News
     template_name = 'find_house_app/news/news.html'
@@ -498,6 +504,7 @@ class SortNewsView(ListView):
 # endregion
 
 # region Category views
+@method_decorator(cache_page(60 * 10), name='dispatch')
 class CategoriesListView(TemplateView):
     template_name = 'find_house_app/category/categories.html'
     
@@ -508,6 +515,7 @@ class CategoriesListView(TemplateView):
             
         return context
 
+@method_decorator(cache_page(60 * 10), name='dispatch')
 class CategoryListView(ListView):
     model = Category
     template_name = 'find_house_app/category/categories.html'
