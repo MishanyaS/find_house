@@ -176,6 +176,7 @@ class AnnouncementCreateView(CreateView):
 class AnnouncementDetailView(DetailView):
     model = Announcement
     template_name = 'find_house_app/announcement/read.html'
+    context_object_name = 'announcement'
     
     def get_object(self, queryset=None):
         obj = super().get_object(queryset=queryset)

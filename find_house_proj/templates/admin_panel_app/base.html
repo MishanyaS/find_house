@@ -1,6 +1,5 @@
 {% load static %}
 {% load i18n %}
-{% load cache %}
 
 <!doctype html>
 <html lang="en">
@@ -16,74 +15,72 @@
     </head>
     <body>
 
-        {% cache 600 admin_navbar %}
-            <nav class="navbar navbar-expand-lg bg-orange">
-                <div class="container-fluid">
-                    <a class="navbar-brand w-text-75" href="{% url 'admin_panel_app:admin_index' %}">{% trans 'Admin Panel' %}</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_index' %}">{% trans 'Home' %}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_user_list_index' %}">{% trans 'Users' %}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_announcement_list' %}">{% trans 'Announcements' %}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_announcement_images_list' %}">{% trans 'Announcement Images' %}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_categories_list' %}">{% trans 'Categories' %}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_favorites_list' %}">{% trans 'Favorites' %}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_news_list' %}">{% trans 'News' %}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_announcement_view_histories_list' %}">{% trans 'Ann View History' %}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_comments_list' %}">{% trans 'Comments' %}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_content_list' %}">{% trans 'Content' %}</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle w-text-75" href="#" id="navbarChat" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Chat
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark bg-orange" aria-labelledby="navbarChat">
-                            <li><a class="dropdown-item w-text-75" href="{% url 'admin_panel_app:admin_chats_list' %}">{% trans 'Chats' %}</a></li>
-                            <li><a class="dropdown-item w-text-75" href="{% url 'admin_panel_app:admin_messages_list' %}"{% trans 'Messages' %}></a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-capitalize w-text-75" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {% trans 'Language' %}
-                            </a>
-                            <ul class="dropdown-menu bg-orange" aria-labelledby="navbarDropdown">
-            
-                                <li><a class="dropdown-item text-capitalize w-text-75" href="{% url 'set_language' 'en' %}">{% trans 'EN' %}</a></li>
-            
-                                <li><a class="dropdown-item text-capitalize w-text-75" href="{% url 'set_language' 'ru' %}">{% trans 'RU' %}</a></li>
-            
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-danger" aria-current="page" href="{% url 'find_house_app:home' %}">{% trans 'Back' %}</a>
-                        </li>
-                    </ul>
-                    </div>
+        <nav class="navbar navbar-expand-lg bg-orange">
+            <div class="container-fluid">
+                <a class="navbar-brand w-text-75" href="{% url 'admin_panel_app:admin_index' %}">{% trans 'Admin Panel' %}</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_index' %}">{% trans 'Home' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_user_list_index' %}">{% trans 'Users' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_announcement_list' %}">{% trans 'Announcements' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_announcement_images_list' %}">{% trans 'Announcement Images' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_categories_list' %}">{% trans 'Categories' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_favorites_list' %}">{% trans 'Favorites' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_news_list' %}">{% trans 'News' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_announcement_view_histories_list' %}">{% trans 'Ann View History' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_comments_list' %}">{% trans 'Comments' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link w-text-75" aria-current="page" href="{% url 'admin_panel_app:admin_content_list' %}">{% trans 'Content' %}</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle w-text-75" href="#" id="navbarChat" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Chat
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark bg-orange" aria-labelledby="navbarChat">
+                        <li><a class="dropdown-item w-text-75" href="{% url 'admin_panel_app:admin_chats_list' %}">{% trans 'Chats' %}</a></li>
+                        <li><a class="dropdown-item w-text-75" href="{% url 'admin_panel_app:admin_messages_list' %}"{% trans 'Messages' %}></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-capitalize w-text-75" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {% trans 'Language' %}
+                        </a>
+                        <ul class="dropdown-menu bg-orange" aria-labelledby="navbarDropdown">
+        
+                            <li><a class="dropdown-item text-capitalize w-text-75" href="{% url 'set_language' 'en' %}">{% trans 'EN' %}</a></li>
+        
+                            <li><a class="dropdown-item text-capitalize w-text-75" href="{% url 'set_language' 'ru' %}">{% trans 'RU' %}</a></li>
+        
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" aria-current="page" href="{% url 'find_house_app:home' %}">{% trans 'Back' %}</a>
+                    </li>
+                </ul>
                 </div>
-            </nav>
-        {% endcache %}
+            </div>
+        </nav>
 
         <div class="container content">
             {% block content %}
